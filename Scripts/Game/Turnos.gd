@@ -125,6 +125,7 @@ func verifyWhoPlays():
 		playerTurnUI.revealTimer(true)
 		turnTimer.stop()
 		playerTurnUI.startClock()
+		
 	else:
 		playerTurnUI.turnTipsButtons(false)
 		turnTimer.start()

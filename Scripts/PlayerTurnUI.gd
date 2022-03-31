@@ -8,7 +8,7 @@ var timer = 0
 var totalTimer = 60
 var answerBox
 var timerOn
-var usedTips3 = []
+var usedTips3: PoolIntArray
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,29 +30,30 @@ func revealTimer(on):
 	
 #"usedTips":{"arrayValue":{"values":[{"integerValue":0}]}},	
 
-func turnTipsButtons(on):
+func blockTipsUsed():
 	#BUSCAR DICAS JÁ UTILIZADAS
 	var usedTips = get_node("/root/MainScene/").roomData.usedTips.arrayValue.values
 	#print('usedTips ',usedTips)
 	var usedTips2 = usedTips
 	#print('usedTips2 ',usedTips2,' size ', usedTips2.size())
-	usedTips3.clear()
+	#usedTips3.clear() //ZERAR ARRAY
 	if usedTips2.size() > 0:
 		for i in range(usedTips2.size()):
 			usedTips3.append(usedTips2[i].integerValue)
-			
-	#print('usedTips3 ',usedTips3)
+	print('TIPO: ', typeof(usedTips3))
 	
-	for c in container.get_children():
-		c.disabled = !on
-	
-	#var childs = container.get_children()
 	for c in container.get_children():
 		var number = int(c.text)
+		#print("Number: ", number," usedTips3: ", usedTips3, " contains: ", usedTips3.has(number))
 		if number in usedTips3:
-			#TA FUNCIONANDO PQ NAO DESATIVA?
-			print("DESATIVOU")
+			print("DESATIVOU: ",number)
 			c.disabled = true
+
+func turnTipsButtons(on):
+	for c in container.get_children():
+		c.disabled = !on
+	if on:
+		blockTipsUsed()
 
 func revealTip(tip):
 	tipText.text = tip
