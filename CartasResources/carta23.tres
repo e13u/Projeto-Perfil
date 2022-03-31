@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 23
+nomeCarta = "Marechal Deodoro da Fonseca"
+categoriaCarta = ""
+tipoCarta = 1
+dicas = PoolStringArray( "Proclamei a República em 1889.", "Governei provisoriamente o País desde a proclamação da república até ser eleito Presidente do Brasil pelo Congresso Constituinte  em 1891.", "Durante meu governo provisório, foi promulgada a primeira constituição republicana do Brasil.", "Durante meu governo provisório, foi criado o Código Criminal, que extinguiu a pena de morte em tempos de paz no Brasil.", "Fui o primeiro presidente do Brasil.", "Participei de conflitos, como a Revolução Praieira e a Guerra do Paraguai.", "Perdi 3 irmãos, também militares, na guerra do Paraguai.", "Fui líder do movimento antiescravista do Exército.", "Meu primeiro nome é Manoel e nasci em Alagoas.", "Tenho 8 irmãos e somos todos militares.", "Sou tio de Hermes da Fonseca, o oitavo Presidente do Brasil.", "Quando me apresentaram um projeto de nova bandeira do Brasil, muito parecida com a dos Estados Unidos, gritei: \"senhores, mudamos o regime, não a pátria!\"", "Baixei um decreto oficializando a bandeira do Brasil do jeito que ela é até hoje. Isso foi em 1989, em 19 de novembro, dia em que comemoramos o dia da Bandeira todos os anos.", "Meses depois de ser eleito Presidente, decretei o fechamento do Congresso e declarei estado de sítio.", "Renunciei ao meu mandato de presidente 9 meses depois de ter sido eleito." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Marechal Deodoro da Fonseca", "Deodoro da Fonseca", "Marechal Teodoro da Fonseca", "Teodoro da Fonseca" )
+cartaBonus = false

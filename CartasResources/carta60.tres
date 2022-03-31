@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 60
+nomeCarta = "Nação"
+categoriaCarta = 3
+tipoCarta = 2
+dicas = PoolStringArray( "Muitas vezes sou usada erroneamente como sinônimo de Estado ou país.", "Sou um conjunto de características que formam a identidade de um povo.", "Sou formada por características culturais, tradições, língua e costumes.", "Um Estado pode ser formado por várias de mim.", "Em relação a um Estado, tenho um caráter mais subjetivo e humano.", "Posso estar dividida em mais de um Estado.", "Posso existir sem um país ou Estado.", "A maioria dos países agrega, em um mesmo território, várias de mim.", "Posso existir sem qualquer espécie de organização legal.", "Tenho como característica a convicção de coletividade por parte de um grupo de indivíduos, constituindo um grupamento distinto com características, interesses e necessidades próprias.", "Sou o conjunto das gerações - passadas, presentes e futuras - que exprime-se, existe e perdura na língua, na arte e na história.", "Derivo do latim natus, que significa “nascido”.", "Os curdos são o maior exemplo em que eu existo sem um território ou um Estado correspondente.", "O cantor e compositor brasileiro Chico Science participou de uma banda que levava o meu nome e, logo após, a palavra \"Zumbi\".", "No Brasil, sou muito usada em referência a torcidas de futebol. Por exemplo, meu nome é muito usado antes dos termos “Rubro-Negra”, \"Tricolor\" ou \"Alvinegra\'\'.", "Sou associada a termos como nacional, nacionalidade, nacionalismo." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Nação", "Nacao" )
+cartaBonus = false

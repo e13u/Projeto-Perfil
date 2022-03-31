@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 51
+nomeCarta = "Impeachment"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "Também sou chamado de destituição.", "No Brasil, aconteci em 1992 e em 2016.", "Posso acontecer com o Presidente da República.", "Eu posso acontecer em função de um tipo específico de crime.", "Eu posso acontecer com Ministros de Estado.", "Eu posso acontecer com Ministros do Supremo Tribunal Federal.", "Eu já aconteci com políticos como Fernando Collor de Mello e Dilma Roussef.", "Para que eu tenha início, preciso ser aceito pelo presidente da Câmara dos Deputados. ", "Eu não me aplico a crimes comuns. ", "Também sou chamado de impedimento.", "Posso acontecer com Governadores e Secretários de estado.", "Um dos meus casos mais famosos aconteceu nos Estados Unidos com o então presidente Richard Nixon e ficou conhecido como o escândalo de Watergate.", "Para que eu aconteça, preciso ser votado tanto na Câmara dos Deputados quanto no Senado Federal.", "Antes de ser votado, sou analisado por uma comissão formada por integrantes de todas as bancadas da Câmara dos Deputados." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Impeachment", "Impeachmen", "Impitima", "Impeachma", "Impeatima", "Inpitima", "Empeachment", "Empitima", "Enpitima", "Impeachman", "Impitiman", "Empitiman", "Empitiment", "Empeachment", "Ipitima" )
+cartaBonus = false

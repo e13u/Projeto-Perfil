@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 36
+nomeCarta = "Juscelino Kubitschek"
+categoriaCarta = ""
+tipoCarta = ""
+dicas = PoolStringArray( "Meu sobrenome é meio difícil de escrever, por isso todos me conhecem pelas minhas iniciais.", "Transferi a capital federal do Rio de Janeiro para o centro do País.", "Eu tinha um Plano de Metas cujo lema era \"50 anos em 5\".", "Fui Presidente do Brasil de 1956 a 1960.", "Fui eleito senador pelo estado de Goiás, mas acabei cassado pelo Golpe Militar de 1964.", "Casei-me com Sarah Lemos em 1931. Todo mundo passou a conhecê-la como Dona Sarah.", "Antes de ser Presidente do Brasil, fui prefeito de Belo Horizonte, deputado federal e governador por MG.", "Além de político, fui médico urologista e policial militar.", "Morri em um acidente automobilístico em 1976.", "Em Brasília, há um Memorial em minha homenagem. É um dos monumentos mais visitados da cidade.", "Recusei o primeiro projeto que Oscar Niemeyer fez da minha residência oficial. Faltava \"monumentalidade”.", "Fui o último presidente da República a assumir o cargo no Palácio do Catete.", "Meu vice-presidente era João Goulart.", "Meu maior adversário político foi o jornalista Carlos Lacerda.", "Minha música preferida: Peixe Vivo! (\"Como pode o peixe vivo viver fora da água fria\?\")" )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "JK", "J.K.", "Juscelino Kubitschek", "Jucelino Kubitschek", "Juscelino Kubitchek", "Juscelino Kubitscheck", "Juscelino Kubischek", "Juscelino Kubichek", "Juscelino Kubishek", "Juscelino Kubitshek", "Juscelino Kubitischek", "Juscelino Kubistchek", "Juscelino Kubicheque", "Juscelino Kubitscheque", "Juscelino Kubitcheque", "Juscelino Kubisheque", "Jucelino Kubicheque", "Jucelino Kubitscheque", "Jucelino Kubitcheque", "Jucelino Kubisheque", "Jucelino Kubitchek", "Jucelino Kubitscheck", "Jucelino Kubischek", "Jucelino Kubichek", "Jucelino Kubishek", "Jucelino Kubitshek", "Jucelino Kubitischek", "Jucelino Kubistchek" )
+cartaBonus = false

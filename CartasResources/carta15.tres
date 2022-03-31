@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 15
+nomeCarta = "Lei Maria da Penha"
+categoriaCarta = 2
+tipoCarta = ""
+dicas = PoolStringArray( "Sou conhecida pelo nome da mulher que me serviu de inspiração.", "Minha musa inspiradora é a cearense Maria da Penha Maia Fernandes. Ela é farmacêutica bioquímica.", "Meu nome oficial é Lei N. 11.340, de 7 de agosto de 2006.", "Meu objetivo é prevenir e punir a violência doméstica e familiar contra a mulher.", "Sou considerada uma das melhores leis do mundo quando o assunto é coibir a violência doméstica e familiar contra a mulher.", "Depois que eu surgi, a violência doméstica contra a mulher deixou de ser considerada como de menor potencial ofensivo.", "Criei os Juizados de Violência Doméstica e Familiar contra a Mulher.", "Previ medidas de assistência à vítima de violência doméstica e familiar, incluindo medidas protetivas de urgência, como o afastamento do agressor do lar.", "Não trato apenas da violência física, mas também da violência psicológica, moral, sexual e patrimonial.", "Possibilitei a prisão dos agressores de mulheres em flagrante ou a decretação da sua prisão preventiva.", "Extingui a opção de punição com penas alternativas como, por exemplo, a doação de cestas básicas em caso de violência doméstica contra a mulher.", "Levo o nome de uma mulher que sofreu dupla tentativa de feminicídio pelo próprio marido e que foi atrás de justiça.", "Meu total cumprimento esbarra, entre outros fatores, na quantidade insuficiente de delegacias da Mulher.", "Toda mulher que precisa da minha proteção pode ligar 180 e fazer sua denúncia.", "Sou comumente associada à Lei do Feminicídio, que pune o assassinato de mulheres motivado por questões de gênero." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Lei Maria da Penha", "Maria da Penha", "Maria Penha" )
+cartaBonus = false

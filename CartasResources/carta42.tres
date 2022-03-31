@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 42
+nomeCarta = "Estado Laico"
+categoriaCarta = 3
+tipoCarta = 1
+dicas = PoolStringArray( "Sou um conceito que se relaciona a religião.", "Sou um adjetivo normalmente usado após a palavra Estado.", "Um sinônimo meu é a palavra Secular.", "Quando existo, o país não tem uma religião oficial.", "Quando existo, o país aceita a crença em um ou vários Deuses.", "Quando existo, o país respeita o direito à descrença religiosa.", "Sou o contrário de um Estado Teocrático.", "Sou um conceito que um país pode ou não adotar.", "O Vaticano e o Irã são exemplos de países que não me adotam.", "Quando existo, a religião não deve influenciar nos assuntos do país.", "O Brasil é um país que me adota.", "Derivo de uma doutrina chamada laiscismo. ", "Países que me adotam devem garantir a liberdade religiosa de seus cidadãos.", "Países que me adotam devem garantir tratamento igualitário a seus cidadãos independentemente de crenças religiosas. ", "Não sou sinônimo de Estado ateu." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Estado Laico", "Laico" )
+cartaBonus = false

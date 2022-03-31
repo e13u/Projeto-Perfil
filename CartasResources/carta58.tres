@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 58
+nomeCarta = "Poder Judiciário"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "Sou um dos três poderes da República.", "Em meu formato mais moderno, derivo das teorias da separação dos poderes de Montesquieu e John Locke.", "Minha principal função é administrar a lei e a justiça perante a sociedade.", "Entre minhas funções está promover a justiça e resolver conflitos entre cidadãos, entidades e Estado.", "Entre meus órgãos estão o Supremo Tribunal Federal, o Conselho Nacional de Justiça e o Superior Tribunal de Justiça.", "Sou dividido em duas partes: Justiça Comum, formada pela Justiça Federal e Justiça Estadual;  e Justiça Especializada, formada pela Justiça do Trabalho, Justiça Eleitoral e Justiça Militar.", "Em meu âmbito trabalham juízes, desembargadores e ministros.", "Sou o guardião das liberdades, dos direitos individuais e sociais.", "Em meu âmbito trabalham promotores, procuradores e defensores públicos.", "O meu órgão máximo é o Supremo Tribunal Federal.", "Possibilito a resolução pacífica de conflitos mediante uma estrutura ordenada de processos válidos para todos os cidadãos de um país.", "Meu funcionamento se dá por meio de instâncias ou graus de jurisdição." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Poder Judiciário", "Judiciário" )
+cartaBonus = false

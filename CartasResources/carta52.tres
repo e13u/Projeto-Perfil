@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 52
+nomeCarta = "Comissão Parlamentar de Inquérito"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "Sou uma comissão muito conhecida por uma sigla.", "Sou um instrumento previsto na Constituição.", "Sou uma ferramenta para que parlamentares possam exercer sua função de fiscalizar a administração pública.", "Tenho poderes de investigação próprios de autoridades judiciais.", "Sou uma comissão temporária.", "Tenho o poder de convocar Ministros de Estado.", "Sou uma investigação conduzida pelo poder Legislativo.", "Posso ser criada pela Câmara dos Deputados e pelo Senado Federal, em conjunto ou separadamente.", "Tenho o poder de quebrar sigilo bancário, fiscal, de dados e telefônico.", "Já fui criada no Brasil para investigar temas relacionados à Covid-19 e à Petrobras.", "Em geral, sirvo para apurar fatos de grande relevância para a política nacional.", "Normalmente eu duro 120 dias, podendo ser prorrogada por mais 60 dias.", "Minha sigla possui três letras.", "Para que eu seja criada, um terço dos membros da Casa legislativa precisam assinar o pedido.", "Não tenho o poder de punir os meus investigados, mesmo que os considere culpados." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Comissão Parlamentar de Inquérito", "Comissão Parlamentar Inquérito", "CPI", "C.P.I." )
+cartaBonus = false

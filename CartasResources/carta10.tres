@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 10
+nomeCarta = "Estatuto da Criança e do Adolescente"
+categoriaCarta = 2
+tipoCarta = 1
+dicas = PoolStringArray( "Sou a Lei N. 8069/1990.", "Sou conhecida por uma sigla engraçada, formada pelas minhas iniciais.", "Completei 30 anos em 2020.", "Fui criada a partir do artigo 227 da Constituição Federal de 1988.", "Minha missão é proteger a infância e a adolescência.", "O Congresso Nacional está sempre de olho em mim para garantir que eu me mantenha atualizado.", "Para mim, criança é quem tem até 12 anos; adolescente é quem tem entre 12 e 18 anos. E ambos são pessoas em formação, que merecem atenção especial.", "Para mim, crianças e adolescentes estão em primeiro lugar e devem ter prioridade sempre!", "Sou muito clara: crianças e adolescentes devem crescer livres de violência, discriminação, negligência, exploração, crueldade ou humilhação.", "Asseguro os direitos das crianças desde a barriga das mães.", "Criança não trabalha! É nisso que eu acredito!", "Toda criança e adolescente têm direito à educação. É o que eu determino.", "Eu proíbo a venda a menores de 18 anos de produtos que podem fazer mal ou causar vício, como cigarros ou bebidas alcoólicas.", "Tive duas inspirações: a Convenção Internacional dos Direitos da Infância, de 1989, e a Declaração Universal dos Direitos da Criança, de 1979.", "Fui promulgada em 13 de julho de 1990." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Estatuto da Criança e do Adolescente", "Estatuto Criança Adolescente", "ECA", "E.C.A." )
+cartaBonus = false

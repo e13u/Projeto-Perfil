@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 5
+nomeCarta = "Proclamação da República"
+categoriaCarta = 2
+tipoCarta = 1
+dicas = PoolStringArray( "Sou um evento histórico.", "Aconteci em 15 de novembro de 1889.", "Há um feriado em minha homenagem no meio de novembro.", "Sou tão importante que tenho até hino.", "O refrão do meu hino é “Liberdade, liberdade | Abre as asas sobre nós | Das lutas nas tempestades | Dá que ouçamos tua voz”.", "O Marechal Deodoro da Fonseca assinou o manifesto que me tornou realidade.", "Por minha causa, a monarquia acabou no Brasil.", "Fui a responsável pelo exílio de Dom Pedro II e da família imperial, em 1889.", "O movimento republicano foi muito importante para que eu acontecesse.", "A abolição da escravatura colocou os ex-escravocratas contra o Império e a meu favor.", "Apesar de importante, não fui muito festejada pela população, nem sofri grande resistência.", "Igreja e exército foram favoráveis a mim.", "Um dos meus principais defensores foi Ruy Barbosa.", "Surgiu em 1870, no Rio de Janeiro, o primeiro partido político em minha defesa.", "Dei origem a um novo país - a República Federativa do Brasil." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Proclamação da República", "15 de Novembro", "15 Novembro", "15 de Novembro de 1889", "Proclamação República" )
+cartaBonus = false

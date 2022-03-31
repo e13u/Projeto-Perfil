@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 28
+nomeCarta = "Marianne Peretti"
+categoriaCarta = ""
+tipoCarta = 2
+dicas = PoolStringArray( "Sou artista plástica e a mais importante vitralista do Brasil.", "Fui a única mulher a integrar a equipe de artistas da construção de Brasília.", "Sou francesa, filha de um pernambucano, e moro no Brasil há muitas décadas.", "Bati na porta do escritório de Oscar Niemeyer para pedir para trabalhar com ele em Brasília.", "Minha primeira exposição individual, como artista plástica, foi elogiada pelo gênio da pintura Salvador Dalí.", "Entre meus colegas de trabalho, em Brasília, estavam Athos Bulcão, Alfredo Ceschiatti e Roberto Burle Marx.", "Meus vitrais estão em vários pontos da capital federal. Mas os mais famosos certamente são os da Catedral Metropolitana.", "Vivo em Olinda, em um casarão onde funciona também o meu ateliê.", "O primeiro vitral que criei em Brasília foi o da capela do Palácio do Jaburu.", "Sou Marie Anne Antoinette Hélène, mas pode me chamar de Marianne.", "No Salão Verde da Câmara dos Deputados, está o painel \"Araguaia\", de minha autoria.", "\"Alumbramento\" é o nome do painel que recebe os visitantes que chegam ao Congresso Nacional pelo Salão Branco.", "No Salão Verde da Câmara dos Deputados há uma escultura minha chamada \"Pássaro\".", "No Salão Nobre da Câmara dos Deputados está o meu painel Pasiphae.", "O vitral vermelho e roxo que fiz para o Memorial JK costuma deixar os visitantes muito emocionados." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Marianne Peretti", "Marianne Pereti", "Mariane Pereti", "Mariana Peretti", "Marianna Peretti", "Marianna Pereti", "Mariana Pereti" )
+cartaBonus = false

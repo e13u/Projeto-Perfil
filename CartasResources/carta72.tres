@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 72
+nomeCarta = "Supremo Tribunal Federal"
+categoriaCarta = 1
+tipoCarta = 1
+dicas = PoolStringArray( "Sou a sede do Poder Judiciário em Brasília.", "Muita gente faz protestos na minha frente.", "Já tive os vidros da minha fachada estilhaçados quando um caça fez um voo demonstrativo muito perto de mim.", "Na minha frente, fica a estátua A Justiça, de Alfredo Ceschiatti.", "Tenho 11 ministros mas não sou ministério.", "Sou o órgão máximo do Poder Judiciário no País.", "Sou o guardião da Constituição Federal de 1988!", "O meu presidente é também o chefe do Poder Judiciário.", "Meu desenho lembra muito o do meu vizinho de frente, o Palácio do Planalto.", "Meus traços horizontais e colunas leves dão a impressão de que flutuo no ar.", "Fico no extremo Sul da Praça dos Três Poderes.", "Abrigo um museu com móveis e objetos da antiga sede do Poder Judiciário.", "Minhas colunas brancas tão características ficam nas minhas laterais. ", "Dizem que a estátua que fica na minha frente é uma clara referência à estátua de Quéfren, no Antigo Egito.", "Entrei em funcionamento no dia da inauguração de Brasília - foi numa sessão solene às 9h30 do dia 21 de abril de 1960." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Supremo", "Supremo Tribunal Federal", "STF", "S.T.F." )
+cartaBonus = false

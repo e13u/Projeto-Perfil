@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 77
+nomeCarta = "Brasília"
+categoriaCarta = 1
+tipoCarta = ""
+dicas = PoolStringArray( "Fico localizada sobre um Planalto.", "Sou a sede dos três poderes da República.", "Sou dividida em blocos numerados e em setores para atividades pré-determinadas.", "Dizem que o meu céu é lindo.", "Sou uma cidade planejada.", "Fui idealizada pelo então presidente Juscelino Kubitschek.", "Fui inaugurada em 21 de abril de 1960.", "Meu plano urbanístico original foi criado pelo arquiteto e urbanista Lúcio Costa.", "Muitos de meus monumentos são assinados pelo arquiteto Oscar Niemeyer, ", "Sou a terceira capital do meu país.", "Muitos dizem que, quando vista de cima, pareço ter o formato de um avião.", "Sou considerada Patrimônio Mundial pela UNESCO devido ao meu conjunto arquitetônico e urbanístico.", "Os trabalhadores que vieram de fora para trabalhar na minha construção eram chamados de “candangos”.", "Meu nome é parecido com o do meu país." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Brasília" )
+cartaBonus = false

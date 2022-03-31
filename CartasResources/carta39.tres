@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 39
+nomeCarta = "Princesa Leopoldina"
+categoriaCarta = ""
+tipoCarta = 2
+dicas = PoolStringArray( "Sou mais conhecida como esposa de D. Pedro I.", "Tive um papel fundamental no processo de independência do Brasil.", "Nasci na Áustria, Sou filha do imperador Francisco I da Áustria e de Maria Isabel de Bourbon.", "Meu nome completo é Carolina Josefa Leopoldina Francisca Fernanda de Habsburgo-Lorena.", "Casei-me com Pedro em 1817, por procuração - eu na Áustria, ele no Brasil.", "Quando cheguei ao Brasil, em 1817, vim acompanhada de uma comitiva de notáveis cientistas, dentre eles botânicos, mineralogistas e zoólogos.", "Quando cheguei ao Brasil, passei a assinar Maria, antes do meu nome, para deixá-lo mais parecido com a das princesas de origem portuguesa.", "Em 1822, assumi a regência do Reino do Brasil no lugar do marido.", "José Bonifácio de Andrada foi um amigo querido.", "Eu e o ministro e conselheiro José Bonifácio realizamos a reunião do Conselho de Estado que, em 2 de setembro de 1822, deliberou pela Independência do Brasil.", "Tive sete filhos com Pedro.", "Faleci após um aborto espontâneo em 18 de dezembro de 1826.", "Minha morte provocou o primeiro luto nacional brasileiro.", "Fui a primeira imperatriz consorte do Brasil e a primeira imperatriz do continente americano.", "Das mágoas que tive de meu marido, a principal foi o caso que ele teve com Domitila de Castro do Canto e Melo." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Princesa Leopoldina", "Leopoldina" )
+cartaBonus = false

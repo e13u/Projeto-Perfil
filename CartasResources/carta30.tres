@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 30
+nomeCarta = "Antonieta de Barros"
+categoriaCarta = ""
+tipoCarta = 2
+dicas = PoolStringArray( "Estou entre as três primeiras mulheres eleitas no Brasil.", "Sou a primeira mulher negra eleita no Brasil.", "Nasci em Santa Catarina no início do século passado, filha de uma escravizada liberta e órfã de pai.", "Aos 21 anos, fundei um curso de alfabetização de adultos que levava o meu nome.", "Acredito que, mais do que alfabetizar, é preciso dar às pessoas condições de prosseguirem com os estudos. Só pela educação se constrói uma sociedade menos injusta.", "Escrevia nos jornais de Santa Catarina assinando meus artigos como Maria da Ilha.", "Em Santa Catarina, escrevi mais de mil artigos em oito jornais.", "Em 1934, candidatei-me ao cargo de deputada estadual pelo Partido Liberal Catarinense e fui eleita!", "Cheguei a escrever dois capítulos da Constituição catarinense, referentes à Educação e Cultura e Funcionalismo.", "Fui destituída do cargo de deputada estadual em 1937, com o golpe de Getúlio Vargas.", "Em 1947, dois anos depois de Getúlio Vargas deixar o poder, Voltei a ser eleita deputada estadual.", "Um projeto de lei de minha autoria formalizou o dia 15 de outubro como Dia do Professor e feriado escolar em Santa Catarina.", "Minha mãe trabalhou na casa de Vidal Ramos, um importante político catarinense. Ele me ajudou a entrar para a vida política.", "Fui a primeira mulher negra a trabalhar na imprensa catarinense.", "Meu livro, Farrapos de Ideias, foi o primeiro publicado por uma mulher negra em Santa Catarina." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Antonieta de Barros", "Antonieta Barros" )
+cartaBonus = false

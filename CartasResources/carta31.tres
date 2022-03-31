@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 31
+nomeCarta = "Ivette Vargas"
+categoriaCarta = ""
+tipoCarta = 2
+dicas = PoolStringArray( "Meu primeiro nome é Cândida, mas fiquei mais conhecida pelo segundo nome, Ivette.", "Fui a segunda mulher eleita deputada federal no Brasil, em 1950.", "Sou sobrinha-neta de Getúlio Vargas.", "Como meu tio-avô famoso, sou gaúcha e segui carreira política.", "Antes de ser eleita deputada federal, trabalhei como jornalista.", "Iniciei minha vida política em 1950, pelo Partido Trabalhista Brasileiro (PTB).", "Fui eleita deputada federal pelo estado de São Paulo por sucessivos mandatos.", "Tive meu mandato de deputada federal cassado em 16 de janeiro de 1969 pelo AI-5.", "Fui presidente da seção paulista do Partido Trabalhista Brasileiro até a sua extinção, em 1965, pelo AI-2.", "Minha xará mais famosa é uma conhecida cantora baiana.", "Com o processo de redemocratização, refundei o Partido Trabalhista Brasileiro em 1979.", "Tive algumas disputas políticas com o também gaúcho Leonel Brizola.", "Fui a quarta deputada federal mais votada no estado de São Paulo nas eleições de 1982 - recebi cerca de 265 mil votos.", "Durante o período que passei em Portugal, após ganhar uma bolsa de estudos como jornalista, entrevistei o Presidente da República de lá.", "Morri de câncer em pleno mandato parlamentar, em 1984." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Ivette Vargas", "Ivete Vargas" )
+cartaBonus = false

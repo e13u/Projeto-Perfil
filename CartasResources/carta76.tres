@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 76
+nomeCarta = "Rio de Janeiro"
+categoriaCarta = 1
+tipoCarta = ""
+dicas = PoolStringArray( "Sou uma capital que tem o mesmo nome do seu estado.", "Fui a segunda capital do Brasil.", "Sou conhecida como Cidade Maravilhosa.", "Presenciei todos os acontecimentos políticos importantes do País até 1960.", "Sou o maior destino turístico internacional do Brasil.", "Quando deixei de ser capital do país, me tornei cidade-estado.", "Durante 15 anos, fui o estado da Guanabara.", "Meus filhos são chamados de cariocas.", "Tornei-me a capital do País em 1763.", "Muita gente me chama apenas pelo meu primeiro nome.", "Fui fundada em 1º de março de 1565.", "Meus desfiles de carnaval são os mais famosos do mundo.", "Recebi a família real portuguesa em 1808.", "Já fui capital do Reino Unido de Portugal, Brasil e Algarves.", "Uma das melhores canções feitas a meu respeito é de Tom Jobim, o Samba do Avião." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Rio de Janeiro", "Rio", "Rio Janeiro", "RJ", "R.J." )
+cartaBonus = false

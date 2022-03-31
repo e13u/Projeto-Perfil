@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 19
+nomeCarta = "Prudente de Morais"
+categoriaCarta = ""
+tipoCarta = 2
+dicas = PoolStringArray( "Meu primeiro nome é, também, um adjetivo que significa cuidadoso, cauteloso.", "Três cidades brasileiras foram batizadas em minha homenagem - uma em MG, outra em SP e a última no PR.", "Fui o terceiro presidente do Brasil, e o primeiro civil.", "Junto com Ruy Barbosa, elaborei a primeira constituição republicana.", "Fui presidente da Assembleia Nacional Constituinte de 1891.", "Fui o primeiro Presidente do Brasil eleito por voto direto.", "Fui o responsável por mudar o nome da cidade paulista de Vila Nova da Constituição para Piracicaba.", "Fui vereador de Piracicaba e deputado provincial, governador e senador, tudo pelo estado de São Paulo.", "Derrotei Afonso Pena nas eleições presidenciais de 1894.", "Assinei o Tratado de Amizade, Comércio e Navegação com o Japão em 1895, a fim de favorecer a vinda de imigrantes japoneses.", "A Guerra de Canudos ocorreu durante o meu mandato presidencial.", "Fui vítima de um atentado durante o meu tempo na Presidência da República.", "Sou do tempo da política do Café com Leite.", "Sou um representante dos cafeicultores paulistas na Presidência da República.", "Uma das cidades cujo nome me homenageia é Prudentópolis." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Prudente de Morais", "prudente de Moraes", "Prudente Moraes", "Prudente Morais" )
+cartaBonus = false

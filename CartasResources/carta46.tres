@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 46
+nomeCarta = "Deputado ou Deputada Federal"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "É o povo que me elege.", "Atuo no poder legislativo nacional.", "Meu mandato dura 4 anos.", "Minha escolha se dá por meio de eleições diretas.", "Preciso ter no mínimo 21 anos de idade.", "Minhas principais atribuições são propor, discutir e aprovar leis.", "Cabe a mim aprovar as medidas provisórias propostas pelo Presidente da República.", "Uma de minhas funções é fiscalizar e controlar as ações do Poder Executivo.", "Minha eleição se dá pelo sistema proporcional.", "No Brasil, podem existir até 513 de mim.", "Minha eleição ocorre a cada quatro anos.", "Preciso possuir nacionalidade brasileira.", "Cada unidade da federação pode eleger de 8 a 70 de mim.", "Trabalho na câmara baixa do Congresso Nacional.", "Represento do povo no Congresso Nacional." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Deputado Federal", "Deputada Federal", "Deputado(a) Federal", "Deputado ou Deputada Federal", "Deputados Federais" )
+cartaBonus = false

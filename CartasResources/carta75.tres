@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 75
+nomeCarta = "Brasil"
+categoriaCarta = 1
+tipoCarta = ""
+dicas = PoolStringArray( "Pero Vaz de Caminha foi a primeira pessoa a escrever a meu respeito.", "Dizem que fui descoberto em 1500, mas quando os primeiros exploradores portugueses chegaram aqui, já havia mais de 2 milhões de habitantes.", "Sou o maior país da América do Sul.", "Sou uma república federativa presidencialista e democrática.", "Já fui chamado de Pindorama, Monte Pascoal, Ilha de Vera Cruz, Terra de Santa Cruz, Nova Lusitânia e Cabrália.", "Claude Lévi-Strauss já disse, a meu respeito: “Este não é um país sério”.", "Há quem diga que Deus nasceu aqui.", "Minha língua oficial é o português. Sou o maior país lusófono do planeta!", "Já fui colônia e império. Desde 1889, sou República.", "Minha atual capital federal é Brasília.", "Faço fronteira com quase todos os países da América do Sul, exceto Chile e Equador.", "Sou o quinto maior país do mundo em área territorial.", "Sou o sexto país mais populoso do mundo.", "Minha costa tem 7491 km e é banhada pelo Oceano Atlântico.", "Tenho 26 estados, mais o Distrito Federal." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Brasil" )
+cartaBonus = false

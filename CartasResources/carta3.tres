@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 3
+nomeCarta = "Constituição Federal de 1988"
+categoriaCarta = 2
+tipoCarta = 1
+dicas = PoolStringArray( "Sou a lei mais importante do Brasil.", "Já passei dos trinta anos, mas sou sempre atualizada.", "Fui promulgada em 5 de outubro de 1988.", "Sou conhecida como Constituição Cidadã.", "Ampliei as garantias e liberdades individuais dos brasileiros e brasileiras.", "Trouxe de volta as eleições diretas para presidente, governador, prefeito e para as casas legislativas.", "Garanti aos analfabetos e aos jovens entre 16 e 18 anos o direito ao voto facultativo.", "Defendo crianças, adolescentes, mulheres, negros e indígenas.", "Fui criada logo após o regime militar, quando as pessoas ansiavam por democracia e liberdade.", "Fui elaborada pela Assembleia Nacional Constituinte de 1987.", "No dia em que fui promulgada, o deputado Ulysses Guimarães discursou e levou todos às lágrimas.", "Sou a sétima Carta Magna do Brasil.", "559 parlamentares participaram da minha elaboração.", "Demorou 20 meses para que eu ficasse pronta. ", "Determinei a criação do SUS - Sistema Único de Saúde." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Constituição Federal de 1988", "Constituição de 1988", "Constituição 1988" )
+cartaBonus = false

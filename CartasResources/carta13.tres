@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 13
+nomeCarta = "Consolidação das Leis do Trabalho"
+categoriaCarta = 2
+tipoCarta = 2
+dicas = PoolStringArray( "Sou a lei trabalhista mais importante do Brasil.", "Sou uma lei antiga - de 1943! - mas sou constantemente atualizada.", "Fui criada para proteger os trabalhadores brasileiros.", "Recentemente sofri várias modificações - você as conhece por Reforma Trabalhista.", "Fui eu que dei ao trabalhador o direito a férias remuneradas.", "O trabalhador que tem sua carteira profissional assinada pelo empregador é chamado de celetista em minha homenagem.", "Concedi ao trabalhador o direito ao vale-transporte.", "Se hoje os trabalhadores têm direito a férias após 12 meses de trabalho, é por minha causa.", "Sou eu que asseguro ao trabalhador o direito ao 13º salário.", "Fundo de Garantia por Tempo de Serviço (FGTS) é um direito do trabalhador assegurado por mim.", "Muita gente me acusa de dificultar a contratação de trabalhadores.", "Sou do tempo do presidente Getúlio Vargas. Ele se orgulhava muito de mim!", "Fui promulgada no dia 1º de maio de 1943 - não poderia haver data melhor!", "Sou uma lei bem grande - tenho 922 artigos!", "Regulo a duração da jornada de trabalho e a remuneração mínima a que um empregado tem direito." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Consolidação Leis Trabalho", "CLT", "C.L.T." )
+cartaBonus = false

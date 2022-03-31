@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 57
+nomeCarta = "Poder Legislativo"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "Sou um dos três poderes da República.", "Em meu formato mais moderno, derivo das teorias da separação dos poderes de Montesquieu e John Locke.", "Minha principal função é a criação e revisão do conjunto de leis de um país.", "Na esfera nacional, sou exercido pelo Congresso Nacional, que é formado pelo Senado Federal e pela Câmara dos Deputados, onde atuam respectivamente senadores e deputados federais.", "Na esfera estadual, sou exercido pelas Assembléias Legislativas, nas quais atuam os deputados estaduais ou distritais, no caso do Distrito Federal.", "Na esfera municipal, sou exercido pelas Câmaras Municipais, nas quais atuam os vereadores.", "Sou constituído por senadores, deputados federais, deputados estaduais, deputados distritais e vereadores.", "Uma de minhas funções é a fiscalização dos atos do Poder Executivo.", "Em meu âmbito existem as Comissões, sejam elas permanentes, temporárias ou mistas. ", "Os meus membros são eleitos para mandatos de quatro ou oito anos.", "Meus membros são eleitos por meio do voto.", "O Tribunal de Contas da União faz parte de mim. " )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Poder Legislativo", "Legislativo" )
+cartaBonus = false

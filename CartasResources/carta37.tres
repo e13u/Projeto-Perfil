@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 37
+nomeCarta = "Duque de Caxias"
+categoriaCarta = ""
+tipoCarta = 2
+dicas = PoolStringArray( "Meu nome é Luís Alves de Lima e Silva.", "Fui militar, político e monarquista.", "Fui Presidente do Conselho de Ministros de D. Pedro II.", "Sou conhecido como \"O Pacificador\" e \"O Duque de Ferro\".", "Ensinei esgrima e hipismo a D. Pedro II, a quem servi como Mestre de armas.", "Em 1823, combati nas lutas de independência na Bahia, contra Portugal.", "De 1839 a 1845, comandei as forças leais ao Império na supressão de revoltas como a Balaiada, as Revoltas Liberais e a Revolução Farroupilha.", "Comandei vitoriosamente as forças brasileiras na Guerra do Paraguai.", "Sempre fui fiel ao Império, mesmo que isso significasse ficar contra a minha família.", "Sou o patrono do Exército Brasileiro, considerado por historiadores como o maior oficial militar da História do Brasil.", "O território da fazenda onde eu nasci se tornou parte de um município fluminense batizado em minha homenagem.", "Dou nome ao município mais populoso da Baixada Fluminense.", "Fui um dos amigos e monarquistas mais raros e sinceros de D. Pedro II.", "Fui a única pessoa a receber o título de duque, o mais alto da nobreza brasileira, durante os 58 anos de reinado de D. Pedro II.", "Em minha homenagem, no dia do meu nascimento se celebra o Dia do Soldado." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Duque de Caxias", "Duque Caxias", "Duque de Caixias", "Duque Caixias", "Duque de Cachias", "Duque de Caichias", "Duque Caichias", "Duque Cachias" )
+cartaBonus = false

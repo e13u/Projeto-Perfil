@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 49
+nomeCarta = "Presidente do Senado Federal"
+categoriaCarta = 3
+tipoCarta = 1
+dicas = PoolStringArray( "Sou um Senador ou Senadora.", "Minha eleição acontece por votação entre os Senadores.", "Sou o presidente do Congresso Nacional.", "Sou membro da mesa diretora do Senado Federal.", "Meu mandato é de 2 anos.", "Sou o terceiro na linha de sucessão do Presidente da República.", "Entre minhas atribuições está definir a pauta de votações no Senado Federal.", "Entre minhas atribuições está definir a pauta de votações no Congresso Nacional.", "Atuo no poder Legislativo.", "Sou o porta-voz do Congresso Nacional.", "Preciso ter nascido no Brasil.", "Faço parte do Conselho de Defesa Nacional e do Conselho da República.", "Minha eleição se dá por voto secreto.", "Entre minhas atribuições está convocar e presidir as sessões do Senado Federal e do Congresso Nacional.", "Uma de minhas atribuições é dar posse aos Senadores da República." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Presidente do Senado Federal", "Presidente do Senado", "Presidente Senado" )
+cartaBonus = false

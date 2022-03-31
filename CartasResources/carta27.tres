@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 27
+nomeCarta = "Athos Bulcão"
+categoriaCarta = ""
+tipoCarta = ""
+dicas = PoolStringArray( "Fui um importante pintor, escultor, desenhista e artista brasileiro.", "Trabalhei como assistente do pintor Cândido Portinari no painel São Francisco de Assis, na igreja da Pampulha, em Belo Horizonte.", "Nasci no Rio de Janeiro, no bairro do Catete.", "Em Brasília, uma importante fundação cultural leva o meu nome.", "Brasília foi minha grande tela, onde mostrei todo meu talento.", "Mudei-me para Brasília ainda na época da construção, em 1958, e vivi na cidade até o fim da minha vida, em 2008.", "Quer conhecer o meu trabalho\? Ele está espalhado por toda a capital federal. ", "Meu primeiro nome é o mesmo de um dos Três Mosqueteiros (Athos, Porthos e Aramis, lembra\?).", "Em Brasília, não há quem não se apaixone pelos meus famosos painéis de azulejos.", "No Palácio do Congresso Nacional há um grande painel de minha autoria - \"Ventania\". ", "Fiz inúmeros trabalhos em parceria com os arquitetos Oscar Niemeyer e João Filgueiras Lima, o Lelé.", "Há quem me chame de \"O Artista de Brasília\".", "Morri em 2008, por complicações decorrentes do Mal de Parkinson. Eu tinha 90 anos.", "É minha citação: “Artista eu era. Pioneiro eu fiz-me. Devo a Brasília esse sofrido privilégio. Realmente um privilégio: ser pioneiro. Dureza que gera espírito. Um prêmio moral”.", "Cheguei a estudar Medicina, mas abandonei o curso. A arte era o meu destino." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Athos Bulcão", "Atos Bulcão", "Athos Bucão", "Atos Bucão" )
+cartaBonus = false

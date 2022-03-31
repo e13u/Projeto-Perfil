@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 59
+nomeCarta = "Urna Eletrônica"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "Sou um tipo de microcomputador.", "Possuo autonomia de energia.", "Sou composta por dois terminais.", "Sou utilizada em eleições.", "Garanto o voto seguro e secreto.", "Emito um som característico sempre que sou usada.", "Tenho um teclado numérico e três botões característicos: um branco, um laranja e um verde.", "Possuo um botão Confirma.", "Possuo um botão Corrige.", "Quando termino de ser usada, apresento a mensagem FIM. ", "Sou um instrumento da Justiça Eleitoral.", "Um dos meus terminais é o do mesário. ", "Possuo diversos mecanismos de segurança.", "Comecei a ser usada massivamente no Brasil em 1996. " )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Urna Eletrônica" )
+cartaBonus = false

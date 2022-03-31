@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 63
+nomeCarta = "Bandeira Nacional"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "Meu conceito foi criado por Raimundo Teixeira Mendes, com colaboração de Miguel Lemos, Manuel Pereira Reis e Décio Villares. ", "Sou um dos símbolos que representa uma nação.", "Posso ser usada para determinar a posse de um território por parte do país.", "Sou primariamente utilizada pelo governo e outras autoridades públicas do país. ", "Possuo o formato retangular.", "Fui adotada, em minha atual forma, em 1889. ", "A minha destruição representa um ato simbólico de protesto contra o país e pode ser considerada crime.", "Minhas estrelas estão posicionadas refletindo o céu visto da então capital Rio de Janeiro em 16 de janeiro de 1889. ", "Levo escrito em uma faixa o lema “Ordem e Progresso”.", "Sou verde, amarela, azul e branca.", "Possuo 27 estrelas de cinco pontas, cada uma representando um estado, além do Distrito Federal. ", "Possuo um Hino muito bonito com letra de Olavo Bilac.", "Passei por uma mudança em 1968, quando ganhei novas estrelas.", "A minha data comemorativa acontece no dia 19 de Novembro. ", "Um exemplar muito especial meu, com 280 metros quadrados de área, fica permanentemente hasteado na Praça dos Três Poderes, a 100 metros de altura." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Bandeira", "Bandeira Nacional", "Bandeira do Brasil", "Bandeira Brasil" )
+cartaBonus = false

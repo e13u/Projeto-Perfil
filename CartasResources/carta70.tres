@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 70
+nomeCarta = "Palácio do Congresso Nacional"
+categoriaCarta = 1
+tipoCarta = ""
+dicas = PoolStringArray( "Sou o principal cartão-postal de Brasília.", "Sou a sede do Poder Legislativo desde 1960.", "Quem chega na Esplanada dos Ministérios me reconhece de longe, diante da Praça dos Três Poderes.", "Minha parte mais conhecida e fotografada é o conjunto formado pelas cúpulas e pelos prédios que formam um “H”.", "Minha cúpula maior, com a face plana voltada para cima, corresponde à Câmara dos Deputados.", "Minha cúpula menor, com a face plana voltada para baixo, representa o Senado Federal.", "Sou um marco da arquitetura modernista.", "Na capital federal, não existe prédio mais alto do que os meus dois anexos - são 28 andares!", "Sou um projeto do qual Oscar Niemeyer se orgulhava muito.", "Na minha frente, há um grande gramado que é palco de importantes manifestações populares.", "Nos meus arredores estão o Palácio do Itamaraty, o Palácio da Justiça, o Palácio do Planalto e o Supremo Tribunal Federal.", "Fui concebido para que Câmara e Senado mantivessem sua autonomia, mas pudessem trabalhar juntos de forma fácil e rápida sempre que necessário.", "Chegou aos meus salões e não sabe onde está\? Se o tapete for verde, está na Câmara. Se for azul, está no Senado!", "Sou palco das principais decisões políticas do nosso país.", "Os cálculos para a minha construção foram feitos pelo engenheiro Joaquim Cardozo.", "Sou local de trabalho de 513 deputados e 81 senadores." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Palácio do Congresso Nacional", "Congresso Nacional", "Palácio Congresso Nacional" )
+cartaBonus = false

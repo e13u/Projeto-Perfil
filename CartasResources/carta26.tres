@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 26
+nomeCarta = "Lúcio Costa"
+categoriaCarta = ""
+tipoCarta = ""
+dicas = PoolStringArray( "O desenho que ganhou o concurso para a construção de Brasília é meu.", "Sou um arquiteto e urbanista famoso.", "Oscar Niemeyer foi estagiário no meu escritório.", "Fui considerado o precursor da arquitetura modernista no Brasil.", "Meus pais eram brasileiros, mas eu nasci em Toulon, na França, em 1902, e vim para o Brasil só em 1926.", "Passei minha infância e juventude na Inglaterra e Suíça.", "Fui nomeado diretor da Escola Nacional de Belas Artes e lá, minhas ideias de experimentações artísticas entre alunos e professores geraram uma greve de 6 meses de acadêmicos e mestres. Acabei me afastando da Escola.", "Tenho vários livros publicados sobre arquitetura.", "Dizem que minha obra mais conhecida tem forma de avião mas, ao desenhar, a inspiração foi outra: \"dois eixos se cruzando em um ângulo reto, ou seja, o próprio sinal da cruz\".", "Fui nomeado por Getúlio Vargas para o cargo de Diretor de Belas Artes.", "Nos meus projetos, gosto de linhas retas, planos e funcionalidade, como aprendi com Le Corbusier.", "Brasília ficou diferente do que eu havia imaginado, mas não me decepcionei, pois \"quem tomou conta foram esses brasileiros verdadeiros que construíram a cidade.\"", "Participei em 1976 do concurso para escolher o desenho da nova capital da Nigéria, mas o projeto não foi classificado.", "Venci, em 1938, um concurso para o projeto do Pavilhão do Brasil na Feira Mundial de Nova Iorque, mas propus que o projeto de Niemeyer fosse escolhido, pois achei melhor que o meu.", "Morri em 1998, aos 96 anos." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Lúcio Costa", "Lucio Costa" )
+cartaBonus = false

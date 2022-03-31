@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 68
+nomeCarta = "Palácio Monroe"
+categoriaCarta = 1
+tipoCarta = 2
+dicas = PoolStringArray( "Fui um edifício localizado na Cinelândia, no Centro do Rio de Janeiro.", "Minha inauguração foi em 1904.", "Fui um prédio histórico brasileiro, mas comecei a minha existência em Saint Louis, na Louisiana, EUA.", "Fui originalmente criado para ser um Pavilhão do Brasil em uma exposição nos EUA, em 1904. ", "Fui muito elogiado pela beleza de minhas formas e pelo aproveitamento inteligente do meu espaço interno - ganhei até prêmio internacional!", "Meu projeto é do engenheiro militar Francisco Marcelino de Sousa Aguiar.", "Apesar de ter sido construído originalmente nos EUA, fui inteiramente reconstruído no Brasil!", "Minha reinauguração foi em 23 de julho de 1906, como sede da 3ª Conferência Pan-Americana.", "Fui batizado pelo Barão do Rio Branco. Meu nome homenageia um presidente norte-americano.", "De 12 de setembro de 1914 a 17 de junho de 1922, fui sede da Câmara dos Deputados.", "Abriguei o Senado Federal entre 1925 e 1960.", "Lúcio Costa, o urbanista que projetou Brasília, pediu que eu fosse derrubado para desafogar o trânsito no Centro do Rio de Janeiro.", "Tive muitos defensores! Um manifesto contra a minha demolição teve a assinatura de 162 arquitetos, engenheiros e críticos de arte. ", "Apesar de meu valor histórico e artístico, fui varrido do mapa do Rio de Janeiro entre janeiro e junho de 1976.", "Meus despojos agora fazem parte do patrimônio do Senado Federal." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Palácio Monroe", "Palácio Monrou" )
+cartaBonus = false

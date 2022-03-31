@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 56
+nomeCarta = "Poder Executivo"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "No presidencialismo, meu chefe na esfera federal é o Presidente.", "Em meu formato mais moderno, derivo das teorias da separação dos poderes de Montesquieu e John Locke.", "Sou o responsável direto por executar as leis, observando as normas vigentes no país.", "Sou o responsável por administrar os interesses públicos.", "Na esfera estadual, meu chefe é o governador.", "Na esfera municipal, meu chefe é o prefeito. ", "No Brasil, sou dividido em três níveis: municipal, estadual e federal.", "Sou integrado por agentes públicos: os ministérios, na esfera federal, e as secretarias, a níveis estadual e municipal.", "Minha principal função é executar aquilo previamente deliberado pelo poder Legislativo.", "Sou dotado de poderes como o hierárquico, o disciplinar, o regulamentar e o de polícia. ", "Sou responsável pela condução de assuntos diplomáticos e pela celebração de tratados internacionais.", "O topo da minha hierarquia é ocupado por um Chefe de Estado e/ou por um Chefe de Governo.", "Sou um dos três poderes da República." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Poder Executivo", "Executivo" )
+cartaBonus = false

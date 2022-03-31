@@ -1,0 +1,169 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://interface/profile/Room.gd" type="Script" id=1]
+[ext_resource path="res://interface/Title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interface/fonts/montserrat_eb_64.tres" type="DynamicFont" id=3]
+[ext_resource path="res://interface/fonts/montserrat_eb_128.tres" type="DynamicFont" id=4]
+
+[node name="Room" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 2 )]
+anchor_right = 1.0
+margin_right = 0.0
+margin_bottom = 79.0
+size_flags_vertical = 1
+text = "Sala de Espera"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 97.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="VBoxContainer2"]
+margin_right = 720.0
+margin_bottom = 783.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numberPlayersLabel" type="Label" parent="VBoxContainer2/Panel"]
+anchor_right = 1.0
+margin_bottom = 108.0
+custom_fonts/font = ExtResource( 4 )
+text = "Jogadores(0/6):"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 131.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_0" type="Label" parent="VBoxContainer2/Panel/VBoxContainer"]
+margin_right = 720.0
+margin_bottom = 79.0
+custom_fonts/font = ExtResource( 4 )
+text = "-"
+align = 1
+valign = 1
+
+[node name="Label_1" type="Label" parent="VBoxContainer2/Panel/VBoxContainer"]
+margin_top = 83.0
+margin_right = 720.0
+margin_bottom = 162.0
+custom_fonts/font = ExtResource( 4 )
+text = "-"
+align = 1
+valign = 1
+
+[node name="Label_2" type="Label" parent="VBoxContainer2/Panel/VBoxContainer"]
+margin_top = 166.0
+margin_right = 720.0
+margin_bottom = 245.0
+custom_fonts/font = ExtResource( 4 )
+text = "-"
+align = 1
+valign = 1
+
+[node name="Label_3" type="Label" parent="VBoxContainer2/Panel/VBoxContainer"]
+margin_top = 249.0
+margin_right = 720.0
+margin_bottom = 328.0
+custom_fonts/font = ExtResource( 4 )
+text = "-"
+align = 1
+valign = 1
+
+[node name="Label_4" type="Label" parent="VBoxContainer2/Panel/VBoxContainer"]
+margin_top = 332.0
+margin_right = 720.0
+margin_bottom = 411.0
+custom_fonts/font = ExtResource( 4 )
+text = "-"
+align = 1
+valign = 1
+
+[node name="Label_5" type="Label" parent="VBoxContainer2/Panel/VBoxContainer"]
+margin_top = 415.0
+margin_right = 720.0
+margin_bottom = 494.0
+custom_fonts/font = ExtResource( 4 )
+text = "-"
+align = 1
+valign = 1
+
+[node name="ConfirmButton" type="Button" parent="VBoxContainer2"]
+margin_left = 113.0
+margin_top = 798.0
+margin_right = 607.0
+margin_bottom = 883.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Iniciar Partida"
+
+[node name="CancelButton" type="Button" parent="VBoxContainer2"]
+margin_left = 91.0
+margin_top = 898.0
+margin_right = 629.0
+margin_bottom = 983.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Cancelar Busca"
+
+[node name="Notification" type="Label" parent="."]
+margin_right = 1920.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequest2" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequest3" type="HTTPRequest" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="HTTPRequest4" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequest5" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="VBoxContainer2/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
+[connection signal="pressed" from="VBoxContainer2/CancelButton" to="." method="_on_CancelButton_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="request_completed" from="HTTPRequest2" to="." method="_on_HTTPRequest2_request_completed"]
+[connection signal="request_completed" from="HTTPRequest3" to="." method="_on_HTTPRequest3_request_completed"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="request_completed" from="HTTPRequest4" to="." method="_on_HTTPRequest4_request_completed"]
+[connection signal="request_completed" from="HTTPRequest5" to="." method="_on_HTTPRequest5_request_completed"]

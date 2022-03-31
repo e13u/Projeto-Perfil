@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 67
+nomeCarta = "Praça da República"
+categoriaCarta = 1
+tipoCarta = 2
+dicas = PoolStringArray( "Sou uma praça que fica no Centro do Rio de Janeiro.", "Fui cenário de um momento histórico importante para o Brasil República.", "Fui cenário de um momento histórico importante para o Brasil Império.", "Nos tempos coloniais, fui pântano, depósito de lixo e esgoto. ", "Já me chamei Campo de São Domingos no início do séc. XVIII. Era um campo de cajueiros!", "Fui rebatizado em função de um acontecimento histórico ocorrido em 12 de outubro de 1822.", "Fui cenário da aclamação do primeiro imperador brasileiro.", "A primeira estação ferroviária urbana do Brasil, a Gare D. Pedro II, foi construída nos meus domínios.", "Em 1941, um dos meus principais destinos foi inaugurado: a Estação Central do Brasil.", "Marechal Deodoro e eu éramos vizinhos.", "Fui palco da Revolta da Vacina, em 1904.", "Já me chamei Campo de Santana porque havia uma Igreja de Santana nos meus domínios até 1854.", "Fica em mim também o Palácio do Conde dos Arcos, que por 100 anos foi sede do Senado Federal.", "No meu centro há um monumento que homenageia Benjamin Constant.", "Fui cenário da aclamação de D. João VI como Rei de Portugal." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Praça da República", "Praça República", "Praça da Aclamação", "Praça Aclamação" )
+cartaBonus = false

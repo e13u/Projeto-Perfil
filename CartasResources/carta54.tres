@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 54
+nomeCarta = "Constituição"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "Sou um conjunto de normas jurídicas.", "Posso ou não ser um documento escrito.", "Sou a Lei Maior de uma sociedade organizada politicamente.", "Sou o modo pelo qual se forma, se estabelece e se organiza uma sociedade.", "Em geral, sou criada por uma Assembléia Nacional Constituinte.", "No Brasil, sou atualmente chamada de Cidadã. ", "Ao longo da história, o Brasil já teve sete de mim.", "No Brasil, fui criada pela primeira vez em 1824. ", "No Brasil, já fui criada em 1824, 1891, 1934, 1937, 1946, 1967 e 1988.", "No Brasil, por duas vezes já fui imposta.", "Estabeleço os direitos fundamentais do povo brasileiro.", "Divido a organização política do Brasil em três poderes: Legislativo, Executivo e Judiciário.", "Nos Estados Unidos, eu sou composta originalmente por apenas 7 artigos.", "Os parlamentares responsáveis pela minha criação são chamados Constituintes.", "Existo de diferentes formas ao redor do mundo." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Constituição", "Constituissão" )
+cartaBonus = false

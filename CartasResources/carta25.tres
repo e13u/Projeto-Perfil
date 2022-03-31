@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 25
+nomeCarta = "Oscar Niemeyer"
+categoriaCarta = ""
+tipoCarta = ""
+dicas = PoolStringArray( "Sou um famoso arquiteto.", "Trabalhei com Lúcio Costa.", "Projetei obras famosas, como o Palácio do Congresso Nacional, em Brasília.", "Trabalhei com o famoso arquiteto suíço Le Corbusier.", "Recebi, em 1949, o título de “Membro Honorário da Academia Americana de Artes e Ciências\".", "Participei da construção da nova capital do Brasil, no final dos anos 50.", "Recebi o título de Arquiteto do século XX em 2001.", "As curvas da natureza inspiram minhas obras.", "As principais características das minhas obras são concreto, vidro, curvas e vãos livres.", "Tenho muitas obras arquitetônicas espalhadas por Brasília e também pelo Brasil e pelo mundo.", "Além de ser arquiteto, projetei móveis, criei esculturas e escrevi um livro.", "Depois do golpe militar de 1964, me exilei na França e, mais tarde, abri um escritório por lá, onde fiquei até 1980.", "Depois de Brasília, a cidade com mais quantidade de obras minhas é Niterói, onde fica o Museu de Arte Contemporânea, com estilo futurista.", "Fui casado por 76 anos com Anita Baldo, que faleceu em 2004. Depois disso, aos 98 anos, me casei com Vera Lúcia.", "Morri em 2012, no Rio de Janeiro, aos 104 anos." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Oscar Niemeyer", "Oscar Niemeier", "Oscar Niemaier", "Niemeyer", "Niemeier", "Niemaier" )
+cartaBonus = false

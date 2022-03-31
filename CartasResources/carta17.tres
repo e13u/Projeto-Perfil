@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 17
+nomeCarta = "Dom Pedro II"
+categoriaCarta = ""
+tipoCarta = ""
+dicas = PoolStringArray( "Fui o segundo e último imperador do Brasil.", "Meu pai era Dom Pedro I.", "Eu tinha 5 anos quando subi ao trono como príncipe regente.", "Apesar de ser o filho mais novo, tive prioridade na sucessão ao trono, porque meus irmãos mais velhos morreram ainda crianças.", "Meu nome inteiro é Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga de Bragança e Bourbon.", "Sou filho de Dona Leopoldina.", "Tive ótima educação desde criança.", "O Golpe da Maioridade deu início ao meu Segundo Reinado, que durou de 1840 a 1889.", "Minha aia e tutora era considerada minha segunda mãe. Dona Mariana Carlota de Verna, ou \"dadama\", como eu carinhosamente a chamava.", "Com a instalação da República, em 1889, fui obrigado a deixar o Brasil com minha família.", "Casei-me por procuração em maio de 1843 e só conheci minha esposa, Teresa Cristina, em setembro daquele ano.", "Sou pai da famosa Princesa Isabel.", "Durante meu Segundo Reinado, o café se consolidou como principal atividade econômica no País.", "Depois da Guerra do Paraguai, me tornei um imperador extremamente impopular.", "Morri na França, de pneumonia, aos 66 anos." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Dom Pedro II", "Dom Pedro Segundo", "Dom Pedro 2" )
+cartaBonus = false

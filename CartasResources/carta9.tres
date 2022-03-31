@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 9
+nomeCarta = "Dia do Professor"
+categoriaCarta = 2
+tipoCarta = 1
+dicas = PoolStringArray( "Sou uma data comemorativa.", "Fui criado para homenagear uma categoria profissional.", "Fui instituído por lei em 1948.", "Sou comemorado no dia 15 de outubro.", "As escolas têm recesso nesta data.", "Uma deputada estadual catarinense foi quem me criou.", "Minha criadora foi a deputada estadual Antonieta de Barros.", "A primeira mulher negra eleita no Brasil foi quem me criou.", "Fui oficializado em todo o País em 1963, pelo então presidente João Goulart.", "Você encontra os meus homenageados em qualquer escola.", "Talvez você já tenha chamado os meus homenageados de tio ou tia.", "Minha data faz referência à primeira lei brasileira relacionada à educação, publicada em 15 de outubro de 1827.", "Sou um feriado escolar.", "Minha criadora era, além de parlamentar, uma professora.", "Paulo Freire costuma ser uma inspiração para os meus homenageados." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Dia do Professor", "Dia Professor" )
+cartaBonus = false

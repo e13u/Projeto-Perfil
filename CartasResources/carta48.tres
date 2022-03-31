@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 48
+nomeCarta = "Presidente da Câmara dos Deputados"
+categoriaCarta = 3
+tipoCarta = 1
+dicas = PoolStringArray( "Sou um Deputado ou Deputada Federal.", "Sou o segundo na linha de sucessão do presidente da República.", "Uma de minhas atribuições é definir a pauta de votações no Plenário da Câmara dos Deputados.", "Uma de minhas atribuições é dar posse aos Deputados Federais.", "Uma de minhas atribuições é convocar e presidir as sessões do Plenário da Câmara dos Deputados.", "Faço parte da mesa diretora da Câmara dos Deputados.", "Minha eleição acontece por votação entre os Deputados Federais.", "Meu mandato é de 2 anos.", "Em minhas eleições pode haver segundo turno.", "Nomes como Ulysses Guimarães e Michel Temer já ocuparam o meu cargo.", "Supervisiono os trabalhos e a ordem na Câmara dos Deputados.", "Atuo no poder Legislativo.", "Represento a Câmara dos Deputados em pronunciamentos oficiais.", "Faço parte do Conselho de Defesa Nacional e do Conselho da República.", "Preciso ter nascido no Brasil." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Presidente da Câmara dos Deputados", "Presidente da Câmara", "Presidente Câmara" )
+cartaBonus = false

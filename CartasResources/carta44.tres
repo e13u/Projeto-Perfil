@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 44
+nomeCarta = "Ditadura"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "Sou um regime de Estado.", "Quando existo, não há participação popular nas decisões políticas.", "Sou antidemocrática.", "Quando existo, o poder costuma concentrar-se em apenas uma instância.", "Sou uma forma de autoritarismo.", "Normalmente sou estabelecida por meio de um golpe de Estado.", "No Brasil, fui instaurada em 1 de abril de 1964.", "No Brasil, derrubei o governo do presidente eleito João Goulart.", "No Brasil, durei 21 anos.", "Adolf Hitler e Augusto Pinochet são exemplos de chefes de Estado que me adotaram.", "Quando existo, o povo do país costuma ser violentamente reprimido.", "Até hoje, no Brasil, muitas pessoas estão desaparecidas desde a época em que aconteci.", "Costumo estar relacionada com as forças armadas de um país.", "No Brasil, os Atos Institucionais (AIs) aconteceram enquanto eu existia.", "Quando existo, todos os poderes do Estado se concentram em um indivíduo, grupo ou partido." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Ditadura", "Ditadura Militar", "Ditatorial", "Regime Ditatorial", "Ditador" )
+cartaBonus = false

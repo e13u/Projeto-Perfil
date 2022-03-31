@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 7
+nomeCarta = "Dia da Bandeira"
+categoriaCarta = 2
+tipoCarta = 1
+dicas = PoolStringArray( "Sou uma data cívica.", "Nessa data, em 1889, o Brasil ganhou um de seus principais símbolos.", "Apesar de estar perto de outra data cívica, não sou um feriado.", "Sou comemorado em novembro.", "No meu dia, as pessoas cantam um hino especial.", "Sou uma celebração do “lindo pendão da esperança”, do “símbolo augusto da paz”.", "No dia 19 de novembro de 1889 ocorreu o evento que deu origem a mim.", "Sou o dia em que as bandeiras nacionais são hasteadas ao meio-dia, em comemorações especiais.", "Aconteço 4 dias depois de uma data cívica importantíssima!", "Fui criado por causa de um decreto: o Decreto N. 4 de 19 de novembro de 1889.", "Minha homenageada é conhecida pelas cores verde, amarelo, azul e branco.", "Minha homenageada passou por uma mudança em 1968, ganhando novas estrelas.", "Quer ver minha homenageada bem grande\? É só visitar o Mastro do Pavilhão Nacional, na Praça dos Três Poderes!", "“Ordem e progresso”, diz a faixa da minha homenageada.", "O hino que celebra a minha homenageada é muito chique, tem letra de Olavo Bilac!" )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Dia da Bandeira", "Dia Bandeira" )
+cartaBonus = false

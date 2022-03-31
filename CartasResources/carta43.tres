@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 43
+nomeCarta = "Assembleia Nacional Constituinte"
+categoriaCarta = 3
+tipoCarta = 1
+dicas = PoolStringArray( "A atual Constituição de 1988 nasceu a partir de mim.", "Sou um tipo de assembleia.", "Tenho uma função muito importante para o País.", "Sou temporária.", "Sou extraordinária.", "Sou composta por pessoas escolhidas para representarem o povo.", "Devo ser convocada. ", "Represento o Poder Constituinte Originário.", "No Brasil, aconteci pela última vez entre 1987 e 1988.", "Na última vez em que aconteci no Brasil, fui instalada no Congresso Nacional.", "No Brasil, já aconteci também em 1934 e 1946.", "Sou um órgão colegiado.", "No Chile, aconteci em 2021.", "Na França, aconteci pela primeira vez durante a Revolução Francesa.", "Dou origem a uma Constituição." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Assembleia Nacional Constituinte", "Assembleia Constituinte", "Assembleia Nacional Contituinte", "Assembleia Contituinte" )
+cartaBonus = false

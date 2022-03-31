@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 40
+nomeCarta = "Tancredo Neves"
+categoriaCarta = ""
+tipoCarta = 1
+dicas = PoolStringArray( "Fui o primeiro presidente civil eleito após a ditadura militar.", "Em 15 de janeiro de 1985, em eleição indireta no Colégio Eleitoral, derrotei o candidato apoiado pelos militares, Paulo Maluf.", "Na véspera do dia da posse, tive fortes dores abdominais, fui internado às pressas submetido a uma cirurgia.", "Fui eleito, mas quem tomou posse e presidiu o Brasil foi o meu vice.", "Na minha chapa para a Presidência, o vice foi José Sarney.", "Depois de 38 dias de agonia, fui declarado morto em 21 de abril em 1985.", "Meu primeiro cargo político foi vereador de São João Del Rei, aos 25 anos.", "Fui vereador, deputado estadual e federal, senador, governador e até primeiro-ministro!", "Fui muito amigo de Getúlio Vargas. Até ganhei uma caneta-tinteiro dele, pouco antes de ele cometer o suicídio.", "Fui um dos articuladores da candidatura de Juscelino Kubitschek à Presidência da república nas eleições em 1955.", "Enquanto fui primeiro-ministro, consegui a aprovação da Lei n.º 4.070/1962, que elevou o Território do Acre à categoria de Estado.", "A primeira Lei de Diretrizes e Bases da Educação Nacional foi aprovada durante o meu período como primeiro-ministro.", "Minha mulher se chamava Risoleta Tolentino.", "Sou o avô de um ex-governador de Minas Gerais.", "O Panteão da Pátria e da Liberdade, localizado na Praça dos Três Poderes, em Brasília/DF, foi batizado em minha homenagem." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Tancredo Neves" )
+cartaBonus = false

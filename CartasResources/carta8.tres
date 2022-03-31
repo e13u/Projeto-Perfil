@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 8
+nomeCarta = "Política do Café com Leite"
+categoriaCarta = 2
+tipoCarta = 1
+dicas = PoolStringArray( "Sou um tipo de arranjo político que ocorreu no Brasil entre 1890 e 1930.", "Significo a alternância entre mineiros e paulistas na presidência da República.", "Meu nome faz referência a uma famosa bebida muito apreciada no café da manhã.", "O leite no meu nome faz referência a Minas Gerais e sua oligarquia leiteira.", "O café no meu nome faz referência a São Paulo, onde a cafeicultura era forte.", "O presidente Washington Luís fez parte dessa alternância política (do lado do café).", "O paulista Washington Luís foi quem resolveu quebrar a alternância entre mineiros e paulistas na presidência.", "Terminei com um golpe de Estado em 24 de outubro de 1930.", "Getúlio Vargas assumiu o poder depois que um golpe de Estado acabou comigo.", "No meu tempo, ainda valia a Constituição de 1891, a primeira do Brasil República.", "Ocorri durante a chamada República Velha.", "No meu tempo, dois partidos se alternavam na presidência da República: o Partido Republicano Paulista (PRP) e o Partido Republicano Mineiro (PRM).", "Uma aliança entre mineiros, gaúchos e paraibanos tentou derrotar o candidato paulista Júlio Prestes na eleição presidencial de 1930.", "João Pessoa, o político paraibano que deu nome à capital do seu estado, esteve envolvido com o meu fim.", "Comecei com o presidente paulista Campos Sales." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Café com Leite", "República do Café com Leite", "Política do Café com Leite", "Política Café com Leite" )
+cartaBonus = false

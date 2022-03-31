@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 6
+nomeCarta = "Movimento Diretas Já"
+categoriaCarta = 2
+tipoCarta = 2
+dicas = PoolStringArray( "Fui um dos maiores movimentos populares da História do Brasil.", "Tive enorme importância na redemocratização do País.", "Comecei em 1983, com os primeiros atos em defesa das eleições diretas para presidente.", "Fui a resposta do povo a quase 20 anos sem poder escolher seus representantes no Poder Executivo.", "O cenário em que eu nasci combinava o início da abertura política do País com uma grave crise econômica.", "Meu primeiro grande comício aconteceu em São Paulo, em 1984, no dia do aniversário da cidade.", "Por minha causa, o deputado Ulysses Guimarães ficou conhecido como “Senhor Diretas”.", "Nas minhas manifestações, as pessoas gritavam: “Um, dois, três, quatro, cinco, mil. Queremos eleger o presidente do Brasil!”.", "Contei com a participação de partidos políticos, lideranças sindicais, organizações civis, estudantes, jornalistas, artistas e religiosos.", "Tudo começou em 2 de março de 1983, quando o deputado Dante de Oliveira apresentou uma Proposta de Emenda à Constituição.", "Um dos meus eventos mais famosos foi o chamado “Grito da Candelária”, que reuniu cerca de um milhão de pessoas no Rio de Janeiro.", "Meu último comício, no Vale do Anhangabaú, em São Paulo, reuniu mais de 1 milhão e 500 mil pessoas!", "Apesar de toda a pressão popular, infelizmente não alcancei meu objetivo: a aprovação da Emenda Dante de Oliveira.", "Alguns anos depois de mim, o povo brasileiro voltou a eleger diretamente o seu presidente.", "Ulysses Guimarães viajou mais de 40 mil quilômetros por todo o Brasil para me defender." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Movimento Diretas Já", "Diretas Já" )
+cartaBonus = false

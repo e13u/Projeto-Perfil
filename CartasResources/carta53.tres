@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 53
+nomeCarta = "República"
+categoriaCarta = 3
+tipoCarta = 1
+dicas = PoolStringArray( " Eu derivo do latim “res publica”.", "Sou uma forma de governo.", "Tive origem na Grécia antiga.", "Posso ser presidencialista.", "Posso ser parlamentarista.", "O Brasil passou a me adotar em 1889.", "Significo “coisa pública”.", "Quando existo, o Chefe de Estado e o Chefe de Governo exercem suas funções por um período de tempo limitado.", "Quando existo, o Chefe de Estado e o Chefe de Governo podem ser a mesma pessoa.", "No Brasil, o cargo máximo do poder Executivo leva meu nome no seu.", "Não preciso necessariamente ser uma democracia.", "Posso ser federativa. ", "Em geral, sou oposta à monarquia." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "República" )
+cartaBonus = false

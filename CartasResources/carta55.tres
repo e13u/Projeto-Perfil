@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 55
+nomeCarta = "Eleição"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "Sou um processo pelo qual um grupo designa alguém para ocupar um cargo.", "Costumo acontecer por meio de votação.", "Posso ser direta ou indireta.", "No Brasil, aconteço em anos pares.", "No Brasil, aconteço por meio de urnas eletrônicas. ", "Sou usada para a escolha dos representantes do povo.", "Aconteço no Brasil desde o século XVI.", "Posso acontecer em mais de um turno.", "Quando aconteço, é comum haver debates entre candidatos.", "Aconteço em regimes democráticos.", "Estou intimamente ligada ao “sufrágio universal”.", "No Brasil, existe um Tribunal Superior especializado em mim. ", "Normalmente sou relacionada à política, mas posso acontecer em outros contextos.", "No Brasil, passei a acontecer eletronicamente em 1991. ", "Quando aconteço, um horário é reservado para mim nas transmissões de televisão." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Eleição", "Eleições" )
+cartaBonus = false

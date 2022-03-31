@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 73
+nomeCarta = "Palácio do Planalto"
+categoriaCarta = 1
+tipoCarta = 1
+dicas = PoolStringArray( "Sou a sede do Poder Executivo Federal.", "Sou o local de trabalho do Presidente da República.", "Fico no extremo Norte da Praça dos Três Poderes.", "Diante de mim, há uma estátua de Bruno Giorgio chamada Os Guerreiros, que é mais conhecida como Os Candangos.", "Como outros palácios da capital federal, fui projetado por Oscar Niemeyer.", "As famosas colunas que me caracterizam ficam na minha fachada principal.", "Sobre minhas colunas tão características, Niemeyer disse serem “leves como penas pousando no chão”.", "Sou protegido pelo Batalhão da Guarda Presidencial e pelos Dragões da Independência.", "Do lado direito da minha fachada principal, há um parlatório - uma espécie de balcão onde o Presidente pode discursar.", "Recebo muitos chefes de Estado e autoridades.", "Um jogador de futebol conhecido como Vampeta já deu cambalhota na minha rampa.", "As colunas curvas da minha fachada são conhecidas como velas por lembrarem velas de barco.", "Fui o local do baile de inauguração de Brasília, em 21 de abril de 1960.", "Meu antecessor em Brasília foi o Catetinho. No Rio de Janeiro, foi o Palácio do Catete.", "Meu nome, no Brasil, é usado como sinônimo de Presidência da República." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Palácio do Planalto", "Palácio Planalto" )
+cartaBonus = false

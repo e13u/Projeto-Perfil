@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 66
+nomeCarta = "Governador ou Governadora"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "Pertenço ao poder Executivo.", "Sou um cargo eletivo.", "Minha eleição ocorre a cada quatro anos.", "Venço a minha eleição ao obter, em primeiro turno, 50% dos votos mais um.", "Se não conseguir me eleger em primeiro turno, minha votação vai para o segundo turno com maioria simples dos votos. ", "Ao longo do tempo, já fui chamado de diversos nomes, como donatário, capitão-mor e presidente da província.", "Represento o poder da administração estadual. ", "No Rio de Janeiro, trabalho no Palácio Guanabara.", "No Distrito Federal, trabalho no Palácio do Buriti. ", "Minha principal função é representar o estado em todas as suas relações, sejam elas jurídicas, políticas ou administrativas.", "Eu possuo um vice que é eleito comigo na mesma chapa. ", "Preciso ter nacionalidade brasileira e, no mínimo, trinta anos de idade.", "Escolho livremente meus auxiliares, chamados Secretários de estado." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Governador", "Governadora", "Governador de Estado", "Governadora de Estado", "Governadores" )
+cartaBonus = false

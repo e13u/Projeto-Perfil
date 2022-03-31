@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://interface/fonts/montserrat_eb_128.tres" type="DynamicFont" id=1]
+[ext_resource path="res://interface/profile/JoinButton.gd" type="Script" id=2]
+
+[node name="HostButton" type="Button"]
+margin_right = 1020.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 1 )
+text = "-"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="." to="." method="_on_HostButton_pressed"]

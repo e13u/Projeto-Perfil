@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 33
+nomeCarta = "Carlota Pereira de Queiroz"
+categoriaCarta = ""
+tipoCarta = 2
+dicas = PoolStringArray( "Fui a primeira mulher a ser eleita deputada federal no Brasil.", "Venho de uma tradicional família da elite paulista.", "Como tantas mulheres do meu tempo, me formei professora, mas aos 28 anos, deixei o magistério pela Medicina.", "Junto com Almerinda Farias Gama, fui uma das duas mulheres que participaram da Assembleia Nacional Constituinte de 1934.", "Meu avô paterno era um rico proprietário de terras em Jundiaí, membro do Partido Republicano Paulista e um dos fundadores do jornal A Província de São Paulo (atualmente, O Estado de S. Paulo).", "Na Revolução Constitucionalista de 1932, liderei 700 mulheres no Departamento de Assistência aos Feridos (DAF), que atendia os soldados machucados nos combates.", "Durante o processo constituinte, participei dos trabalhos da Comissão de Educação e Saúde.", "Fui reeleita deputada federal em 1934 pelo Partido Constitucionalista de São Paulo.", "Permaneci na Câmara dos Deputados até 1937, quando a Casa foi fechada pelo golpe de Estado que instaurou o Estado Novo.", "Fui a primeira mulher a integrar a Academia Nacional de Medicina, em 1942.", "Em minha homenagem, a Câmara dos Deputados criou um diploma que premia mulheres que tenham contribuído para o pleno exercício da cidadania, na defesa dos direitos da mulher e nas questões de gênero.", "Minha monografia de conclusão do curso de medicina, \"Estudos sobre o Câncer\'\', ganhou o prêmio Miguel Couto em 1926.", "Fundei a Academia Brasileira de Mulheres Médicas, em 1950.", "Como deputada constituinte, defendi as mulheres e a infância.", "Apoiei o golpe militar que derrubou o presidente João Goulart, em 1964." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Carlota Pereira de Queiroz", "Carlota Pereira de Queiros", "Carlota de Queiroz", "Carlota de Queiros", "Carlota Pereira Queiroz", "Carlota Pereira Queiros" )
+cartaBonus = false

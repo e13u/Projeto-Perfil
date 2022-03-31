@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 18
+nomeCarta = "Ruy Barbosa"
+categoriaCarta = ""
+tipoCarta = 1
+dicas = PoolStringArray( "Nasci na Bahia em 1849.", "Sou escritor, tradutor, orador e filólogo.", "Sou membro fundador da Academia Brasileira de Letras.", "Sou jurista, político e diplomata.", "Fui deputado, senador e ministro.", "Sou um defensor da república, do federalismo, do abolicionismo e dos direitos e garantias individuais.", "Fui autor do Decreto Nº1 da República Federativa do Brasil.", "Junto com Prudente de Morais, elaborei a primeira constituição republicana.", "Meu apelido é Águia de Haia.", "Meu hobby é cultivar rosas.", "Minha tetraneta é uma atriz brasileira conhecida por sua beleza e pela cabeleira ruiva.", "Dou nome a dois municípios brasileiros: um na Chapada Diamantina, na Bahia, outro no Rio Grande do Norte.", "Na faculdade de Direito, fui colega do escritor Castro Alves.", "Disputei quatro eleições para Presidente da República, mas nunca venci.", "Meu nome tem três letras e envolve uma grande polêmica: afinal, é com I ou com Y\?" )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Ruy Barbosa", "Ruy Barboza", "Rui Barbosa", "Rui Barboza" )
+cartaBonus = false

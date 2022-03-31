@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 74
+nomeCarta = "Palácio da Alvorada"
+categoriaCarta = 1
+tipoCarta = 1
+dicas = PoolStringArray( "Fui inaugurado em 30 de junho de 1958. Sou o primeiro prédio em alvenaria construído em Brasília.", "Sou a residência oficial do Presidente da República.", "Para criar minhas características colunas, Oscar Niemeyer se inspirou nas redes estendidas nas varandas de antigos casarões.", "Fico em um lugar muito especial - uma península entre os Lagos Sul e Norte, em Brasília.", "Meu primeiro morador foi Juscelino Kubitschek.", "O desenho nas minhas colunas deu origem ao símbolo e emblema do brasão do Distrito Federal.", "Na minha frente, há um espelho d’água e uma escultura de Alfredo Ceschiatti chamada As Iaras.", "Ao meu lado, foi construída uma capelinha.", "Nos meus jardins e gramados, há muitas emas - algumas bem bravas!", "O Presidente Michel Temer não quis ser meu hóspede. Segundo ele, eu era grande demais e não tinha cara de casa.", "Embora eu tenha locais adequados para leitura e estudos, não sou o local de trabalho do Presidente.", "Muitos visitantes usam o fosso que me protege como poço dos desejos.", "Sou guardado pelos Dragões da Independência.", "Meu mobiliário modernista e o acervo de obras de arte em meu interior são de cair o queixo.", "Dizem que meu primeiro projeto feito por Oscar Niemeyer foi recusado pelo Presidente JK por “falta de monumentalidade”. " )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Palácio da Alvorada", "Palácio Alvorada" )
+cartaBonus = false

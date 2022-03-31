@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 4
+nomeCarta = "Lei Áurea"
+categoriaCarta = 2
+tipoCarta = ""
+dicas = PoolStringArray( "Fui assinada pela princesa imperial regente Isabel em 13 de maio de 1888.", "Libertei cerca de 750 mil pessoas escravizadas em todo o Brasil.", "Surgi tardiamente, o que deu ao Brasil o incômodo título de último país das Américas a abolir a escravidão.", "Fui precedida por várias leis abolicionistas.", "Movimentos abolicionistas clamavam por mim.", "Todo mundo me conhece pelo meu apelido mas, oficialmente, sou a Lei N. 3353/1888.", "José do Patrocínio me anunciou em letras garrafais na primeira página da Gazeta da Tarde.", "Dizem que choviam rosas no Paço Imperial em comemoração à minha assinatura.", "A princesa que me assinou foi chamada de “loura mãe dos brasileiros” por José do Patrocínio.", "O deputado Joaquim Nabuco foi um dos meus principais articuladores.", "José do Patrocínio fez questão de beijar as mãos da mulher que me assinou.", "Tenho apenas dois artigos.", "Não previ qualquer indenização aos escravizados ou escravocratas.", "Libertei a população escravizada, mas não previ qualquer forma de integração dela à sociedade.", "Por minha causa, a princesa imperial regente ficou conhecida como “Redentora”." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Lei Áurea" )
+cartaBonus = false

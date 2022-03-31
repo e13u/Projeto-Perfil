@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 69
+nomeCarta = "Palácio Tiradentes"
+categoriaCarta = 1
+tipoCarta = 2
+dicas = PoolStringArray( "Sou a atual sede da Assembleia Legislativa do Estado do Rio de Janeiro.", "Fui tombado pelo Instituto do Patrimônio Histórico e Artístico Nacional em 1993.", "Fui construído em 1922 para sediar a Câmara dos Deputados.", "Meu projeto é dos arquitetos Arquimedes Memória e Francisque Cuchet. O estilo é ", "Fui construído no estilo Luís XVI, o preferido na década de 20 no Rio de Janeiro. ", "Na minha frente, há uma estátua de Tiradentes, esculpida por Francisco Andrade.", "Quando me visitar, aprecie o painel de Eliseu Visconti que retrata o o momento da assinatura da Constituição Republicana.", "Passeando pelo Centro do Rio de Janeiro, você me reconhece pelo meu teto abobadado e pelas esculturas lindíssimas.", "Por dentro, sou ainda mais bonito. Do chão de pastilhas ao teto, passando pelo mobiliário, pelas obras de arte e pelos painéis do artista J. Timotheo.", "Fui sede da Câmara dos Deputados até 1960.", "Em 2009, fui cenário da novela Caminho das Índias. Fiz papel de palácio indiano!", "Já fui cenário de cinema e série de TV. Também, vá ser bonito assim lá no Rio de Janeiro!", "Fui construído onde antes ficava a Cadeia Velha, local onde Tiradentes permaneceu preso por 3 anos antes de ser executado.", "Fui inaugurado em 6 de maio de 1926, já como sede da Câmara dos Deputados.", "O vitral dentro da minha cúpula representa o céu da noite de 15 de novembro de 1889." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Palácio Tiradentes" )
+cartaBonus = false

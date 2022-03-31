@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 1
+nomeCarta = "Primeira Constituição da República"
+categoriaCarta = 2
+tipoCarta = 2
+dicas = PoolStringArray( "Sou uma carta magna brasileira.", "Fui publicada em 24 de fevereiro de 1891.", "Fui escrita por Prudente de Moraes e Ruy Barbosa.", "Sou um marco na História do Brasil.", "Defini como funcionaria a recém-proclamada República Federativa do Brasil.", "Fixei 3 Poderes principais: o Executivo, o Legislativo e o Judiciário.", "Extingui o poder Moderador, que antes era exercido pelo Imperador.", "Estabeleci o voto popular e direto - mas só para homens ricos e letrados.", "Determinei que o Brasil passaria a ser presidencialista.", "Fui a primeira lei brasileira a separar o Estado da Igreja.", "Minha antecessora foi a Constituição de 1824.", "Eu chamava os atuais governadores de ‘presidentes de estado’.", "Meus autores se basearam na Constituição dos Estados Unidos para me criar.", "Já tive cinco sucessoras - a última é a de 1988.", "Na época da minha publicação, o presidente do Brasil era Deodoro da Fonseca." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Primeira Constituição da República", "Primeira Constituição", "Constituição de 1891", "Constituição República", "Constituição 1891" )
+cartaBonus = false

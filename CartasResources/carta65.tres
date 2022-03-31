@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 65
+nomeCarta = "Proposta de Emenda Constitucional"
+categoriaCarta = 3
+tipoCarta = 2
+dicas = PoolStringArray( "Sou muito conhecida por uma sigla de três letras.", "Posso ser apresentada pelo Presidente da República.", "Na Câmara dos Deputados ou no Senado Federal preciso ser apresentada por, no mínimo, um terço dos membros.", "Sirvo para alterar a lei mais importante do país. ", "Meu trâmite passa por uma Comissão específica.", "Estou prevista na mesma lei que pretendo alterar.", "Sou a expressão prática do chamado poder constituinte derivado reformador.", "Não posso tratar de assuntos como o voto secreto e os direitos e garantias individuais.", "Eu não posso suprimir as chamadas Cláusulas Pétreas.", "Para ser aprovada, preciso passar por um processo no Congresso Nacional bem mais difícil do que o normal.", "Eu sempre entro em vigor na data da minha publicação.", "Fiquei conhecida nos últimos anos por nomes como “... das domésticas”, “...do teto de gastos” e “...das precatórias”.", "Sou discutida e votada em dois turnos em cada Casa do Congresso.", "Sou aprovada apenas se obtiver três quintos dos votos tanto dos Senadores quanto dos Deputados Federais. ", "Sou um tipo de proposta." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Proposta de Emenda Constitucional", "Proposta Emenda Constitucional", "PEC", "P.E.C." )
+cartaBonus = false

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 45
+nomeCarta = "Senador ou Senadora"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "É o povo que me elege.", "Sou um representante dos estados da federação.", "Meu mandato dura 8 anos.", "Atuo no poder legislativo.", "Minha escolha se dá por meio de eleições diretas.", "Preciso ter nascido no Brasil ou ter sido naturalizado ou naturalizada.", "Preciso ter no mínimo 35 anos de idade.", "Minha eleição acontece em votação majoritária e em turno único.", "Uma de minhas funções é integrar comissões.", "Meu trabalho inclui propor novas leis, normas e alterações na Constituição.", "Minhas funções incluem avaliar e rever propostas e projetos votados na Câmara dos Deputados.", "Cada unidade da federação elege três de mim. ", "No Brasil, existem 81 de mim. ", "Minha eleição ocorre a cada quatro anos." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Senador", "Senador da República", "Senadora", "Senadora da República", "Senador ou Senadora da República", "Senador ou Senadora", "Senador(a)", "Senador(a) da República" )
+cartaBonus = false

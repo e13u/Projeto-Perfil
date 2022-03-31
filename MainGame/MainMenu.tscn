@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://interface/Title.tscn" type="PackedScene" id=1]
+[ext_resource path="res://interface/register/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://interface/fonts/montserrat_eb_64.tres" type="DynamicFont" id=3]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="Container" instance=ExtResource( 1 )]
+margin_right = 720.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+text = "Adivinha Quem É"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Container"]
+margin_top = 129.0
+margin_right = 720.0
+margin_bottom = 951.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+
+[node name="LabelName" type="Label" parent="Container/VBoxContainer2"]
+margin_right = 720.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Escolha seu nome:"
+align = 1
+
+[node name="LineEditUserName" type="LineEdit" parent="Container/VBoxContainer2"]
+margin_top = 94.0
+margin_right = 720.0
+margin_bottom = 183.0
+size_flags_horizontal = 11
+custom_fonts/font = ExtResource( 3 )
+caret_blink = true
+
+[node name="JoinButton" type="Button" parent="Container/VBoxContainer2"]
+margin_left = 45.0
+margin_top = 198.0
+margin_right = 675.0
+margin_bottom = 283.0
+size_flags_horizontal = 6
+custom_fonts/font = ExtResource( 3 )
+text = "Escolher uma sala"
+
+[node name="CreateButton" type="Button" parent="Container/VBoxContainer2"]
+margin_left = 110.0
+margin_top = 298.0
+margin_right = 609.0
+margin_bottom = 383.0
+size_flags_horizontal = 6
+custom_fonts/font = ExtResource( 3 )
+text = "Criar uma sala"
+
+[node name="Notification" type="Label" parent="Container"]
+margin_top = 1001.0
+margin_right = 720.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+align = 1
+autowrap = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequest2" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="Container/VBoxContainer2/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer2/CreateButton" to="." method="_on_CreateButton_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="request_completed" from="HTTPRequest2" to="." method="_on_HTTPRequest2_request_completed"]

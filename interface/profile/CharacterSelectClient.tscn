@@ -1,0 +1,161 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://interface/profile/CharacterSelectClient.gd" type="Script" id=1]
+[ext_resource path="res://interface/Title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interface/fonts/montserrat_eb_64.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Sprites/Adao.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Legis.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Ze Plenarinho.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Vital.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Cida.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Xereta.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Adao_selected.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Cida_selected.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Vital_selected.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Xereta_selected.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Ze Plenarinho_selected.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Legis_selected.png" type="Texture" id=15]
+
+[node name="CharSeleClient" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 2 )]
+anchor_right = 1.0
+margin_right = 0.0
+margin_bottom = 161.0
+text = "Escolha seu Personagem"
+autowrap = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 150.0
+margin_right = -50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer2"]
+margin_right = 620.0
+margin_bottom = 830.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AdaoBtn" type="TextureButton" parent="VBoxContainer2/GridContainer"]
+margin_right = 204.0
+margin_bottom = 413.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource( 4 )
+texture_focused = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+
+[node name="CidaBtn" type="TextureButton" parent="VBoxContainer2/GridContainer"]
+margin_left = 208.0
+margin_right = 412.0
+margin_bottom = 413.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource( 8 )
+texture_focused = ExtResource( 11 )
+expand = true
+stretch_mode = 5
+
+[node name="ZeBtn" type="TextureButton" parent="VBoxContainer2/GridContainer"]
+margin_left = 416.0
+margin_right = 620.0
+margin_bottom = 413.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource( 6 )
+texture_focused = ExtResource( 14 )
+expand = true
+stretch_mode = 5
+
+[node name="LegisBtn" type="TextureButton" parent="VBoxContainer2/GridContainer"]
+margin_top = 417.0
+margin_right = 204.0
+margin_bottom = 830.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 15 )
+expand = true
+stretch_mode = 5
+
+[node name="VitalBtn" type="TextureButton" parent="VBoxContainer2/GridContainer"]
+margin_left = 208.0
+margin_top = 417.0
+margin_right = 412.0
+margin_bottom = 830.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource( 7 )
+texture_focused = ExtResource( 12 )
+expand = true
+stretch_mode = 5
+
+[node name="XeretaBtn" type="TextureButton" parent="VBoxContainer2/GridContainer"]
+margin_left = 416.0
+margin_top = 417.0
+margin_right = 620.0
+margin_bottom = 830.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource( 9 )
+texture_focused = ExtResource( 13 )
+expand = true
+stretch_mode = 5
+
+[node name="ConfirmButton" type="Button" parent="VBoxContainer2"]
+margin_left = 93.0
+margin_top = 845.0
+margin_right = 526.0
+margin_bottom = 930.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "CONFIRMAR"
+
+[node name="Notification" type="Label" parent="."]
+margin_right = 1920.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="VBoxContainer2/GridContainer/AdaoBtn" to="." method="_on_AdaoBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer2/GridContainer/CidaBtn" to="." method="_on_CidaBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer2/GridContainer/ZeBtn" to="." method="_on_ZeBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer2/GridContainer/LegisBtn" to="." method="_on_LegisBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer2/GridContainer/VitalBtn" to="." method="_on_VitalBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer2/GridContainer/XeretaBtn" to="." method="_on_XeretaBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer2/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

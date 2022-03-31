@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 21
+nomeCarta = "Presidente Castello Branco"
+categoriaCarta = ""
+tipoCarta = 2
+dicas = PoolStringArray( "Fui o 26° presidente do Brasil, o primeiro do período da Ditadura Militar.", "Fui um dos articuladores do Golpe Militar de 1964.", "Fui nomeado chefe do Estado-Maior do Exército em 1963 pelo presidente João Goulart e o depus no ano seguinte.", "Fui eleito Presidente do Brasil de forma indireta em 11 de abril de 1964. ", "Eu deveria deixar a Presidência do Brasil em 31 de janeiro de 1966, mas acabei ficando até 15 de março de 1967.", "Fui o responsável pela implantação do bipartidarismo - só haveria dois partidos no Brasil,  a ARENA e o MDB.", "Em meu governo, promulguei quatro Atos Institucionais, dispositivos legais autoritários.", "Determinei o recesso do Congresso Nacional em 20 de outubro de 1966.", "Depois que fechei o Congresso Nacional, deixei que ele reabrisse para aprovar a Constituição de 1967.", "Em meu governo, aprovei a Lei de Imprensa, que restringia a liberdade de expressão dos meios de comunicação.", "Morri em um acidente aéreo em julho de 1967, meses depois de deixar a Presidência da República.", "Em São Paulo, há uma importante rodovia que leva o meu nome. Ela também é conhecida como SP 280.", "Um município no Paraná e outro em Santa Catarina levam o meu nome precedido de “Presidente”.", "Fui sucedido na Presidência do Brasil pelo general Costa e Silva.", "Em 1981, meu rosto estampou a cédula de 5 mil cruzeiros." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Presidente Castello Branco", "Castello Branco", "Presidente Castelo Branco", "Castelo Branco" )
+cartaBonus = false

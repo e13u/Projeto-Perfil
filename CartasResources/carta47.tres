@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 47
+nomeCarta = "Presidente da República"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "É o povo que me elege.", "Atuo no poder executivo.", "Meu mandato dura 4 anos.", "Sou o(a) chefe de Estado e de Governo.", "Posso disputar apenas uma reeleição consecutiva.", "Preciso ter nascido no Brasil.", "Preciso ter no mínimo 35 anos de idade.", "Sou o(a) comandante supremo(a) das Forças Armadas.", "Posso vetar total ou parcialmente projetos de lei.", "Escolho livremente meus auxiliares, chamados ministros de Estado.", "Apenas uma vez na história do Brasil eu fui uma mulher.", "Devo prestar contas anualmente ao Congresso Nacional.", "Minha residência oficial chama-se Palácio da Alvorada.", "Minhas funções incluem sancionar, promulgar e fazer publicar as leis.", "Exerço a direção superior da administração federal.", "Trabalho no Palácio do Planalto." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Presidente da República", "Presidenta da República", "Presidente", "Presidenta" )
+cartaBonus = false

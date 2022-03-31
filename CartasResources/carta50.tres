@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 50
+nomeCarta = "Mandato"
+categoriaCarta = 3
+tipoCarta = 1
+dicas = PoolStringArray( "Duro um período específico de tempo.", "Posso ou não ser eletivo.", "Em geral, sou conferido a pessoas para representarem o povo nas instituições.", "No caso do Presidente da República, tenho duração de 4 anos.", "No caso de Deputados Federais, tenho a duração de 4 anos. ", "No caso de Senadores, tenho a duração de 8 anos.", "Em alguns casos, posso ser cassado. ", "Em alguns casos, posso ser revogado.", "Posso significar o período de exercício de determinados cargos.", "Posso significar um poder conferido a alguém.", "Tenho origem no latim mandare, que significa “dar a mão”.", "O Presidente da República não pode me exercer mais de duas vezes consecutivas.", "Alguns de meus sinônimos são encargo, incumbência e autorização para agir em nome de outra pessoa.", "Quem me ocupa é chamado mandatário.", "Sou um termo muito usado em cargos políticos eletivos." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Mandato" )
+cartaBonus = false

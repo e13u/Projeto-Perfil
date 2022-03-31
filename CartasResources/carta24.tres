@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 24
+nomeCarta = "Getúlio Vargas"
+categoriaCarta = ""
+tipoCarta = ""
+dicas = PoolStringArray( "Sou um importante político gaúcho.", "Deixei a vida para entrar na História.", "Dou nome a praça, bairro, parque, avenida, município...", "Já fui personagem principal de um filme estrelado por Tony Ramos.", "Pus um fim à Política do Café com Leite, em que mineiros e paulistas se alternavam na Presidência do Brasil.", "O período em que governei o Brasil entre 1930 e 1934 é conhecido como Governo Provisório.", "No meu governo, nasceu a Constituição de 1934, que garantiu o voto feminino.", "No meu governo, os trabalhadores passaram a ter seus direitos assegurados por Lei.", "No meu governo, foram fundadas a Companhia Siderúrgica Nacional, a Vale do Rio Doce, a Hidrelétrica Vale do São Francisco, a Petrobras e o Instituto Brasileiro de Geografia e Estatística (IBGE).", "Fui eleito Presidente da República pela Assembleia Nacional Constituinte de 1934. Essa fase foi chamada de Governo Constitucional.", "Eu deveria ter deixado o poder em 1938, mas no ano anterior, cancelei a eleição e instalei um regime ditatorial no Brasil.", "De 1937 a 1945, governei o Brasil de forma ditatorial. O período ficou conhecido como Estado Novo.", "Pensa que todo mundo me odiou por eu ter sido um presidente autoritário\? Que nada, voltei ao poder pelo voto direto em 1950.", "Cometi o suicídio com um tiro no peito, no Palácio do Catete.", "Minha sobrinha-neta, Ivette, foi a segunda mulher eleita deputada federal no Brasil." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Getúlio Vargas", "Jetúlio Vargas" )
+cartaBonus = false

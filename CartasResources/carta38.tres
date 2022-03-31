@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 38
+nomeCarta = "Ulysses Guimarães"
+categoriaCarta = ""
+tipoCarta = 1
+dicas = PoolStringArray( "Sou conhecido como \"Senhor Diretas\".", "Fui presidente da Assembleia Nacional Constituinte de 1987.", "Tinha inclinação artística, mas a política me fisgou cedo - ainda na faculdade, me candidatei e fui eleito vice-presidente da União Nacional dos Estudantes.", "Fui candidato à presidência da República na eleição de 1989.", "Fui o parlamentar que mais tempo ficou à frente do Legislativo federal, por mais de quatro décadas.", "Além de parlamentar, fui professor, advogado e até presidente de clube de futebol!", "Venci 11 eleições seguidas para deputado federal.", "Fui presidente da Câmara dos Deputados por três vezes.", "O Plenário da Câmara dos Deputados leva o meu nome.", "Morri em um acidente de helicóptero perto de Angra dos Reis em 1992. Meu corpo nunca foi achado.", "Fui fundador e primeiro Presidente Nacional do PMDB - Partido do Movimento Democrático Brasileiro.", "Fui eu quem apelidou a Constituição Federal de 1988 de Constituição Cidadã.", "Sou considerado um Herói da Pátria por tudo que fiz em defesa da democracia.", "Minha mulher se chamava Ida de Almeida, mas era mais conhecida como Dona Mora.", "Liderei a campanha nacional pelas eleições diretas em 1983-1984." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Ulysses Guimarães", "Ulisses Guimarães", "Ulyces Guimarães", "Ulyces Guimarães", "Uliçes Guimarães", "Ulyçes Guimarães" )
+cartaBonus = false

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 62
+nomeCarta = "Democracia"
+categoriaCarta = ""
+tipoCarta = ""
+dicas = PoolStringArray( "Sou um regime político.", "Quando existo, a soberania é exercida pelo povo.", "Quando existo, os cidadão são detentores do poder, confiando parte desse poder ao Estado.", "Tenho origem no grego demos, que significa “povo”, e kratos, que significa “governo”.", "Posso ser representativa, quando os cidadãos elegem seus representantes por meio do voto.", "No Brasil, surgi com a “Primeira República” e desde então passei por diferentes períodos de maior e menor estabilidade.", "Em geral, me contraponho à Ditadura.", "Uma de minhas principais funções é a proteção dos direitos humanos fundamentais.", "Posso ser de diferentes tipos: direta, indireta ou participativa.", "Algumas características comuns a países que me adotam são a elegibilidade dos cidadãos, liberdades de imprensa e de associação política, e realização de eleições idôneas e imparciais.", "No Brasil, fui interrompida em dois momentos: na Revolução de 1930 e no golpe militar de 1964. ", "Predomino na maioria dos países ocidentais. ", "Surgi em Atenas, na Grécia Antiga, por volta de 510 a.C.." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Democracia" )
+cartaBonus = false

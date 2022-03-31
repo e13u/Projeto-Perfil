@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 16
+nomeCarta = "Dom Pedro I"
+categoriaCarta = ""
+tipoCarta = ""
+dicas = PoolStringArray( "Sou filho de Dom João IV.", "Fui imperador Brasileiro de 1822 a 1831.", "Meu nome inteiro é Pedro de Alcântara Francisco Antônio João Carlos Xavier de Paula Miguel Rafael Joaquim José Gonzaga Pascoal Cipriano Serafim de Bragança e Bourbon.", "Dizem que eu não era muito fã de estudar, quando jovem.", "Minha mãe se chama Carlota Joaquina.", "Tornei-me herdeiro do trono português quando meu irmão mais velho, Antônio de Bragança, morreu.", "Cheguei ao Brasil ainda criança, quando a corte portuguesa foi transferida para cá.", "Fui casado com Maria Leopoldina.", "Meu ministro conselheiro foi José Bonifácio.", "Fui convencido por minha esposa e meu ministro conselheiro a contrariar as ordens de Portugal e ficar no Brasil, em 1922.", "É minha a famosa frase \"Como é para bem de todos e felicidade geral da nação, estou pronto; diga ao povo que fico.”", "No dia 7 de setembro de 1822, declarei a independência do Brasil às margens do Rio Ipiranga.", "Tive um longo relacionamento extraconjugal com a Marquesa de Santos, Domitila de Castro, com quem tive 5 filhos.", "Em 1831, deixei o cargo de Imperador do Brasil e meu filho de 5 anos o assumiu.", "Minha vitória em conflito com meu irmão Miguel garantiu a coroa para minha filha, que se tornou Maria II de Portugal.", "Morri de tuberculose em 1834, mesmo ano em que minha filha assumiu o trono." )
+instrucoes = PoolStringArray(  )
+qtDicas = 10
+qtPontosTotais = 10.0
+pontosDica = 1.0
+possiveisRespostas = PoolStringArray( "Dom Pedro I", "Dom Pedro Primeiro", "Dom Pedro 1" )
+cartaBonus = false

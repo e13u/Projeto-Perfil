@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 20
+nomeCarta = "Joaquim Nabuco"
+categoriaCarta = ""
+tipoCarta = 2
+dicas = PoolStringArray( "Fui um dos principais nomes do Abolicionismo.", "Sou um dos fundadores da Academia Brasileira de Letras.", "Sou amigo pessoal de Machado de Assis.", "Fui político, jurista, historiador, diplomata, orador e jornalista.", "Fui eleito deputado federal em 1878. Nas tribunas, defendi o fim da escravidão.", "Meu nome está inscrito no Livro de Aço dos Heróis da Pátria.", "Junto com José do Patrocínio, fundei a Sociedade Brasileira contra a Escravidão.", "Nasci no dia de São Joaquim, daí o meu primeiro nome.", "Sou pernambucano e fui criado no engenho de açúcar da minha madrinha. Foi lá que tive contato com o horror da escravidão.", "Morri aos 60 anos em Washington, EUA. Eu era embaixador, nessa época.", "Machado de Assis tinha um retrato meu pendurado na parede de sua casa.", "Em Recife, há uma fundação pública que leva o meu nome. Ela é conhecida como Fundaj.", "2010 foi declarado o meu Ano, no Brasil.", "Há uma cidade em Pernambuco que leva o meu nome.", "Em minha homenagem, comemora-se o Dia do Historiador no dia do meu nascimento." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "Joaquim Nabuco", "Joaquim Nambuco" )
+cartaBonus = false

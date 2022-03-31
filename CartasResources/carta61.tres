@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 61
+nomeCarta = "Monarquia"
+categoriaCarta = 3
+tipoCarta = ""
+dicas = PoolStringArray( "Sou uma forma de governo.", "Sou comandada por um monarca.", "Quando existo, o poder costuma ser exercido de modo hereditário e vitalício. ", "Predominei na maior parte das sociedades até o fim do século XIX. ", "Existi no Brasil de 1822 a 1889.", "Posso ser de dois tipos: constitucional ou absoluta.", "Fui substituída, na maior parte das sociedades, pela República. ", "Costumo ser liderada por um Rei/Rainha ou por um Imperador/Imperatriz.", "Mais de 40 países ao redor do mundo ainda me adotam.", "Reino Unido, Espanha, Arábia Saudita e Japão são exemplos de países que me adotam.", "Quando existo, os cidadãos costumam ser chamados de súditos.", "Tive fim no Brasil com a Proclamação da República.", "Posso ser eletiva, como é o caso do Vaticano e dos Emirados Árabes Unidos.", "Sou uma das mais antigas formas de governo, com ecos na liderança de chefes tribais." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Monarquia" )
+cartaBonus = false

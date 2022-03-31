@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 34
+nomeCarta = "José Bonifácio"
+categoriaCarta = ""
+tipoCarta = 2
+dicas = PoolStringArray( "Sou considerado uma das mentes mais brilhantes que já passaram pela política brasileira. ", "Como muitos jovens abastados do meu tempo, dei continuidade aos estudos em Coimbra, Portugal.", "Inicialmente estava matriculado nos cursos jurídicos, mas meu interesse por ciências me fez ampliar minha área de estudos.", "Entre 1787 e 1788, me formei em filosofia e letras jurídicas.", "Em fevereiro de 1789, me tornei sócio livre da Academia de Ciências de Lisboa. E, logo no primeiro trabalho publicado, já ganhei uma bolsa de estudos do governo português.", "Em Paris, estudei química e geologia.", "Em 1796, identifiquei quatro novas espécies minerais e oito novas variedades de minerais que se incluíam em espécies já conhecidas.", "Fiz uma viagem de estudos patrocinada pelo governo português que demorou mais de dez anos.", "Quando voltei ao Brasil em 1819, depois de uma longa temporada na Europa, era um cientista renomado.", "Minha ideia, ao voltar ao Brasil, era descansar e aproveitar a aposentadoria. Em vez disso, me envolvi com a política.", "Sou um dos principais articuladores da Independência do Brasil.", "Fui amigo e conselheiro da família real no Brasil. Em especial, de D. Pedro I e da Imperatriz Leopoldina.", "Junto com a então princesa regente Leopoldina, realizei a reunião do Conselho de Estado que deliberou pela Independência do Brasil.", "Fui tutor de D. Pedro II por alguns anos.", "O minério andradita foi descoberto por mim e batizado em minha homenagem." )
+instrucoes = PoolStringArray(  )
+qtDicas = 15
+qtPontosTotais = 27.0
+pontosDica = 1.8
+possiveisRespostas = PoolStringArray( "José Bonifácio" )
+cartaBonus = false

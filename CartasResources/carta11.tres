@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Game/Carta.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+idCarta = 11
+nomeCarta = "Lei da Ficha Limpa"
+categoriaCarta = 2
+tipoCarta = 1
+dicas = PoolStringArray( "Sou uma lei complementar, isto é, uma lei que completa, explica ou soma algo à Constituição Federal.", "Sou uma lei criada por iniciativa popular.", "Mais de 1,5 milhões de pessoas assinaram o projeto de lei que deu origem a mim.", "Meu nome oficial é Lei Complementar Nº 135, de 4 de junho de 2010. Mas todo mundo me conhece pelo meu apelido.", "Meu projeto de lei chegou ao Congresso Nacional via Comissão de Legislação Participativa da Câmara dos Deputados.", "Sou o terror dos candidatos à eleição com problemas na Justiça.", "Sou a quarta lei brasileira nascida de um projeto de lei de iniciativa popular.", "Defino os critérios que fazem com que um político seja inelegível.", "Se um político renuncia ao cargo para não ser processado ou fugir de condenação, eu não deixo concorrer às próximas duas eleições.", "Apesar de ter sido sancionada em junho de 2010, não vali para as eleições daquele ano, só para as dos anos seguintes.", "O Presidente que me sancionou foi Luiz Inácio Lula da Silva.", "Alterei a Lei Complementar N. 64/1990, conhecida como Lei das Inelegibilidades.", "Minha origem foi uma campanha criada pelo Movimento de Combate à Corrupção Eleitoral (MCCE).", "Quando cheguei à Câmara dos Deputados, fui entregue ao então presidente de lá, Michel Temer.", "Sou tema de discussões calorosas entre o Supremo Tribunal Federal e a Câmara dos Deputados." )
+instrucoes = PoolStringArray(  )
+qtDicas = 12
+qtPontosTotais = 18.0
+pontosDica = 1.5
+possiveisRespostas = PoolStringArray( "Lei da Ficha Limpa", "Lei Ficha Limpa", "Ficha Limpa" )
+cartaBonus = false
