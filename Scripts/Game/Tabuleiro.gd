@@ -29,13 +29,21 @@ func _on_HTTPRequest2_request_completed(result: int, response_code: int, headers
 	
 func _popCard():
 	cartaDestaque = baralho.pilhaCartas[0]	
-	#print(cartaDestaque.idCarta)
 	showTips()
+	
+func _popCard2():
+	data = get_node("/root/MainScene/").roomData
+	baralho.pilhaCartas.remove(0)
+	cartaDestaque = baralho.pilhaCartas[0]
 	
 func _popCCard(card):
 	cartaDestaque = card
 	#get_node("/root/MainScene/").verifyWhoPlays()
 	showTips()
+	
+func _popCCard2(card):	
+	cartaDestaque = card
+	print(cartaDestaque.nomeCarta)
 	
 func showTips():
 	var tipPrefab = preload("res://Prefabs/Tip.tscn")

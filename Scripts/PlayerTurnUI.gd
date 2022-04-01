@@ -33,18 +33,14 @@ func revealTimer(on):
 func blockTipsUsed():
 	#BUSCAR DICAS JÁ UTILIZADAS
 	var usedTips = get_node("/root/MainScene/").roomData.usedTips.arrayValue.values
-	#print('usedTips ',usedTips)
 	var usedTips2 = usedTips
-	#print('usedTips2 ',usedTips2,' size ', usedTips2.size())
-	#usedTips3.clear() //ZERAR ARRAY
+	usedTips3.resize(0)
 	if usedTips2.size() > 0:
 		for i in range(usedTips2.size()):
 			usedTips3.append(usedTips2[i].integerValue)
-	print('TIPO: ', typeof(usedTips3))
 	
 	for c in container.get_children():
 		var number = int(c.text)
-		#print("Number: ", number," usedTips3: ", usedTips3, " contains: ", usedTips3.has(number))
 		if number in usedTips3:
 			print("DESATIVOU: ",number)
 			c.disabled = true

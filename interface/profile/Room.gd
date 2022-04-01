@@ -97,7 +97,7 @@ func _on_HTTPRequest4_request_completed(result: int, response_code: int, headers
 	isUpdating = false
 	refreshPlayerList()
 
-#DANDO BUG AS VEZES // VERIFICAR SE A VERIFICAÇÃO CORRIGIU
+#DANDO BUG AS VEZES // AINDA DANDO BUG ALEATORIAMENTE
 func verifyNumberOfPlayersInRoom():
 	if(roomData.players.arrayValue.values != null):
 		return roomData.players.arrayValue.values.size()

@@ -1,6 +1,7 @@
 extends Node
 
 onready var http :HTTPRequest = $HTTPRequest
+onready var http2 :HTTPRequest = $HTTPRequest2
 onready var http3 :HTTPRequest = $HTTPRequest3
 onready var http4 :HTTPRequest = $HTTPRequest4
 onready var http5 :HTTPRequest = $HTTPRequest5
@@ -19,6 +20,7 @@ var playerTurnUI
 func _initGame() -> void:
 	turnState = 0
 	http = get_node("HTTPRequest")
+	http2 = get_node("HTTPRequest2")
 	http3 = get_node("HTTPRequest3")
 	http4 = get_node("HTTPRequest4")
 	http5 = get_node("HTTPRequest5")
@@ -98,7 +100,7 @@ func waitGameInfo():
 		#Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http3)
 		yield(get_tree().create_timer(0.5), "timeout")
 	print("POSSO COMEÇAR")
-	_popClientCard()
+	_popClientCard(1)
 
 func _on_HTTPRequest3_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
@@ -108,15 +110,19 @@ func _on_HTTPRequest3_request_completed(result: int, response_code: int, headers
 		print("RECEBI OS DADOS!")
 		canStart = true
 
-func _popClientCard():
+func _popClientCard(code):
 	var card : Carta
 	var ran = $Tabuleiro.baralho.pilhaCartas.size()
 	
 	for i in range(ran):
 		if $Tabuleiro.baralho.pilhaCartas[i].idCarta == int(roomData.cards.arrayValue.values[0].integerValue):
 			card = $Tabuleiro.baralho.pilhaCartas[i]
-	$Tabuleiro._popCCard(card)
-			
+	if code == 1:
+		$Tabuleiro._popCCard(card)
+	elif code ==2:
+		$Tabuleiro._popCCard2(card)
+
+
 func verifyWhoPlays():
 	#print(roomData.activePlayer.stringValue)
 	if roomData.activePlayer.stringValue == Firebase.user_email:
@@ -128,11 +134,13 @@ func verifyWhoPlays():
 		
 	else:
 		playerTurnUI.turnTipsButtons(false)
+		_popClientCard(2)
 		turnTimer.start()
 	
 func revealTip(number):
 	var tipText = $Tabuleiro.cartaDestaque.dicas[number]
 	print($Tabuleiro.cartaDestaque.dicas[number])
+	print($Tabuleiro.cartaDestaque.nomeCarta)
 	roomData.usedTips.arrayValue.values.append({"integerValue": number})
 	#Revela UI do jogador da vez
 	playerTurnUI.revealTip(tipText)
@@ -168,11 +176,14 @@ func updateScore():
 	var index = playersNames.find(activePlayer)
 	roomData.score.arrayValue.values[index] = { "integerValue": score}
 	roomData.cards.arrayValue.values.remove(0)
+	#"usedTips":{"arrayValue":{"values":[{"integerValue":0}]}},
+	roomData.usedTips.arrayValue.values = [{"integerValue":0}]
 	print(roomData.cards.arrayValue.values[0])
 	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http6)
 
 func _on_HTTPRequest6_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	print("HTTP6 ",response_code)
+	$Tabuleiro._popCard2()
 	nextPlayerTurn()
 	
 func rightAnswer():
@@ -184,7 +195,6 @@ func rightAnswer():
 	
 func wrongAnswer():
 	print("ERROU")
-	print($Tabuleiro.cartaDestaque.nomeCarta)
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(false)
 	playerTurnUI.revealTimer(false)
