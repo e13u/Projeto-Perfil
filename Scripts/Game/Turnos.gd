@@ -48,11 +48,11 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 	if turnState == 2:
 		print("Active Player: ",activePlayer)
 		var index = playersNames.find(activePlayer)+1 #3 ->4
-		print("INDEX: ",index)
+		#print("INDEX: ",index)
 		if index == playersNames.size():
 			index = 0
 		activePlayer = playersNames[index]
-		print("ACTIVE PLAYER: ",activePlayer, " INDEX: ",index)
+		#print("ACTIVE PLAYER: ",activePlayer, " INDEX: ",index)
 		roomData.activePlayer.stringValue = activePlayer
 		Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http4)
 
@@ -147,9 +147,20 @@ func revealTip(number):
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(true)
 	playerTurnUI.revealTimer(true)
-	
+
+#TRATAMENTO DAS STRINGS
 func verifyAnswer(answer):
-	if answer in $Tabuleiro.cartaDestaque.possiveisRespostas:
+	var answer1 = stringProcessing(answer)
+	var possible = $Tabuleiro.cartaDestaque.possiveisRespostas
+	var possible2 = []
+	
+	for s in possible:
+		s = stringProcessing(s)
+		possible2.append(s)
+	
+	print("POSSIBLE_____2: ",possible2)
+	
+	if answer1 in possible2:
 		rightAnswer()
 	else:
 		wrongAnswer()
@@ -173,16 +184,15 @@ func _on_HTTPRequest5_request_completed(result: int, response_code: int, headers
 	
 func updateScore():
 	var score = 10 #AJUSTAR PARA QUANTIDADE DE DICAS UTILIZADAS
-	var index = playersNames.find(activePlayer)
+	var index = playersNames.find(Firebase.user_email)
+	score += int(roomData.score.arrayValue.values[index].integerValue)
 	roomData.score.arrayValue.values[index] = { "integerValue": score}
 	roomData.cards.arrayValue.values.remove(0)
-	#"usedTips":{"arrayValue":{"values":[{"integerValue":0}]}},
 	roomData.usedTips.arrayValue.values = [{"integerValue":0}]
 	print(roomData.cards.arrayValue.values[0])
 	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http6)
 
 func _on_HTTPRequest6_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
-	print("HTTP6 ",response_code)
 	$Tabuleiro._popCard2()
 	nextPlayerTurn()
 	
@@ -199,3 +209,31 @@ func wrongAnswer():
 	playerTurnUI.revealTextBoxAnswer(false)
 	playerTurnUI.revealTimer(false)
 	nextPlayerTurn()
+	
+func stringProcessing(text):
+	var t_final = text.to_upper()
+	t_final = t_final.replace('Á',"A")
+	t_final = t_final.replace('À',"A")
+	t_final = t_final.replace('Ã',"A")
+	t_final = t_final.replace('Â',"A")
+	
+	t_final = t_final.replace('É',"E")
+	t_final = t_final.replace('È',"E")
+	t_final = t_final.replace('Ê',"E")
+	
+	t_final = t_final.replace('Í',"I")
+	t_final = t_final.replace('Ì',"I")
+	t_final = t_final.replace('Î',"I")
+
+	t_final = t_final.replace('Ó',"O")
+	t_final = t_final.replace('Ò',"O")
+	t_final = t_final.replace('Ô',"O")
+	t_final = t_final.replace('Õ',"O")
+	
+	t_final = t_final.replace('Ú',"U")
+	t_final = t_final.replace('Ù',"U")
+	t_final = t_final.replace('Û',"U")
+	
+	t_final = t_final.replace('Ç',"C")
+	
+	return t_final

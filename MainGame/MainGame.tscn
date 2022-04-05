@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/ringtimer.png" type="Texture" id=2]
@@ -11,6 +11,13 @@
 [ext_resource path="res://Sprites/mockup.jpeg" type="Texture" id=12]
 [ext_resource path="res://Sprites/BG.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/LINHA VITORIA.png" type="Texture" id=15]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonts/OpenSans-Regular_0.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = SubResource( 1 )
 
 [node name="MainScene" type="Control"]
 anchor_right = 1.0
@@ -166,13 +173,12 @@ anchor_left = 0.114
 anchor_top = 0.607
 anchor_right = 0.428
 anchor_bottom = 0.774
-margin_left = 0.11998
-margin_top = 0.439941
-margin_right = 85.2399
-margin_bottom = -13.92
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 6 )
-text = "............................."
+margin_left = -75.08
+margin_top = 75.44
+margin_right = 367.84
+margin_bottom = 82.08
+custom_colors/font_color = Color( 0.32549, 0.32549, 0.32549, 1 )
+custom_fonts/font = SubResource( 2 )
 autowrap = true
 clip_text = true
 __meta__ = {

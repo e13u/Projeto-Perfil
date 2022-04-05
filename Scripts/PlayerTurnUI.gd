@@ -42,7 +42,6 @@ func blockTipsUsed():
 	for c in container.get_children():
 		var number = int(c.text)
 		if number in usedTips3:
-			print("DESATIVOU: ",number)
 			c.disabled = true
 
 func turnTipsButtons(on):
