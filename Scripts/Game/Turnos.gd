@@ -137,6 +137,7 @@ func verifyWhoPlays():
 		_popClientCard(2)
 		turnTimer.start()
 	
+#AS VEZES DANDO ERRO QUANDO SELECIONA DICA NUMERO 15
 func revealTip(number):
 	var tipText = $Tabuleiro.cartaDestaque.dicas[number]
 	print($Tabuleiro.cartaDestaque.dicas[number])
@@ -157,8 +158,6 @@ func verifyAnswer(answer):
 	for s in possible:
 		s = stringProcessing(s)
 		possible2.append(s)
-	
-	print("POSSIBLE_____2: ",possible2)
 	
 	if answer1 in possible2:
 		rightAnswer()
@@ -183,10 +182,16 @@ func _on_HTTPRequest5_request_completed(result: int, response_code: int, headers
 	verifyWhoPlays()
 	
 func updateScore():
-	var score = 10 #AJUSTAR PARA QUANTIDADE DE DICAS UTILIZADAS
+	var scoreBase = $Tabuleiro.cartaDestaque.pontosDica #AJUSTAR PARA QUANTIDADE DE DICAS UTILIZADAS
+	var notUsedTips = $Tabuleiro.cartaDestaque.dicas.size()-playerTurnUI.usedTipsNumber
+	var score = scoreBase*notUsedTips
+	var scoreInt = int(round(score))
+	
+	print("scoreBase: ",scoreBase," notUsedTips: ",notUsedTips)
+	print("ScoreTotal: ",scoreInt)
 	var index = playersNames.find(Firebase.user_email)
-	score += int(roomData.score.arrayValue.values[index].integerValue)
-	roomData.score.arrayValue.values[index] = { "integerValue": score}
+	scoreInt += int(roomData.score.arrayValue.values[index].integerValue)
+	roomData.score.arrayValue.values[index] = { "integerValue": scoreInt}
 	roomData.cards.arrayValue.values.remove(0)
 	roomData.usedTips.arrayValue.values = [{"integerValue":0}]
 	print(roomData.cards.arrayValue.values[0])

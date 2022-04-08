@@ -9,6 +9,7 @@ var totalTimer = 60
 var answerBox
 var timerOn
 var usedTips3: PoolIntArray
+var usedTipsNumber = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +33,7 @@ func revealTimer(on):
 
 func blockTipsUsed():
 	#BUSCAR DICAS JÁ UTILIZADAS
+	usedTipsNumber = 0
 	var usedTips = get_node("/root/MainScene/").roomData.usedTips.arrayValue.values
 	var usedTips2 = usedTips
 	usedTips3.resize(0)
@@ -43,7 +45,8 @@ func blockTipsUsed():
 		var number = int(c.text)
 		if number in usedTips3:
 			c.disabled = true
-
+			usedTipsNumber +=1
+			
 func turnTipsButtons(on):
 	for c in container.get_children():
 		c.disabled = !on
@@ -55,15 +58,25 @@ func revealTip(tip):
 	
 func startClock():
 	if timerOn:
-		#print(timer)
 		yield(get_tree().create_timer(1.0), "timeout")
 		timer = timer+1
+		print("TIMER: ",timer)
 		timerRadial.value = timer
 		if timer <= totalTimer:
 			startClock()
 		else:
-			print("ACABOU O TEMPO")
-			get_node("/root/MainScene/").wrongAnswer()
+			timeOver()
+
+func timeOver():
+	revealTextBoxAnswer(false)
+	revealTimer(false)
+	turnTipsButtons(false)
+	timerOn = false
+	timer = 0
+	var answer = answerBox.text
+	answerBox.text = ""
+	print("ACABOU O TEMPO")
+	get_node("/root/MainScene/").wrongAnswer()
 	
 func _on_Button_Send_pressed() -> void:
 	revealTextBoxAnswer(false)
