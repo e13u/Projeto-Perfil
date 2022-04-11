@@ -98,6 +98,7 @@ func _on_HTTPRequest4_request_completed(result: int, response_code: int, headers
 	refreshPlayerList()
 
 #DANDO BUG AS VEZES // AINDA DANDO BUG ALEATORIAMENTE
+#INVALID GET INDEX PLAYERS ON BASE NIL
 func verifyNumberOfPlayersInRoom():
 	if(roomData.players.arrayValue.values != null):
 		return roomData.players.arrayValue.values.size()

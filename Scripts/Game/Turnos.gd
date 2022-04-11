@@ -16,6 +16,8 @@ var mediator
 var activePlayer
 var canStart = false
 var playerTurnUI
+var gameEnded = false
+var pointsForWinning = 100
 
 func _initGame() -> void:
 	turnState = 0
@@ -179,7 +181,10 @@ func _on_HTTPRequest4_request_completed(result: int, response_code: int, headers
 func _on_HTTPRequest5_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	roomData = result_body.fields
-	verifyWhoPlays()
+	if roomData.state.stringValue == "ended":
+		endGame()
+	else:
+		verifyWhoPlays()
 	
 func updateScore():
 	var scoreBase = $Tabuleiro.cartaDestaque.pontosDica #AJUSTAR PARA QUANTIDADE DE DICAS UTILIZADAS
@@ -195,6 +200,8 @@ func updateScore():
 	roomData.cards.arrayValue.values.remove(0)
 	roomData.usedTips.arrayValue.values = [{"integerValue":0}]
 	print(roomData.cards.arrayValue.values[0])
+	if scoreInt >= pointsForWinning:
+		endGame()
 	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http6)
 
 func _on_HTTPRequest6_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
@@ -214,6 +221,11 @@ func wrongAnswer():
 	playerTurnUI.revealTextBoxAnswer(false)
 	playerTurnUI.revealTimer(false)
 	nextPlayerTurn()
+
+func endGame():
+	gameEnded = true
+	roomData.state = { "stringValue": "ended" }
+	$Background/ResultsScreen.visible = true
 	
 func stringProcessing(text):
 	var t_final = text.to_upper()

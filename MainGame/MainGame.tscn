@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/ringtimer.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scripts/Game/Tabuleiro.gd" type="Script" id=5]
 [ext_resource path="res://interface/fonts/montserrat_eb_64.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Sprites/BOLO DE CARTAS.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/OpenSans-Regular_0.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Sprites/CARTA.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/mockup.jpeg" type="Texture" id=12]
 [ext_resource path="res://Sprites/BG.png" type="Texture" id=13]
@@ -18,6 +19,10 @@ font_path = "res://Fonts/OpenSans-Regular_0.ttf"
 [sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 38
+font_data = ExtResource( 8 )
 
 [node name="MainScene" type="Control"]
 anchor_right = 1.0
@@ -43,6 +48,7 @@ __meta__ = {
 }
 
 [node name="Mockup" type="TextureRect" parent="."]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -216,6 +222,35 @@ text = "Enviar Resposta"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ResultsScreen" type="Panel" parent="Background"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -318.5
+margin_top = -484.0
+margin_right = 318.5
+margin_bottom = 484.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Background/ResultsScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -139.0
+margin_top = -36.5
+margin_right = 139.0
+margin_bottom = 36.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Cabo"
+align = 1
+valign = 1
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
