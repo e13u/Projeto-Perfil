@@ -3,12 +3,12 @@ extends Node
 onready var http : HTTPRequest = $HTTPRequest
 #onready var http2 : HTTPRequest = $HTTPRequest2
 onready var iniciarBtn : Button = $VBoxContainer2/ConfirmButton
-onready var roomsContainer = $VBoxContainer2/Panel/VBoxContainer
+onready var roomsContainer = $VBoxContainer
 var hostName : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	iniciarBtn.disabled = true
+	#iniciarBtn.disabled = true
 	hostName = ""
 	#Firebase.connect("roomCreated",self,"on_room_Created")
 	_getActiveRooms()
@@ -16,6 +16,7 @@ func _ready() -> void:
 func toggleConfirmButton(disabled, name):
 	iniciarBtn.disabled = disabled
 	hostName = name
+	_on_ConfirmButton_pressed()
 	
 func _getActiveRooms():
 	print("Verificando Salas")
@@ -39,10 +40,10 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 			hostNames.append(result_body.values()[0][i].fields.players.arrayValue.values[0].stringValue)
 
 	for j in (hostNames.size()):
-		var hostButtonPrefab = preload("res://Prefabs/HostButton.tscn")
+		var hostButtonPrefab = preload("res://Prefabs/RoomPrefab.tscn")
 		var hostButton = hostButtonPrefab.instance()
 		roomsContainer.add_child(hostButton)
-		hostButton.text = hostNames[j]
+		hostButton.get_child('NameRect').get_child('RoomName').text = hostNames[j]
 
 func _on_Timer_timeout() -> void:
 	_getActiveRooms()

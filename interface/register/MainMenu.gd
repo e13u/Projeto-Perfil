@@ -2,8 +2,8 @@ extends Control
 
 onready var http : HTTPRequest = $HTTPRequest
 onready var http2 : HTTPRequest = $HTTPRequest2
-onready var username : LineEdit = $Container/VBoxContainer2/LineEditUserName
-onready var notification : Label = $Container/Notification
+onready var username : LineEdit = $BG/TextureRect2/LineEditUserName
+#onready var notification : Label = $Container/Notification
 var standardPassword = "123456"
 # 1=CREATE, 0= JOIN
 var create = 0 
@@ -20,7 +20,7 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 	var response_body := JSON.parse(body.get_string_from_ascii())
 	#SE EXISTIR USUÁRIO APENAS LOGAR
 	if response_code != 200:
-		notification.text = response_body.result.error.message.capitalize()
+		#notification.text = response_body.result.error.message.capitalize()
 		print(response_body.result.error.message)
 		if response_body.result.error.message == "EMAIL_EXISTS":
 			print("Conta já existente")
@@ -28,7 +28,6 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 			login()
 	#SE USUÁRIO NÃO EXISTIR CRIAR CONTA
 	else:
-		notification.text = "Registration sucessful!"
 		print("Conta nova criada")
 		yield(get_tree().create_timer(2.0), "timeout")
 		login()

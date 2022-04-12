@@ -2,7 +2,7 @@ extends Control
 
 onready var http : HTTPRequest = $HTTPRequest
 onready var http2 : HTTPRequest = $HTTPRequest2
-onready var notification : Label = $Container/Notification
+#onready var notification : Label = $Container/Notification
 
 var new_room := false
 var information_sent := false

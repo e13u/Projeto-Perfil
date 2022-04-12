@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/RESPOSTA.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Game/Turnos.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Game/Tabuleiro.gd" type="Script" id=5]
-[ext_resource path="res://interface/fonts/montserrat_eb_64.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Sprites/BOLO DE CARTAS.png" type="Texture" id=7]
 [ext_resource path="res://Fonts/OpenSans-Regular_0.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Sprites/CARTA.png" type="Texture" id=10]
