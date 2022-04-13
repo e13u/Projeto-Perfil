@@ -6,7 +6,7 @@ onready var http3 : HTTPRequest = $HTTPRequest3
 onready var http4 : HTTPRequest = $HTTPRequest4
 onready var http5 : HTTPRequest = $HTTPRequest5
 
-onready var numberPlayersLabel : Label = $VBoxContainer2/Panel/numberPlayersLabel
+onready var numberPlayersLabel : Label = $TextureRect3/numberPlayersLabel
 onready var iniciarBtn : Button = $VBoxContainer2/ConfirmButton
 
 var playersInRoom :int = 0
