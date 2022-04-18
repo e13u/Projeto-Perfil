@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Mockups/3.jpeg" type="Texture" id=2]
-[ext_resource path="res://Sprites/BG.png" type="Texture" id=4]
+[ext_resource path="res://interface/rooms/Camada 136 copiar 2.jpg" type="Texture" id=3]
+[ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003.png" type="Texture" id=4]
 [ext_resource path="res://interface/profile/SearchRoom.gd" type="Script" id=5]
 [ext_resource path="res://interface/rooms/Camada 146 copiar.png" type="Texture" id=6]
 [ext_resource path="res://interface/rooms/Menu copiar 3.png" type="Texture" id=7]
-[ext_resource path="res://Prefabs/RoomPrefab.tscn" type="PackedScene" id=8]
 
 [node name="SearchRoom" type="Control"]
 anchor_right = 1.0
@@ -21,7 +21,7 @@ __meta__ = {
 [node name="BG" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -75,15 +75,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RoomPrefab" parent="VBoxContainer" instance=ExtResource( 8 )]
+[node name="ConfirmButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -295.5
+margin_top = -166.0
+margin_right = 295.5
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ConfirmButton" type="Button" parent="."]
-margin_left = 400.0
-margin_top = 1849.0
-margin_right = 679.0
-margin_bottom = 1920.0
-size_flags_horizontal = 4
-text = "Entrar na Sala"
+[node name="Label" type="Label" parent="ConfirmButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Entrar na sala"
+align = 1
+valign = 1
 
 [node name="mockup" type="TextureRect" parent="."]
 visible = false

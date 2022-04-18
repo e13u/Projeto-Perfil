@@ -7,7 +7,7 @@ onready var http4 : HTTPRequest = $HTTPRequest4
 onready var http5 : HTTPRequest = $HTTPRequest5
 
 onready var numberPlayersLabel : Label = $TextureRect3/numberPlayersLabel
-onready var iniciarBtn : Button = $VBoxContainer2/ConfirmButton
+onready var iniciarBtn : TextureButton = $ConfirmButton
 
 var playersInRoom :int = 0
 var id 
@@ -77,10 +77,25 @@ func _on_Timer2_timeout() -> void:
 
 
 func refreshPlayerList():
+	#REMOVER NOMES ANTES DE ATUALIZAR
+	var slot = get_node("VBoxContainer")
+	for n in slot.get_children():
+		slot.remove_child(n)
+		n.queue_free()
+	
 	var players = roomData.players.arrayValue.values
+	var avatars = roomData.avatars.arrayValue.values
+	
+	var playerInfoPrefab  = preload("res://Prefabs/PlayerInWaitRoomPrefab.tscn")
+	
 	for i in range(players.size()):
 		if players[i].stringValue != "null":
-			get_node("VBoxContainer2/Panel/VBoxContainer/Label_"+str(i)).text = players[i].stringValue
+			var prefab = playerInfoPrefab.instance()
+			slot.add_child(prefab)
+			prefab.get_child(0).get_child(0).text = players[i].stringValue
+			prefab.get_child(1).texture = UiManager.imageIconAvatar(avatars[i].stringValue)
+			#get_node("VBoxContainer2/Panel/VBoxContainer/Label_"+str(i)).text = players[i].stringValue
+	
 	numberPlayersLabel.text = "Jogadores("+str(players.size())+"/6)"
 	
 	if players.size() > 1 and Firebase.isHost:

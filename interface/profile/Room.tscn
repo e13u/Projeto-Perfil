@@ -1,18 +1,25 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://interface/profile/Room.gd" type="Script" id=1]
 [ext_resource path="res://Mockups/5.jpeg" type="Texture" id=2]
 [ext_resource path="res://interface/fonts/montserrat_eb_64.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Prefabs/PlayerInWaitRoomPrefab.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interface/rooms/Camada 1109 copiar 10.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003.png" type="Texture" id=6]
 [ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_004.png" type="Texture" id=7]
 [ext_resource path="res://interface/rooms/Camada 136 copiar 2.jpg" type="Texture" id=8]
 [ext_resource path="res://interface/rooms/PlayPress.png" type="Texture" id=9]
 [ext_resource path="res://interface/rooms/Play.png" type="Texture" id=10]
+[ext_resource path="res://interface/rooms/Play_disabled.png" type="Texture" id=11]
+[ext_resource path="res://interface/rooms/Camada 525 copiar 8.png" type="Texture" id=12]
+[ext_resource path="res://interface/rooms/Xereta_button.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 73
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 74
 font_data = ExtResource( 5 )
 
 [node name="Room" type="Control"]
@@ -57,13 +64,57 @@ text = "Mediador da Sala"
 align = 1
 valign = 1
 
+[node name="PlayerInWaitRoomPrefab" type="TextureRect" parent="."]
+margin_left = 154.0
+margin_top = 164.0
+margin_right = 730.0
+margin_bottom = 312.0
+rect_scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameSlot" type="TextureRect" parent="PlayerInWaitRoomPrefab"]
+margin_left = 204.0
+margin_top = 26.0
+margin_right = 531.0
+margin_bottom = 126.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PlayerInWaitRoomPrefab/NameSlot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = -5.0
+margin_right = 1.0
+margin_bottom = -5.0
+custom_fonts/font = SubResource( 2 )
+text = "Edu"
+align = 1
+valign = 1
+
+[node name="PlayerImageSlot" type="TextureRect" parent="PlayerInWaitRoomPrefab"]
+margin_left = -33.0
+margin_top = -28.0
+margin_right = 183.0
+margin_bottom = 188.0
+texture = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect3" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -224.0
-margin_top = 310.0
+margin_top = 355.0
 margin_right = 291.0
-margin_bottom = 428.0
+margin_bottom = 473.0
 texture = ExtResource( 6 )
 expand = true
 __meta__ = {
@@ -95,13 +146,6 @@ margin_bottom = 0.439941
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="PlayerInWaitRoomPrefab" parent="VBoxContainer" instance=ExtResource( 4 )]
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 968.0
-margin_bottom = 148.0
-size_flags_stretch_ratio = 0.0
 
 [node name="CancelButton" type="Button" parent="."]
 visible = false
@@ -136,6 +180,7 @@ margin_left = -347.0
 margin_top = -338.0
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 9 )
+texture_disabled = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

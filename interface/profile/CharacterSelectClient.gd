@@ -7,7 +7,7 @@ onready var ZeBtn: TextureButton = $VBoxContainer2/GridContainer/ZeBtn
 onready var LegisBtn: TextureButton = $VBoxContainer2/GridContainer/LegisBtn
 onready var VitalBtn: TextureButton = $VBoxContainer2/GridContainer/VitalBtn
 onready var XeretaBtn: TextureButton = $VBoxContainer2/GridContainer/XeretaBtn
-onready var confirmBtn: Button = $ConfirmButton
+onready var confirmBtn: TextureButton = $ConfirmButton
 
 var roomData
 var usedChars = []

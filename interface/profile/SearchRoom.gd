@@ -2,7 +2,7 @@ extends Node
 
 onready var http : HTTPRequest = $HTTPRequest
 #onready var http2 : HTTPRequest = $HTTPRequest2
-onready var iniciarBtn : Button = $VBoxContainer2/ConfirmButton
+onready var iniciarBtn : TextureButton = $ConfirmButton
 onready var roomsContainer = $VBoxContainer
 var hostName : String
 
@@ -31,6 +31,8 @@ func _resetRooms():
 	
 func _on_HTTPRequest_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var hostNames = []
+	var avatarIconsNames = []
+	var playersInRoomNames = []
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	_resetRooms()
 	
@@ -38,12 +40,17 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 		#print(result_body.values()[0][i].fields.player_0.stringValue)
 		if result_body.values()[0][i].fields.state.stringValue == "open":
 			hostNames.append(result_body.values()[0][i].fields.players.arrayValue.values[0].stringValue)
+			avatarIconsNames.append(result_body.values()[0][i].fields.avatars.arrayValue.values[0].stringValue)
+			playersInRoomNames.append(result_body.values()[0][i].fields.players.arrayValue.values)
 
 	for j in (hostNames.size()):
 		var hostButtonPrefab = preload("res://Prefabs/RoomPrefab.tscn")
 		var hostButton = hostButtonPrefab.instance()
 		roomsContainer.add_child(hostButton)
-		hostButton.get_child('NameRect').get_child('RoomName').text = hostNames[j]
+		hostButton.get_child(2).get_child(0).text = hostNames[j]
+		hostButton.get_child(1).texture = UiManager.imageIconAvatar(avatarIconsNames[j])
+		#print(playersInRoomNames[j])
+		#hostButton.get_child(3).text = playersInRoomNames[j].stringValue
 
 func _on_Timer_timeout() -> void:
 	_getActiveRooms()
