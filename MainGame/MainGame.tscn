@@ -1,17 +1,21 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/ringtimer.png" type="Texture" id=2]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/RESPOSTA.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Game/Turnos.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Game/Tabuleiro.gd" type="Script" id=5]
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Sprites/BOLO DE CARTAS.png" type="Texture" id=7]
 [ext_resource path="res://Fonts/OpenSans-Regular_0.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://Sprites/CARTA.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/mockup.jpeg" type="Texture" id=12]
-[ext_resource path="res://Sprites/BG.png" type="Texture" id=13]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/mockup_tela5.png" type="Texture" id=9]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/DICAS REVELADAS.png" type="Texture" id=10]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_green.png" type="Texture" id=11]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_fundo.png" type="Texture" id=12]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/fundo.png" type="Texture" id=13]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_sombra.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/LINHA VITORIA.png" type="Texture" id=15]
+[ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=16]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonts/OpenSans-Regular_0.ttf"
@@ -19,6 +23,10 @@ font_path = "res://Fonts/OpenSans-Regular_0.ttf"
 [sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 38
@@ -47,22 +55,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Mockup" type="TextureRect" parent="."]
-visible = false
-self_modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 12 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 13 )
 expand = true
+stretch_mode = 1
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -96,33 +94,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HintsPanel" type="TextureRect" parent="Background"]
-anchor_left = 0.912
-anchor_top = 0.056
-anchor_right = 1.0
-anchor_bottom = 0.767
-margin_left = -420.04
-margin_top = -0.480003
-margin_right = -32.0
-margin_bottom = -27.3601
-texture = ExtResource( 10 )
-expand = true
-stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GridContainer" type="GridContainer" parent="Background/HintsPanel"]
-anchor_left = 0.061
-anchor_top = 0.142
-anchor_right = 0.946
-anchor_bottom = 0.941
-columns = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="PinsPanel" type="Panel" parent="Background"]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.173
 anchor_top = 0.761
@@ -191,25 +164,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="Background"]
-visible = false
-anchor_left = 0.332
-anchor_right = 0.332
-margin_left = 43.5599
-margin_top = 12.0
-margin_right = 496.56
-margin_bottom = 465.0
-rect_scale = Vector2( 0.5, 0.5 )
-max_value = 60.0
-texture_under = ExtResource( 2 )
-texture_progress = ExtResource( 2 )
-fill_mode = 4
-tint_over = Color( 1, 0, 0, 1 )
-tint_progress = Color( 0, 1, 0.368627, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Button" type="Button" parent="Background"]
 visible = false
 margin_left = 467.0
@@ -222,6 +176,92 @@ text = "Enviar Resposta"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HintsPanel" type="TextureRect" parent="Background"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -225.0
+margin_bottom = 392.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Background/HintsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClockShadow" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 623.0
+margin_top = 1459.0
+margin_right = -24.0
+margin_bottom = -28.0
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="Background/ClockShadow"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -184.5
+margin_top = -184.5
+margin_right = 184.5
+margin_bottom = 184.5
+rect_scale = Vector2( 0.979998, 0.979998 )
+max_value = 60.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 11 )
+fill_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Background/ClockShadow/TextureProgress"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -66.5
+margin_top = -59.0
+margin_right = 66.5
+margin_bottom = 59.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="RevealedTipsButton" type="TextureButton" parent="Background"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 51.0
+margin_top = -384.0
+margin_right = 566.0
+margin_bottom = -82.0
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Background/RevealedTipsButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_bottom = -29.0
+custom_fonts/font = SubResource( 4 )
+text = "Dicas 
+Reveladas"
+align = 1
+valign = 1
 
 [node name="ResultsScreen" type="Panel" parent="Background"]
 visible = false
@@ -251,6 +291,16 @@ custom_fonts/font = SubResource( 3 )
 text = "Cabo"
 align = 1
 valign = 1
+
+[node name="Mockup" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 

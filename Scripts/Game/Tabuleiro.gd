@@ -46,12 +46,13 @@ func _popCCard2(card):
 	print(cartaDestaque.nomeCarta)
 	
 func showTips():
-	var tipPrefab = preload("res://Prefabs/Tip.tscn")
+	var tipPrefab = preload("res://Prefabs/TipButton.tscn")
 	var size = cartaDestaque.dicas.size()
 	#data = get_node("/root/MainScene/").roomData
 	for i in range(size):
 		var tip = tipPrefab.instance()
 		get_node("/root/MainScene/Background/HintsPanel/GridContainer").add_child(tip)
-		tip.text = str(i+1)
+		tip.get_child(0).text = str(i+1)
+		tip.tipNumber = str(i+1)
 		tip.disabled = true
 	get_node("/root/MainScene/").verifyWhoPlays()
