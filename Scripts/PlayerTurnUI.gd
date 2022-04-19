@@ -16,7 +16,7 @@ func _ready() -> void:
 	container = get_node("/root/MainScene/Background/HintsPanel/GridContainer")
 	tipText = get_node("/root/MainScene/Background/TipText")
 	answerTextBox = get_node("/root/MainScene/Background/AnswerPanel")
-	timerRadial = get_node("/root/MainScene/Background/TextureProgress")
+	timerRadial = get_node("/root/MainScene/Background/ClockShadow/TextureProgress")
 	sendButton= get_node("/root/MainScene/Background/Button")
 	answerBox = get_node("/root/MainScene/Background/AnswerPanel/Answer")
 	
