@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/RESPOSTA.png" type="Texture" id=3]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Botao_Dica1.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Game/Turnos.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Game/Tabuleiro.gd" type="Script" id=5]
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=6]
@@ -16,6 +16,34 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_sombra.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/LINHA VITORIA.png" type="Texture" id=15]
 [ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=16]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box pontuacao.png" type="Texture" id=17]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box nome.png" type="Texture" id=18]
+[ext_resource path="res://interface/rooms/Ze_button.png" type="Texture" id=19]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha1.png" type="Texture" id=20]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box.png" type="Texture" id=21]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Dificuldade.png" type="Texture" id=22]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box_Dificuldades.png" type="Texture" id=23]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box_dicas.png" type="Texture" id=24]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/dificuldade_icone1.png" type="Texture" id=25]
+[ext_resource path="res://interface/rooms/Menu copiar 3.png" type="Texture" id=26]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/botaoEnviar_press.png" type="Texture" id=27]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/Agrupar 3.png" type="Texture" id=28]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/DICA_TEXTO.png" type="Texture" id=29]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/botaoEnviar.png" type="Texture" id=30]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/Camada 1791.png" type="Texture" id=31]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/RESPOSTA.png" type="Texture" id=32]
+
+[sub_resource type="DynamicFont" id=5]
+size = 70
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 48
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 90
+font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonts/OpenSans-Regular_0.ttf"
@@ -64,6 +92,294 @@ stretch_mode = 1
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
+}
+
+[node name="PlayerProfile" type="TextureRect" parent="Background"]
+margin_left = 13.0
+margin_top = 27.0
+margin_right = 481.0
+margin_bottom = 469.0
+texture = ExtResource( 19 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameBox" type="TextureRect" parent="Background/PlayerProfile"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -135.5
+margin_top = -87.0
+margin_right = 135.5
+texture = ExtResource( 18 )
+
+[node name="Label" type="Label" parent="Background/PlayerProfile/NameBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+text = "Maria"
+align = 1
+valign = 1
+
+[node name="ScoreBox" type="TextureRect" parent="Background/PlayerProfile"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -103.0
+margin_top = 21.0
+margin_right = 103.0
+margin_bottom = 102.0
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Background/PlayerProfile/ScoreBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "0000"
+align = 1
+valign = 1
+
+[node name="MedalImage" type="TextureRect" parent="Background/PlayerProfile/ScoreBox"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -32.0
+margin_top = -27.0
+margin_right = 25.0
+margin_bottom = 50.0
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardTypeBox" type="TextureRect" parent="Background"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -547.0
+margin_top = 155.0
+margin_right = -39.0
+margin_bottom = 303.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Background/CardTypeBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.513726, 0.603922, 0.643137, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "Conceito ou Cargo"
+align = 1
+valign = 1
+
+[node name="DificultyBox" type="TextureRect" parent="Background"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -552.0
+margin_top = 343.0
+margin_right = -74.0
+margin_bottom = 438.0
+texture = ExtResource( 22 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DificultyBox2" type="TextureRect" parent="Background/DificultyBox"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -190.0
+margin_top = -74.0
+margin_right = 26.0
+margin_bottom = 74.0
+texture = ExtResource( 23 )
+
+[node name="TextureRect" type="TextureRect" parent="Background/DificultyBox/DificultyBox2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -71.0
+margin_top = -49.0
+margin_right = 71.0
+margin_bottom = 49.0
+texture = ExtResource( 25 )
+stretch_mode = 6
+
+[node name="UsedTipsBox" type="TextureRect" parent="Background"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -315.0
+margin_top = 476.0
+margin_right = -53.0
+margin_bottom = 573.0
+texture = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Background/UsedTipsBox"]
+anchor_left = 0.263
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.0939941
+custom_fonts/font = ExtResource( 6 )
+text = "6/15"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HintsPanel" type="TextureRect" parent="Background"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -225.0
+margin_right = -30.0
+margin_bottom = 392.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Background/HintsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnswerTipPanel" type="TextureRect" parent="Background"]
+visible = false
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 68.0
+margin_top = -356.0
+margin_right = -68.0
+margin_bottom = 476.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TipTextBox" type="TextureRect" parent="Background/AnswerTipPanel"]
+anchor_right = 1.0
+margin_left = -8.0
+margin_top = 133.0
+margin_right = 5.0
+margin_bottom = 564.0
+texture = ExtResource( 29 )
+
+[node name="Label" type="Label" parent="Background/AnswerTipPanel/TipTextBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_right = -20.0
+custom_colors/font_color = Color( 0.321569, 0.321569, 0.321569, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Fui nomeado diretor da Escola Nacional de Belas Artes e lá, minhas ideias de experimentações artísticas entre alunos e professores geraram uma greve de 6 meses de acadêmicos e mestres.
+Acabei me afastando da Escola."
+valign = 1
+autowrap = true
+
+[node name="CurrentTipNumber" type="TextureRect" parent="Background/AnswerTipPanel"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+
+[node name="CurrentTipNumberText" type="Label" parent="Background/AnswerTipPanel/CurrentTipNumber"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 26.0
+margin_top = 26.0
+margin_right = -41.0
+margin_bottom = -42.0
+custom_fonts/font = SubResource( 7 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnswerPanel" type="TextureRect" parent="Background/AnswerTipPanel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -226.0
+margin_right = 731.0
+margin_bottom = 25.0
+texture = ExtResource( 32 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer" type="LineEdit" parent="Background/AnswerTipPanel/AnswerPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 28.0
+margin_right = -19.0
+margin_bottom = -40.0
+custom_fonts/font = ExtResource( 6 )
+placeholder_text = "Digite a resposta aqui"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Background/AnswerTipPanel/AnswerPanel"]
+anchor_right = 1.0
+margin_left = 27.0
+margin_top = -58.0
+margin_right = 27.0
+margin_bottom = 84.0
+texture = ExtResource( 28 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Background/AnswerTipPanel/AnswerPanel/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 144.0
+margin_top = 28.0
+margin_right = -207.0
+margin_bottom = -20.0
+custom_fonts/font = ExtResource( 6 )
+text = "RESPOSTA"
+align = 1
+valign = 1
+
+[node name="SendButton" type="TextureButton" parent="Background/AnswerTipPanel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -219.0
+margin_top = -212.0
+margin_right = 9.0
+margin_bottom = 16.0
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 27 )
+texture_focused = ExtResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="PlayerContainer" type="VBoxContainer" parent="Background"]
@@ -115,38 +431,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnswerPanel" type="TextureRect" parent="Background"]
-visible = false
-anchor_left = 0.119
-anchor_top = 0.07
-anchor_right = 0.454
-anchor_bottom = 0.69
-margin_left = -0.480011
-margin_top = 0.400002
-margin_right = -0.680054
-margin_bottom = -0.200073
-texture = ExtResource( 3 )
-expand = true
-stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Answer" type="LineEdit" parent="Background/AnswerPanel"]
-anchor_left = 0.059
-anchor_top = 0.338
-anchor_right = 0.967
-anchor_bottom = 0.831
-margin_left = 0.0629959
-margin_top = -0.122025
-margin_right = 0.218933
-margin_bottom = 0.0609741
-custom_fonts/font = ExtResource( 6 )
-placeholder_text = "Digite a resposta aqui"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="TipText" type="Label" parent="Background"]
 anchor_left = 0.114
 anchor_top = 0.607
@@ -160,39 +444,6 @@ custom_colors/font_color = Color( 0.32549, 0.32549, 0.32549, 1 )
 custom_fonts/font = SubResource( 2 )
 autowrap = true
 clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="Background"]
-visible = false
-margin_left = 467.0
-margin_top = 831.0
-margin_right = 614.0
-margin_bottom = 888.0
-rect_scale = Vector2( 2, 2 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-text = "Enviar Resposta"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HintsPanel" type="TextureRect" parent="Background"]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -225.0
-margin_bottom = 392.0
-expand = true
-stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GridContainer" type="GridContainer" parent="Background/HintsPanel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-columns = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -292,11 +543,23 @@ text = "Cabo"
 align = 1
 valign = 1
 
-[node name="Mockup" type="TextureRect" parent="."]
+[node name="MenuButton" type="TextureButton" parent="Background"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -119.0
+margin_top = 31.0
+margin_right = -18.0
+margin_bottom = 131.0
+texture_normal = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mockup2" type="TextureRect" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 9 )
+texture = ExtResource( 31 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -322,7 +585,17 @@ wait_time = 3.0
 
 [node name="HTTPRequest6" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="Background/Button" to="Background" method="_on_Button_Send_pressed"]
+[node name="Mockup" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Background/AnswerTipPanel/SendButton" to="Background" method="_on_SendButton_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="request_completed" from="HTTPRequest2" to="Tabuleiro" method="_on_HTTPRequest2_request_completed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -146,6 +146,7 @@ func revealTip(number):
 	print($Tabuleiro.cartaDestaque.nomeCarta)
 	roomData.usedTips.arrayValue.values.append({"integerValue": number})
 	#Revela UI do jogador da vez
+	#REVELAR PAINEL DE RESPOSTA
 	playerTurnUI.revealTip(tipText)
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(true)

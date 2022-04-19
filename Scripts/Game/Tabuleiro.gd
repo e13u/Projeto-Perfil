@@ -53,6 +53,6 @@ func showTips():
 		var tip = tipPrefab.instance()
 		get_node("/root/MainScene/Background/HintsPanel/GridContainer").add_child(tip)
 		tip.get_child(0).text = str(i+1)
-		tip.tipNumber = str(i+1)
+		#tip.tipNumber = str(i+1)
 		tip.disabled = true
 	get_node("/root/MainScene/").verifyWhoPlays()

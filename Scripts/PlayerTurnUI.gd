@@ -7,6 +7,7 @@ var sendButton
 var timer = 0
 var totalTimer = 60
 var answerBox
+var answerPanel
 var timerOn
 var usedTips3: PoolIntArray
 var usedTipsNumber = 0
@@ -14,15 +15,18 @@ var usedTipsNumber = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	container = get_node("/root/MainScene/Background/HintsPanel/GridContainer")
-	tipText = get_node("/root/MainScene/Background/TipText")
-	answerTextBox = get_node("/root/MainScene/Background/AnswerPanel")
+	tipText = get_node("/root/MainScene/Background/AnswerTipPanel/TipTextBox/Label")
+	answerTextBox = get_node("/root/MainScene/Background/AnswerTipPanel/AnswerPanel/Answer")
 	timerRadial = get_node("/root/MainScene/Background/ClockShadow/TextureProgress")
-	sendButton= get_node("/root/MainScene/Background/Button")
-	answerBox = get_node("/root/MainScene/Background/AnswerPanel/Answer")
-	
+	sendButton= get_node("/root/MainScene/Background/AnswerTipPanel/SendButton")
+	answerBox = get_node("/root/MainScene/Background/AnswerTipPanel/AnswerPanel/Answer")
+	answerPanel = get_node("/root/MainScene/Background/AnswerTipPanel")
+
 func revealTextBoxAnswer(on):
-	answerTextBox.visible = on
-	sendButton.visible = on
+	answerPanel.visible = on
+	container.visible = !on
+	#answerTextBox.visible = on
+	#sendButton.visible = on
 
 func revealTimer(on):
 	timerRadial.visible = on
@@ -42,7 +46,7 @@ func blockTipsUsed():
 			usedTips3.append(usedTips2[i].integerValue)
 	
 	for c in container.get_children():
-		var number = int(c.text)
+		var number = int(c.get_child(0).text)
 		if number in usedTips3:
 			c.disabled = true
 			usedTipsNumber +=1
@@ -77,8 +81,8 @@ func timeOver():
 	answerBox.text = ""
 	print("ACABOU O TEMPO")
 	get_node("/root/MainScene/").wrongAnswer()
-	
-func _on_Button_Send_pressed() -> void:
+
+func _on_SendButton_pressed() -> void:
 	revealTextBoxAnswer(false)
 	revealTimer(false)
 	turnTipsButtons(false)
