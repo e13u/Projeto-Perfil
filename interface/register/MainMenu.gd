@@ -15,7 +15,6 @@ func _on_RegisterButton_pressed() -> void:
 	Firebase.register(username.text, standardPassword, http)
 	#Firebase.register(username.text, password.text, http)
 
-
 func _on_HTTPRequest_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var response_body := JSON.parse(body.get_string_from_ascii())
 	#SE EXISTIR USUÁRIO APENAS LOGAR

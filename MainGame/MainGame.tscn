@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -18,7 +18,7 @@
 [ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=16]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box pontuacao.png" type="Texture" id=17]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box nome.png" type="Texture" id=18]
-[ext_resource path="res://interface/rooms/Ze_button.png" type="Texture" id=19]
+[ext_resource path="res://interface/rooms/Edu_button.png" type="Texture" id=19]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha1.png" type="Texture" id=20]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box.png" type="Texture" id=21]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Dificuldade.png" type="Texture" id=22]
@@ -30,8 +30,16 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/Agrupar 3.png" type="Texture" id=28]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/DICA_TEXTO.png" type="Texture" id=29]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/botaoEnviar.png" type="Texture" id=30]
-[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/Camada 1791.png" type="Texture" id=31]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/Camada 1578.png" type="Texture" id=31]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/RESPOSTA.png" type="Texture" id=32]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Agrupar 13 copiar.png" type="Texture" id=33]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela8/Camada 1595.png" type="Texture" id=34]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/X copiar 2.png" type="Texture" id=35]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Agrupar 15.png" type="Texture" id=36]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela8/Agrupar 16.png" type="Texture" id=37]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Tela7_Mockup.png" type="Texture" id=38]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/Camada 1482.png" type="Texture" id=39]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2.png" type="Texture" id=40]
 
 [sub_resource type="DynamicFont" id=5]
 size = 70
@@ -95,6 +103,7 @@ __meta__ = {
 }
 
 [node name="PlayerProfile" type="TextureRect" parent="Background"]
+visible = false
 margin_left = 13.0
 margin_top = 27.0
 margin_right = 481.0
@@ -175,9 +184,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_colors/font_color = Color( 0.513726, 0.603922, 0.643137, 1 )
 custom_fonts/font = ExtResource( 6 )
-text = "Conceito ou Cargo"
+text = "?"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="DificultyBox" type="TextureRect" parent="Background"]
 anchor_left = 1.0
@@ -555,6 +567,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="RevealedTipsPanel" type="TextureRect" parent="Background"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -498.0
+margin_top = -812.0
+margin_right = 516.0
+margin_bottom = 518.0
+texture = ExtResource( 39 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Background/RevealedTipsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 19.0
+margin_top = 21.0
+margin_right = -29.0
+margin_bottom = -45.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/RevealedTipsPanel/ScrollContainer"]
+margin_right = 966.0
+margin_bottom = 1264.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CloseButton" type="TextureButton" parent="Background/RevealedTipsPanel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -96.0
+margin_top = -116.0
+margin_right = 5.0
+margin_bottom = -16.0
+texture_normal = ExtResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Mockup2" type="TextureRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -564,6 +621,113 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="WrongAnswerPanel" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box" type="TextureRect" parent="WrongAnswerPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -452.0
+margin_right = 494.0
+margin_bottom = 646.0
+texture = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chars" type="TextureRect" parent="WrongAnswerPanel/Box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -369.0
+margin_top = -268.5
+margin_right = 317.0
+margin_bottom = 268.5
+texture = ExtResource( 37 )
+
+[node name="TextureRect" type="TextureRect" parent="WrongAnswerPanel/Box"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -294.5
+margin_top = 70.0
+margin_right = 294.5
+margin_bottom = 175.0
+texture = ExtResource( 34 )
+
+[node name="Label" type="Label" parent="WrongAnswerPanel/Box/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "Resposta Errada!"
+align = 1
+valign = 1
+
+[node name="CloseWindow" type="TextureRect" parent="WrongAnswerPanel/Box"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_top = 20.0
+margin_bottom = 100.0
+texture = ExtResource( 35 )
+
+[node name="RightAnswerPanel" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box" type="TextureRect" parent="RightAnswerPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -452.0
+margin_right = 494.0
+margin_bottom = 646.0
+texture = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="RightAnswerPanel/Box"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -328.5
+margin_top = 50.0
+margin_right = 328.5
+margin_bottom = 197.0
+texture = ExtResource( 36 )
+
+[node name="Label" type="Label" parent="RightAnswerPanel/Box/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "Resposta Correta!"
+align = 1
+valign = 1
+
+[node name="CloseWindow" type="TextureRect" parent="RightAnswerPanel/Box"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_top = 40.0
+margin_bottom = 140.0
+texture = ExtResource( 35 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
@@ -585,6 +749,16 @@ wait_time = 3.0
 
 [node name="HTTPRequest6" type="HTTPRequest" parent="."]
 
+[node name="Mockup3" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 38 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Mockup" type="TextureRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -596,6 +770,8 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="Background/AnswerTipPanel/SendButton" to="Background" method="_on_SendButton_pressed"]
+[connection signal="pressed" from="Background/RevealedTipsButton" to="Background" method="_on_RevealedTipsButton_pressed"]
+[connection signal="pressed" from="Background/RevealedTipsPanel/CloseButton" to="Background" method="_on_CloseButton_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="request_completed" from="HTTPRequest2" to="Tabuleiro" method="_on_HTTPRequest2_request_completed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

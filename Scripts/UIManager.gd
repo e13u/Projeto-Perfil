@@ -16,3 +16,25 @@ func imageIconAvatar(avatar):
 		"Ze Plenarinho": 
 			tex= load("res://interface/rooms/Ze_button.png")
 	return tex
+	
+func dificultyImage(dif):
+	var difi
+	var tex
+	print('dif: ',dif)
+
+	if dif == 1:
+		difi = 'easy'
+	elif dif == 1.5:
+		difi = 'medium'
+	elif dif == 1.8:
+		difi = 'hard'
+		
+	print('difi: ',difi)
+	match difi:
+		'easy':
+			tex = load("res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/dificuldade_icone1.png")
+		'medium':
+			tex = load("res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/dificuldade_icone2.png")
+		'hard':
+			tex = load("res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/dificuldade_icone3.png")
+	return tex

@@ -1,5 +1,7 @@
 extends Node
 
+var cardTypeBox
+var cardDificultyImage 
 var casasTotais = 100
 var baralho = null
 var cartaDestaque = null
@@ -9,6 +11,8 @@ var data
 
 func inicializarBaralho():
 	baralho = load("res://Prefabs/Baralho.tres")
+	cardTypeBox = get_node("/root/MainScene/Background/CardTypeBox/Label")
+	cardDificultyImage = get_node("/root/MainScene/Background/DificultyBox/DificultyBox2/TextureRect")
 	baralho.criarBaralho()
 	print(baralho.qtCartasTotais)
 	baralho._embaralhar()
@@ -49,6 +53,7 @@ func showTips():
 	var tipPrefab = preload("res://Prefabs/TipButton.tscn")
 	var size = cartaDestaque.dicas.size()
 	#data = get_node("/root/MainScene/").roomData
+	_cardData()
 	for i in range(size):
 		var tip = tipPrefab.instance()
 		get_node("/root/MainScene/Background/HintsPanel/GridContainer").add_child(tip)
@@ -56,3 +61,10 @@ func showTips():
 		#tip.tipNumber = str(i+1)
 		tip.disabled = true
 	get_node("/root/MainScene/").verifyWhoPlays()
+	
+func _cardData():
+	var allTheEnumKeys = Categoria.Categori.keys()
+	var key_value = allTheEnumKeys[cartaDestaque.categoriaCarta]
+	#print("CAT: ", key_value )
+	cardTypeBox.text = key_value
+	cardDificultyImage.texture = UiManager.dificultyImage(cartaDestaque.pontosDica)

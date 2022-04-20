@@ -7,6 +7,9 @@ onready var http4 :HTTPRequest = $HTTPRequest4
 onready var http5 :HTTPRequest = $HTTPRequest5
 onready var http6 :HTTPRequest = $HTTPRequest6
 onready var turnTimer: Timer = $TimerTurn
+onready var playerProfileImage = $Background/PlayerProfile
+onready var scoreText= $Background/PlayerProfile/ScoreBox/Label
+
 var tabuleiro
 var playersNames =[]
 var avatarsNames =[]
@@ -28,6 +31,7 @@ func _initGame() -> void:
 	http5 = get_node("HTTPRequest5")
 	http6 = get_node("HTTPRequest6")
 	playerTurnUI = get_node("/root/MainScene/Background/")
+	playerProfileImage.visible = false
 	if http == null:
 		print("DEU RUIM")
 	Firebase.get_document("partidas/%s" % Firebase.hostName, http)
@@ -62,12 +66,16 @@ func _on_Timer_timeout() -> void:
 	_initGame()
 
 func playersIcon():
-	var iconPrefab = preload("res://Prefabs/iconPlayer.tscn")
-	for i in avatarsNames.size():
-		var icon = iconPrefab.instance()
-		#get_node("Background/PlayerContainer/player_image_"+str(i)).texture = UiManager.imageIconAvatar(avatarsNames[i])
-		get_node("/root/MainScene/Background/PlayerContainer/").add_child(icon)
-		icon.texture = UiManager.imageIconAvatar(avatarsNames[i])
+	var index = _getPlayerIndex(Firebase.user_email)
+	playerProfileImage.texture = UiManager.imageIconAvatar(avatarsNames[index])
+	playerProfileImage.visible = true
+	scoreText.text = '0'
+#	var iconPrefab = preload("res://Prefabs/iconPlayer.tscn")
+#	for i in avatarsNames.size():
+#		var icon = iconPrefab.instance()
+#		#get_node("Background/PlayerContainer/player_image_"+str(i)).texture = UiManager.imageIconAvatar(avatarsNames[i])
+#		get_node("/root/MainScene/Background/PlayerContainer/").add_child(icon)
+#		icon.texture = UiManager.imageIconAvatar(avatarsNames[i])
 	playersPins()	
 		
 func playersPins():	
@@ -201,6 +209,7 @@ func updateScore():
 	roomData.cards.arrayValue.values.remove(0)
 	roomData.usedTips.arrayValue.values = [{"integerValue":0}]
 	print(roomData.cards.arrayValue.values[0])
+	scoreText.text = str(scoreInt)
 	if scoreInt >= pointsForWinning:
 		endGame()
 	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http6)
@@ -211,6 +220,7 @@ func _on_HTTPRequest6_request_completed(result: int, response_code: int, headers
 	
 func rightAnswer():
 	print("ACERTOU")
+	playerTurnUI.rightAnswerPanel()
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(false)
 	playerTurnUI.revealTimer(false)
@@ -218,6 +228,7 @@ func rightAnswer():
 	
 func wrongAnswer():
 	print("ERROU")
+	playerTurnUI.wrongAnswerPanel()
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(false)
 	playerTurnUI.revealTimer(false)
@@ -227,6 +238,9 @@ func endGame():
 	gameEnded = true
 	roomData.state = { "stringValue": "ended" }
 	$Background/ResultsScreen.visible = true
+
+func _getPlayerIndex(name):
+	return playersNames.find(name)
 	
 func stringProcessing(text):
 	var t_final = text.to_upper()
