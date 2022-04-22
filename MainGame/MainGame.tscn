@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Scripts/Game/Tabuleiro.gd" type="Script" id=5]
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Sprites/BOLO DE CARTAS.png" type="Texture" id=7]
-[ext_resource path="res://Fonts/OpenSans-Regular_0.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/papel picado.png" type="Texture" id=8]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/mockup_tela5.png" type="Texture" id=9]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/DICAS REVELADAS.png" type="Texture" id=10]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_green.png" type="Texture" id=11]
@@ -30,7 +30,7 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/Agrupar 3.png" type="Texture" id=28]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/DICA_TEXTO.png" type="Texture" id=29]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/botaoEnviar.png" type="Texture" id=30]
-[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/Camada 1578.png" type="Texture" id=31]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 904 copiar.png" type="Texture" id=31]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/RESPOSTA.png" type="Texture" id=32]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Agrupar 13 copiar.png" type="Texture" id=33]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela8/Camada 1595.png" type="Texture" id=34]
@@ -40,10 +40,15 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Tela7_Mockup.png" type="Texture" id=38]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/Camada 1482.png" type="Texture" id=39]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2.png" type="Texture" id=40]
-
-[sub_resource type="DynamicFont" id=5]
-size = 70
-font_data = ExtResource( 16 )
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1587.png" type="Texture" id=41]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1596.png" type="Texture" id=42]
+[ext_resource path="res://Prefabs/PlayerProfile.tscn" type="PackedScene" id=43]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 751.png" type="Texture" id=44]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Retângulo 2087.png" type="Texture" id=45]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1932 copiar.png" type="Texture" id=46]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 525 copiar 16.png" type="Texture" id=47]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1109 copiar 8.png" type="Texture" id=48]
+[ext_resource path="res://Prefabs/SliderBackg.tscn" type="PackedScene" id=49]
 
 [sub_resource type="DynamicFont" id=6]
 size = 48
@@ -64,9 +69,9 @@ font_data = SubResource( 1 )
 size = 100
 font_data = ExtResource( 16 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 38
-font_data = ExtResource( 8 )
+[sub_resource type="DynamicFont" id=5]
+size = 70
+font_data = ExtResource( 16 )
 
 [node name="MainScene" type="Control"]
 anchor_right = 1.0
@@ -102,70 +107,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="PlayerProfile" type="TextureRect" parent="Background"]
-visible = false
-margin_left = 13.0
-margin_top = 27.0
-margin_right = 481.0
-margin_bottom = 469.0
-texture = ExtResource( 19 )
-expand = true
-stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NameBox" type="TextureRect" parent="Background/PlayerProfile"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -135.5
-margin_top = -87.0
-margin_right = 135.5
-texture = ExtResource( 18 )
-
-[node name="Label" type="Label" parent="Background/PlayerProfile/NameBox"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
-text = "Maria"
-align = 1
-valign = 1
-
-[node name="ScoreBox" type="TextureRect" parent="Background/PlayerProfile"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -103.0
-margin_top = 21.0
-margin_right = 103.0
-margin_bottom = 102.0
-texture = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Background/PlayerProfile/ScoreBox"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 6 )
-text = "0000"
-align = 1
-valign = 1
-
-[node name="MedalImage" type="TextureRect" parent="Background/PlayerProfile/ScoreBox"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -32.0
-margin_top = -27.0
-margin_right = 25.0
-margin_bottom = 50.0
-texture = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="PlayerProfile" parent="Background" instance=ExtResource( 43 )]
 
 [node name="CardTypeBox" type="TextureRect" parent="Background"]
 anchor_left = 1.0
@@ -526,35 +468,6 @@ Reveladas"
 align = 1
 valign = 1
 
-[node name="ResultsScreen" type="Panel" parent="Background"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -318.5
-margin_top = -484.0
-margin_right = 318.5
-margin_bottom = 484.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Background/ResultsScreen"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -139.0
-margin_top = -36.5
-margin_right = 139.0
-margin_bottom = 36.5
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "Cabo"
-align = 1
-valign = 1
-
 [node name="MenuButton" type="TextureButton" parent="Background"]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -613,10 +526,9 @@ __meta__ = {
 }
 
 [node name="Mockup2" type="TextureRect" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 31 )
+texture = ExtResource( 42 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -728,6 +640,291 @@ margin_left = -150.0
 margin_top = 40.0
 margin_bottom = 140.0
 texture = ExtResource( 35 )
+
+[node name="ResultsScreen" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Backg2" type="TextureRect" parent="ResultsScreen"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1920.0
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SecondPlaceSlot" type="TextureRect" parent="ResultsScreen/Backg2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -386.5
+margin_top = -74.0
+margin_right = 386.5
+margin_bottom = 74.0
+texture = ExtResource( 47 )
+
+[node name="PlayerIcon" type="TextureRect" parent="ResultsScreen/Backg2/SecondPlaceSlot"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -108.0
+margin_right = 216.0
+margin_bottom = 108.0
+texture = ExtResource( 19 )
+expand = true
+
+[node name="NameSlot" type="TextureRect" parent="ResultsScreen/Backg2/SecondPlaceSlot"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -163.5
+margin_top = -50.0
+margin_right = 163.5
+margin_bottom = 50.0
+texture = ExtResource( 48 )
+
+[node name="Name" type="Label" parent="ResultsScreen/Backg2/SecondPlaceSlot/NameSlot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "Nome"
+align = 1
+valign = 1
+
+[node name="ScoreBox" type="TextureRect" parent="ResultsScreen/Backg2/SecondPlaceSlot"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -206.0
+margin_top = -40.5
+margin_bottom = 40.5
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ResultsScreen/Backg2/SecondPlaceSlot/ScoreBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "0000"
+align = 1
+valign = 1
+
+[node name="MedalImage" type="TextureRect" parent="ResultsScreen/Backg2/SecondPlaceSlot/ScoreBox"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -32.0
+margin_top = -27.0
+margin_right = 25.0
+margin_bottom = 50.0
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThirddPlaceSlot" type="TextureRect" parent="ResultsScreen/Backg2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -386.5
+margin_top = 139.0
+margin_right = 386.5
+margin_bottom = 287.0
+texture = ExtResource( 47 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerIcon" type="TextureRect" parent="ResultsScreen/Backg2/ThirddPlaceSlot"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -108.0
+margin_right = 216.0
+margin_bottom = 108.0
+texture = ExtResource( 19 )
+expand = true
+
+[node name="NameSlot" type="TextureRect" parent="ResultsScreen/Backg2/ThirddPlaceSlot"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -163.5
+margin_top = -50.0
+margin_right = 163.5
+margin_bottom = 50.0
+texture = ExtResource( 48 )
+
+[node name="Name" type="Label" parent="ResultsScreen/Backg2/ThirddPlaceSlot/NameSlot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "Nome"
+align = 1
+valign = 1
+
+[node name="ScoreBox" type="TextureRect" parent="ResultsScreen/Backg2/ThirddPlaceSlot"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -206.0
+margin_top = -40.5
+margin_bottom = 40.5
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ResultsScreen/Backg2/ThirddPlaceSlot/ScoreBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "0000"
+align = 1
+valign = 1
+
+[node name="MedalImage" type="TextureRect" parent="ResultsScreen/Backg2/ThirddPlaceSlot/ScoreBox"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -32.0
+margin_top = -27.0
+margin_right = 25.0
+margin_bottom = 50.0
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SliderBackg" parent="ResultsScreen/Backg2" instance=ExtResource( 49 )]
+
+[node name="Backg1" type="TextureRect" parent="ResultsScreen"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 41 )
+
+[node name="TextureRect2" type="TextureRect" parent="ResultsScreen/Backg1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ResultsScreen/Backg1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -540.0
+margin_top = -489.0
+margin_right = 540.0
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="ResultsScreen/Backg1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -262.951
+margin_top = -194.602
+margin_right = 251.049
+margin_bottom = 319.398
+texture = ExtResource( 44 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerProfile" type="TextureRect" parent="ResultsScreen/Backg1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -234.0
+margin_top = -505.0
+margin_right = 234.0
+margin_bottom = -63.0
+texture = ExtResource( 19 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ResultsScreen/Backg1/PlayerProfile"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -168.5
+margin_top = 98.0
+margin_right = 168.5
+margin_bottom = 257.0
+texture = ExtResource( 46 )
+
+[node name="NameBox" type="TextureRect" parent="ResultsScreen/Backg1/PlayerProfile"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -135.5
+margin_top = -87.0
+margin_right = 135.5
+texture = ExtResource( 18 )
+
+[node name="Label" type="Label" parent="ResultsScreen/Backg1/PlayerProfile/NameBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+text = "Maria"
+align = 1
+valign = 1
+
+[node name="ScoreBox" type="TextureRect" parent="ResultsScreen/Backg1/PlayerProfile"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -103.0
+margin_top = 21.0
+margin_right = 103.0
+margin_bottom = 102.0
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ResultsScreen/Backg1/PlayerProfile/ScoreBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "0000"
+align = 1
+valign = 1
+
+[node name="MedalImage" type="TextureRect" parent="ResultsScreen/Backg1/PlayerProfile/ScoreBox"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -32.0
+margin_top = -27.0
+margin_right = 25.0
+margin_bottom = 50.0
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
