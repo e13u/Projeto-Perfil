@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Sprites/BOLO DE CARTAS.png" type="Texture" id=7]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/papel picado.png" type="Texture" id=8]
-[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/mockup_tela5.png" type="Texture" id=9]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/DICAS REVELADAS.png" type="Texture" id=10]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_green.png" type="Texture" id=11]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_fundo.png" type="Texture" id=12]
@@ -41,7 +40,6 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/Camada 1482.png" type="Texture" id=39]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2.png" type="Texture" id=40]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1587.png" type="Texture" id=41]
-[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1596.png" type="Texture" id=42]
 [ext_resource path="res://Prefabs/PlayerProfile.tscn" type="PackedScene" id=43]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 751.png" type="Texture" id=44]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Retângulo 2087.png" type="Texture" id=45]
@@ -49,6 +47,9 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 525 copiar 16.png" type="Texture" id=47]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1109 copiar 8.png" type="Texture" id=48]
 [ext_resource path="res://Prefabs/SliderBackg.tscn" type="PackedScene" id=49]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1590.png" type="Texture" id=50]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha2.png" type="Texture" id=51]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha3.png" type="Texture" id=52]
 
 [sub_resource type="DynamicFont" id=6]
 size = 48
@@ -526,9 +527,10 @@ __meta__ = {
 }
 
 [node name="Mockup2" type="TextureRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 42 )
+texture = ExtResource( 38 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -641,7 +643,16 @@ margin_top = 40.0
 margin_bottom = 140.0
 texture = ExtResource( 35 )
 
+[node name="SliderBackg" parent="RightAnswerPanel/Box" instance=ExtResource( 49 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -414.0
+margin_top = -143.0
+margin_right = 414.0
+margin_bottom = -113.0
+
 [node name="ResultsScreen" type="Panel" parent="."]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -726,7 +737,7 @@ margin_left = -32.0
 margin_top = -27.0
 margin_right = 25.0
 margin_bottom = 50.0
-texture = ExtResource( 20 )
+texture = ExtResource( 51 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -801,12 +812,34 @@ margin_left = -32.0
 margin_top = -27.0
 margin_right = 25.0
 margin_bottom = 50.0
-texture = ExtResource( 20 )
+texture = ExtResource( 52 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SliderBackg" parent="ResultsScreen/Backg2" instance=ExtResource( 49 )]
+
+[node name="FinishButton" type="TextureButton" parent="ResultsScreen/Backg2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -371.0
+margin_top = -215.0
+margin_right = 371.0
+margin_bottom = -76.0
+texture_normal = ExtResource( 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ResultsScreen/Backg2/FinishButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "Voltar para o Menu"
+align = 1
+valign = 1
 
 [node name="Backg1" type="TextureRect" parent="ResultsScreen"]
 margin_right = 40.0
@@ -945,26 +978,6 @@ wait_time = 3.0
 [node name="HTTPRequest5" type="HTTPRequest" parent="."]
 
 [node name="HTTPRequest6" type="HTTPRequest" parent="."]
-
-[node name="Mockup3" type="TextureRect" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 38 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Mockup" type="TextureRect" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 9 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="pressed" from="Background/AnswerTipPanel/SendButton" to="Background" method="_on_SendButton_pressed"]
 [connection signal="pressed" from="Background/RevealedTipsButton" to="Background" method="_on_RevealedTipsButton_pressed"]

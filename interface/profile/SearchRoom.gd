@@ -16,7 +16,7 @@ func _ready() -> void:
 func toggleConfirmButton(disabled, name):
 	iniciarBtn.disabled = disabled
 	hostName = name
-	_on_ConfirmButton_pressed()
+	#_on_ConfirmButton_pressed()
 	
 func _getActiveRooms():
 	print("Verificando Salas")

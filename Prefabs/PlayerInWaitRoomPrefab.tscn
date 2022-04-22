@@ -11,9 +11,9 @@ font_data = ExtResource( 1 )
 
 [node name="PlayerInWaitRoomPrefab" type="TextureRect"]
 margin_left = 146.0
-margin_top = 508.0
+margin_top = 409.0
 margin_right = 722.0
-margin_bottom = 656.0
+margin_bottom = 558.0
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

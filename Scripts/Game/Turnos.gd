@@ -79,11 +79,12 @@ func playersIcon():
 	playersPins()	
 		
 func playersPins():	
-	var pinPrefab = preload("res://Prefabs/player_pin_.tscn")
-	for i in avatarsNames.size(): 
-		var pin = pinPrefab.instance()
-		get_node("/root/MainScene/Background/PinsPanel").add_child(pin)
-		pin.texture = UiManager.imageIconAvatar(avatarsNames[i])
+#	var pinPrefab = preload("res://Prefabs/player_pin_.tscn")
+#	for i in avatarsNames.size(): 
+#		var pin = pinPrefab.instance()
+#		get_node("/root/MainScene/Background/PinsPanel").add_child(pin)
+#		pin.texture = UiManager.imageIconAvatar(avatarsNames[i])
+	updareScoreInSlider()
 	if Firebase.isHost:
 		defineRoles()
 	else:
@@ -141,7 +142,7 @@ func verifyWhoPlays():
 		playerTurnUI.revealTimer(true)
 		turnTimer.stop()
 		playerTurnUI.startClock()
-		
+		updareScoreInSlider()
 	else:
 		playerTurnUI.turnTipsButtons(false)
 		_popClientCard(2)
@@ -210,6 +211,7 @@ func updateScore():
 	roomData.usedTips.arrayValue.values = [{"integerValue":0}]
 	print(roomData.cards.arrayValue.values[0])
 	scoreText.text = str(scoreInt)
+	$RightAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[index],scoreInt)
 	if scoreInt >= pointsForWinning:
 		endGame()
 	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http6)
@@ -237,11 +239,15 @@ func wrongAnswer():
 func endGame():
 	gameEnded = true
 	roomData.state = { "stringValue": "ended" }
-	$Background/ResultsScreen.visible = true
+	$ResultsScreen.visible = true
 
 func _getPlayerIndex(name):
 	return playersNames.find(name)
-	
+
+func updareScoreInSlider():
+	for i in avatarsNames.size():
+			$RightAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[i],int(roomData.score.arrayValue.values[i].integerValue))
+			
 func stringProcessing(text):
 	var t_final = text.to_upper()
 	t_final = t_final.replace('Á',"A")
