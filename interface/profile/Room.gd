@@ -49,7 +49,7 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	print(response_code)
 	isUpdating = false
-	get_tree().change_scene("res://PrimeiraCena.tscn")
+	get_tree().change_scene("res://MainGame/MainMenu.tscn")
 
 
 func _on_HTTPRequest2_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
@@ -77,6 +77,12 @@ func _on_Timer2_timeout() -> void:
 
 
 func refreshPlayerList():
+	var roomState = roomData.state.stringValue
+	
+	if roomState == "canceled":
+		get_tree().change_scene("res://MainGame/MainMenu.tscn")
+		return
+		
 	#REMOVER NOMES ANTES DE ATUALIZAR
 	var slot = get_node("VBoxContainer")
 	for n in slot.get_children():
@@ -102,7 +108,7 @@ func refreshPlayerList():
 		iniciarBtn.disabled = false
 	else:
 		iniciarBtn.disabled = true
-	var roomState = roomData.state.stringValue
+
 	if !Firebase.isHost and roomState == "start" and !isUpdating:
 		_startGame()
 	

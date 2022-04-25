@@ -14,7 +14,6 @@ func inicializarBaralho():
 	cardTypeBox = get_node("/root/MainScene/Background/CardTypeBox/Label")
 	cardDificultyImage = get_node("/root/MainScene/Background/DificultyBox/DificultyBox2/TextureRect")
 	baralho.criarBaralho()
-	print(baralho.qtCartasTotais)
 	baralho._embaralhar()
 	if Firebase.isHost:
 		saveDeckInfo()
@@ -28,7 +27,7 @@ func saveDeckInfo():
 	Firebase.update_document("partidas/%s" % Firebase.hostName, data, http2)
 
 func _on_HTTPRequest2_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
-	print(response_code)
+	#print(response_code)
 	_popCard()
 	
 func _popCard():
@@ -47,7 +46,7 @@ func _popCCard(card):
 	
 func _popCCard2(card):	
 	cartaDestaque = card
-	print(cartaDestaque.nomeCarta)
+	#print(cartaDestaque.nomeCarta)
 	
 func showTips():
 	var tipPrefab = preload("res://Prefabs/TipButton.tscn")
@@ -65,6 +64,7 @@ func showTips():
 func _cardData():
 	var allTheEnumKeys = Categoria.Categori.keys()
 	var key_value = allTheEnumKeys[cartaDestaque.categoriaCarta]
-	#print("CAT: ", key_value )
+	print("CAT: ", key_value )
 	cardTypeBox.text = key_value
+	print("DIFI: ",cartaDestaque.pontosDica)
 	cardDificultyImage.texture = UiManager.dificultyImage(cartaDestaque.pontosDica)

@@ -144,10 +144,31 @@ func _on_CloseButton_pressed() -> void:
 	revealedTipsPanel.visible = false
 	
 func showResults(data):
-	$ResultsScreen.visible = true
-	#var bestPlayers = data.
-	var players = []
-	var avatars = []
-	var scores = []
-	for i in range(3):
-		data.score.arrayValue.values[0].integerValue
+	get_node("/root/MainScene/ResultsScreen").visible = true
+	var players =[]
+	var avatars =[]
+	var scores =[]
+	
+	for i in range(data.players.arrayValue.values.size()):
+		players.append(data.players.arrayValue.values[i].stringValue)
+		avatars.append(data.avatars.arrayValue.values[i].stringValue)
+		scores.append(data.score.arrayValue.values[i].integerValue)
+	
+	#NOMES
+	get_node("/root/MainScene/ResultsScreen/Backg1/PlayerProfile/NameBox/Label").text = players[0]
+	get_node("/root/MainScene/ResultsScreen/Backg2/SecondPlaceSlot/NameSlot/Name").text = players[1]
+
+	#IMAGENS DE AVATAR
+	get_node("/root/MainScene/ResultsScreen/Backg1/PlayerProfile").texture = UiManager.imageIconAvatar(avatars[0])
+	get_node("/root/MainScene/ResultsScreen/Backg2/SecondPlaceSlot/PlayerIcon").texture = UiManager.imageIconAvatar(avatars[1])
+
+	#SCORES
+	get_node("/root/MainScene/ResultsScreen/Backg1/PlayerProfile/ScoreBox/Label").text = str(scores[0])
+	get_node("/root/MainScene/ResultsScreen/Backg2/SecondPlaceSlot/ScoreBox/Label").text = str(scores[1])
+
+	if players.size() > 2:
+		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot/NameSlot/Name").text = players[2]
+		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot/NameSlot/Name").texture = UiManager.imageIconAvatar(avatars[2])
+		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot/ScoreBox/Label").text = str(scores[2])
+	else:
+		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot").visible = false

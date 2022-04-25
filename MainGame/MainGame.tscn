@@ -656,6 +656,7 @@ margin_right = 414.0
 margin_bottom = -113.0
 
 [node name="ResultsScreen" type="Panel" parent="."]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -985,6 +986,7 @@ wait_time = 3.0
 [connection signal="pressed" from="Background/AnswerTipPanel/SendButton" to="Background" method="_on_SendButton_pressed"]
 [connection signal="pressed" from="Background/RevealedTipsButton" to="Background" method="_on_RevealedTipsButton_pressed"]
 [connection signal="pressed" from="Background/RevealedTipsPanel/CloseButton" to="Background" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="ResultsScreen/Backg2/FinishButton" to="." method="_on_FinishButton_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="request_completed" from="HTTPRequest2" to="Tabuleiro" method="_on_HTTPRequest2_request_completed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

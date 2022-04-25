@@ -32,6 +32,9 @@ func getUsedAvatars():
 	blockAvatarOptions()
 	
 func blockAvatarOptions():
+	for btn in get_node("GridContainer").get_children():
+		btn.disabled = false
+	
 	if usedChars.has("Adao"):
 		AdaoBtn.disabled = true
 		AdaoBtn.modulate.a = 0.5

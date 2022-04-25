@@ -2,7 +2,7 @@
 
 [ext_resource path="res://interface/profile/Room.gd" type="Script" id=1]
 [ext_resource path="res://Mockups/5.jpeg" type="Texture" id=2]
-[ext_resource path="res://interface/fonts/montserrat_eb_64.tres" type="DynamicFont" id=3]
+[ext_resource path="res://interface/rooms/Menu copiar 3.png" type="Texture" id=3]
 [ext_resource path="res://interface/rooms/Camada 1109 copiar 10.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003.png" type="Texture" id=6]
@@ -148,15 +148,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CancelButton" type="Button" parent="."]
-visible = false
-margin_left = 271.0
-margin_top = 487.0
-margin_right = 809.0
-margin_bottom = 572.0
-size_flags_horizontal = 4
-custom_fonts/font = ExtResource( 3 )
-text = "Cancelar Busca"
+[node name="CancelButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_top = 30.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 

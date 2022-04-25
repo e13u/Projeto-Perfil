@@ -164,12 +164,16 @@ anchor_bottom = 1.0
 margin_left = -76.0
 margin_top = 27.0
 margin_right = 64.0
-margin_bottom = -10.0802
+margin_bottom = -32.0802
+size_flags_horizontal = 3
+size_flags_vertical = 6
 custom_fonts/font = ExtResource( 3 )
 text = "Confirmar
 "
 align = 1
 valign = 1
+autowrap = true
+clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

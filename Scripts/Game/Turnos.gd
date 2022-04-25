@@ -140,14 +140,16 @@ func verifyWhoPlays():
 	#print(roomData.activePlayer.stringValue)
 	if roomData.activePlayer.stringValue == Firebase.user_email:
 		print("MINHA VEZ")
-		#$Tabuleiro._popCard2()
+		_popClientCard(2)
 		playerTurnUI.turnTipsButtons(true)
 		playerTurnUI.revealTimer(true)
 		turnTimer.stop()
 		playerTurnUI.startClock()
+		get_node("Background/PlayerProfile/ActivePlayer").visible = true
 		updareScoreInSlider()
 	else:
 		playerTurnUI.turnTipsButtons(false)
+		get_node("Background/PlayerProfile/ActivePlayer").visible = false
 		_popClientCard(2)
 		turnTimer.start()
 	
@@ -278,3 +280,7 @@ func stringProcessing(text):
 	t_final = t_final.replace('Ç',"C")
 	
 	return t_final
+
+
+func _on_FinishButton_pressed() -> void:
+	get_tree().change_scene("res://MainGame/MainMenu.tscn")

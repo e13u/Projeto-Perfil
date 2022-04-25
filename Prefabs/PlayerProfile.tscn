@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box pontuacao.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha1.png" type="Texture" id=4]
 [ext_resource path="res://interface/rooms/Edu_button.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://interface/rooms/PlayerSelect1.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=5]
 size = 70
@@ -20,6 +21,17 @@ margin_bottom = 469.0
 texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActivePlayer" type="TextureRect" parent="."]
+visible = false
+margin_left = 22.0
+margin_top = 8.0
+margin_right = 451.0
+margin_bottom = 437.0
+texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -23,7 +23,7 @@ func _getActiveRooms():
 	Firebase.get_document("partidas", http)
 
 func _on_CancelButton_pressed() -> void:
-	get_tree().change_scene("res://interface/profile/Lobby.tscn")
+	get_tree().change_scene("res://MainGame/MainMenu.tscn")
 
 func _resetRooms():
 	for child in roomsContainer.get_children():
