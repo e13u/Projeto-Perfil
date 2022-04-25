@@ -9,6 +9,7 @@ onready var http6 :HTTPRequest = $HTTPRequest6
 onready var turnTimer: Timer = $TimerTurn
 onready var playerProfileImage = $Background/PlayerProfile
 onready var scoreText= $Background/PlayerProfile/ScoreBox/Label
+onready var playerNameText= $Background/PlayerProfile/NameBox/Label
 
 var tabuleiro
 var playersNames =[]
@@ -70,6 +71,7 @@ func playersIcon():
 	playerProfileImage.texture = UiManager.imageIconAvatar(avatarsNames[index])
 	playerProfileImage.visible = true
 	scoreText.text = '0'
+	playerNameText.text = Firebase.user_email
 #	var iconPrefab = preload("res://Prefabs/iconPlayer.tscn")
 #	for i in avatarsNames.size():
 #		var icon = iconPrefab.instance()
@@ -138,6 +140,7 @@ func verifyWhoPlays():
 	#print(roomData.activePlayer.stringValue)
 	if roomData.activePlayer.stringValue == Firebase.user_email:
 		print("MINHA VEZ")
+		#$Tabuleiro._popCard2()
 		playerTurnUI.turnTipsButtons(true)
 		playerTurnUI.revealTimer(true)
 		turnTimer.stop()
@@ -209,7 +212,7 @@ func updateScore():
 	roomData.score.arrayValue.values[index] = { "integerValue": scoreInt}
 	roomData.cards.arrayValue.values.remove(0)
 	roomData.usedTips.arrayValue.values = [{"integerValue":0}]
-	print(roomData.cards.arrayValue.values[0])
+	#print("CARTA ACERTADA: ",roomData.cards.arrayValue.values[0].nomeCarta)
 	scoreText.text = str(scoreInt)
 	$RightAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[index],scoreInt)
 	if scoreInt >= pointsForWinning:
@@ -239,7 +242,7 @@ func wrongAnswer():
 func endGame():
 	gameEnded = true
 	roomData.state = { "stringValue": "ended" }
-	$ResultsScreen.visible = true
+	playerTurnUI.showResults(roomData)
 
 func _getPlayerIndex(name):
 	return playersNames.find(name)

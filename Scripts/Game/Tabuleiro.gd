@@ -35,7 +35,7 @@ func _popCard():
 	cartaDestaque = baralho.pilhaCartas[0]	
 	showTips()
 	
-func _popCard2():
+func _popCard2 ():
 	data = get_node("/root/MainScene/").roomData
 	baralho.pilhaCartas.remove(0)
 	cartaDestaque = baralho.pilhaCartas[0]

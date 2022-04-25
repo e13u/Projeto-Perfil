@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://interface/profile/Room.gd" type="Script" id=1]
 [ext_resource path="res://Mockups/5.jpeg" type="Texture" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://interface/rooms/Play_disabled.png" type="Texture" id=11]
 [ext_resource path="res://interface/rooms/Camada 525 copiar 8.png" type="Texture" id=12]
 [ext_resource path="res://interface/rooms/Edu_button.png" type="Texture" id=13]
-[ext_resource path="res://Prefabs/PlayerInWaitRoomPrefab.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 73
@@ -148,18 +147,6 @@ custom_constants/separation = 100
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="PlayerInWaitRoomPrefab" parent="VBoxContainer" instance=ExtResource( 14 )]
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 968.0
-margin_bottom = 148.0
-
-[node name="PlayerInWaitRoomPrefab2" parent="VBoxContainer" instance=ExtResource( 14 )]
-margin_left = 0.0
-margin_top = 248.0
-margin_right = 968.0
-margin_bottom = 396.0
 
 [node name="CancelButton" type="Button" parent="."]
 visible = false

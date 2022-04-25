@@ -65,6 +65,7 @@ align = 1
 valign = 1
 
 [node name="MedalImage" type="TextureRect" parent="ScoreBox"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -32.0

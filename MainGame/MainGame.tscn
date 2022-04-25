@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -58,6 +58,8 @@ font_data = ExtResource( 16 )
 [sub_resource type="DynamicFont" id=7]
 size = 90
 font_data = ExtResource( 16 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonts/OpenSans-Regular_0.ttf"
@@ -293,8 +295,10 @@ margin_left = 16.0
 margin_top = 28.0
 margin_right = -19.0
 margin_bottom = -40.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
-placeholder_text = "Digite a resposta aqui"
+custom_styles/normal = SubResource( 8 )
+placeholder_text = " Digite a resposta aqui"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -652,7 +656,6 @@ margin_right = 414.0
 margin_bottom = -113.0
 
 [node name="ResultsScreen" type="Panel" parent="."]
-visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0

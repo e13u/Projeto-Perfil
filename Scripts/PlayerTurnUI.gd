@@ -99,7 +99,7 @@ func startClock():
 	if timerOn:
 		yield(get_tree().create_timer(1.0), "timeout")
 		timer = timer+1
-		print("TIMER: ",timer)
+		#print("TIMER: ",timer)
 		timerRadial.value = timer
 		if timer <= totalTimer:
 			startClock()
@@ -142,3 +142,12 @@ func _on_RevealedTipsButton_pressed() -> void:
 
 func _on_CloseButton_pressed() -> void:
 	revealedTipsPanel.visible = false
+	
+func showResults(data):
+	$ResultsScreen.visible = true
+	#var bestPlayers = data.
+	var players = []
+	var avatars = []
+	var scores = []
+	for i in range(3):
+		data.score.arrayValue.values[0].integerValue
