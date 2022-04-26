@@ -8,6 +8,8 @@ var cartaDestaque = null
 export(Array, Texture) var charactersAvatarImages
 var http2 : HTTPRequest
 var data
+var tipPrefab
+var hintsContainer
 
 func inicializarBaralho():
 	baralho = load("res://Prefabs/Baralho.tres")
@@ -38,6 +40,7 @@ func _popCard2 ():
 	data = get_node("/root/MainScene/").roomData
 	baralho.pilhaCartas.remove(0)
 	cartaDestaque = baralho.pilhaCartas[0]
+	showTipsLater()
 	
 func _popCCard(card):
 	cartaDestaque = card
@@ -46,25 +49,56 @@ func _popCCard(card):
 	
 func _popCCard2(card):	
 	cartaDestaque = card
-	#print(cartaDestaque.nomeCarta)
+	showTipsLater()
 	
 func showTips():
-	var tipPrefab = preload("res://Prefabs/TipButton.tscn")
+	tipPrefab = preload("res://Prefabs/TipButton.tscn")
 	var size = cartaDestaque.dicas.size()
 	#data = get_node("/root/MainScene/").roomData
+	hintsContainer = get_node("/root/MainScene/Background/HintsPanel/GridContainer")
 	_cardData()
 	for i in range(size):
 		var tip = tipPrefab.instance()
-		get_node("/root/MainScene/Background/HintsPanel/GridContainer").add_child(tip)
+		hintsContainer.add_child(tip)
 		tip.get_child(0).text = str(i+1)
 		#tip.tipNumber = str(i+1)
 		tip.disabled = true
 	get_node("/root/MainScene/").verifyWhoPlays()
+
+func showTipsLater():
+	#LIMPAR DICAS
+	for n in hintsContainer.get_children():
+		hintsContainer.remove_child(n)
+		n.queue_free()
+		
+	_cardData()
+	var size = cartaDestaque.dicas.size()
+	#print("SIZE: ",size)
+	#print("CARTA DESTAQUE: ",cartaDestaque.nomeCarta)
+	
+	for i in range(size):
+		var tip = tipPrefab.instance()
+		hintsContainer.add_child(tip)
+		tip.get_child(0).text = str(i+1)
+		#tip.tipNumber = str(i+1)
+		tip.disabled = true
 	
 func _cardData():
 	var allTheEnumKeys = Categoria.Categori.keys()
 	var key_value = allTheEnumKeys[cartaDestaque.categoriaCarta]
-	print("CAT: ", key_value )
-	cardTypeBox.text = key_value
-	print("DIFI: ",cartaDestaque.pontosDica)
+	#print("CAT: ", key_value )
+	var catString
+	
+	match key_value:
+		"PESSOA": 
+			catString = "Pessoa"
+		"LUGAR": 
+			catString = "Lugar"
+		"EVENTO_LEI": 
+			catString = "Evento ou Lei"
+		"CONCEITO_CARGO": 
+			catString = "Conceito ou Cargo"
+			
+	cardTypeBox.text = catString
+	#print("DIFI: ",cartaDestaque.pontosDica)
 	cardDificultyImage.texture = UiManager.dificultyImage(cartaDestaque.pontosDica)

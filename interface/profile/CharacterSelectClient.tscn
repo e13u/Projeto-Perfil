@@ -171,12 +171,14 @@ anchor_bottom = 1.0
 margin_left = -76.0
 margin_top = 27.0
 margin_right = 64.0
-margin_bottom = -10.0802
+margin_bottom = -37.08
 custom_fonts/font = ExtResource( 10 )
 text = "Confirmar
 "
 align = 1
 valign = 1
+autowrap = true
+clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

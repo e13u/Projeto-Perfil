@@ -155,9 +155,9 @@ func verifyWhoPlays():
 	
 #AS VEZES DANDO ERRO QUANDO SELECIONA DICA NUMERO 15
 func revealTip(number):
-	var tipText = $Tabuleiro.cartaDestaque.dicas[number]
-	print($Tabuleiro.cartaDestaque.dicas[number])
-	print($Tabuleiro.cartaDestaque.nomeCarta)
+	var tipText = $Tabuleiro.cartaDestaque.dicas[number-1] #CORREÇÃO DE INDEX COMEÇANDO COM 0
+	#print($Tabuleiro.cartaDestaque.dicas[number-1])
+	#print($Tabuleiro.cartaDestaque.nomeCarta)
 	roomData.usedTips.arrayValue.values.append({"integerValue": number})
 	#Revela UI do jogador da vez
 	#REVELAR PAINEL DE RESPOSTA
