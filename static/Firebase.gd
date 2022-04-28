@@ -1,6 +1,6 @@
 extends Node
 
-signal roomCreated(data)
+#signal roomCreated(data)
 
 const API_KEY := "AIzaSyBkYOesoZi1afTinIhwLFUl0AkJR8fI07Q"
 const PROJECT_ID := "perfil-plenarinho"
