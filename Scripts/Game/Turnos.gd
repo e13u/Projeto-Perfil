@@ -21,7 +21,7 @@ var activePlayer
 var canStart = false
 var playerTurnUI
 var gameEnded = false
-var pointsForWinning = 10 #100
+var pointsForWinning = 100
 
 func _initGame() -> void:
 	turnState = 0
@@ -149,6 +149,7 @@ func verifyWhoPlays():
 		updareScoreInSlider()
 	else:
 		playerTurnUI.turnTipsButtons(false)
+		playerTurnUI.revealTimer(false)
 		get_node("Background/PlayerProfile/ActivePlayer").visible = false
 		_popClientCard(2)
 		turnTimer.start()
@@ -157,7 +158,7 @@ func verifyWhoPlays():
 func revealTip(number):
 	var tipText = $Tabuleiro.cartaDestaque.dicas[number-1] #CORREÇÃO DE INDEX COMEÇANDO COM 0
 	#print($Tabuleiro.cartaDestaque.dicas[number-1])
-	print($Tabuleiro.cartaDestaque.nomeCarta)
+	#print($Tabuleiro.cartaDestaque.nomeCarta)
 	roomData.usedTips.arrayValue.values.append({"integerValue": number})
 	#Revela UI do jogador da vez
 	#REVELAR PAINEL DE RESPOSTA
@@ -207,8 +208,8 @@ func updateScore():
 	var score = scoreBase*notUsedTips
 	var scoreInt = int(round(score))
 	
-	print("scoreBase: ",scoreBase," notUsedTips: ",notUsedTips)
-	print("ScoreTotal: ",scoreInt)
+	#print("scoreBase: ",scoreBase," notUsedTips: ",notUsedTips)
+	#print("ScoreTotal: ",scoreInt)
 	var index = playersNames.find(Firebase.user_email)
 	scoreInt += int(roomData.score.arrayValue.values[index].integerValue)
 	roomData.score.arrayValue.values[index] = { "integerValue": scoreInt}

@@ -13,6 +13,7 @@ var answerPanel
 var revealedTipsPanel
 var revealedTipsContainer
 var usedTipsNumberText
+var avatarInClock
 var timerOn
 var tabuleiro
 var usedTips3: PoolIntArray
@@ -35,7 +36,8 @@ func _ready() -> void:
 	tabuleiro = get_node("/root/MainScene/Tabuleiro")
 	usedTipsNumberText = get_node("/root/MainScene/Background/UsedTipsBox/Label")
 	usedTipsNumberText.text = ''
-	
+	avatarInClock = get_node("/root/MainScene/Background/ClockShadow/TextureRect")
+
 func revealTextBoxAnswer(on):
 	answerPanel.visible = on
 	container.visible = !on
@@ -46,6 +48,13 @@ func revealTimer(on):
 	timerRadial.visible = on
 	timerRadial.value = 0
 	timerOn = on
+	#if !on:
+	var activePlayer = get_node("/root/MainScene/").roomData.activePlayer.stringValue
+	var index = get_node("/root/MainScene/").playersNames.find(activePlayer)
+	var avatar = get_node("/root/MainScene/").avatarsNames[index]
+	avatarInClock.texture = UiManager.littleImageIcon(avatar)
+	#else:
+	#avatarInClock.texture = UiManager.littleImageIcon("Active_Player")
 	
 #"usedTips":{"arrayValue":{"values":[{"integerValue":0}]}},	
 
@@ -162,8 +171,6 @@ func showResults(data):
 	var players_sorted = []
 	var avatars_sorted = []
 	var scores_sorted = []
-	#var indexes = []
-	#var counter = 0
 	var player_score = {}
 	
 	if players.size() == scores.size():
@@ -171,7 +178,6 @@ func showResults(data):
 		for element in players:
 			player_score[element] = scores[i]
 			i += 1
-	print("Dictionary player_score: ", player_score)
 	
 	for j in range(players.size()):
 		var maxV = player_score.values().max()
@@ -182,42 +188,27 @@ func showResults(data):
 				players_sorted.append(key)
 				player_score.erase(key)
 				pass
+	
+	for j in range(players_sorted.size()):
+		var player_sorted = players_sorted[j]
+		var index = players.find(player_sorted)
+		avatars_sorted.append(avatars[index])
+	
+	#NOMES
+	get_node("/root/MainScene/ResultsScreen/Backg1/PlayerProfile/NameBox/Label").text = players_sorted[0]
+	get_node("/root/MainScene/ResultsScreen/Backg2/SecondPlaceSlot/NameSlot/Name").text = players_sorted[1]
 
-	print("scores_sorted: ", scores_sorted)
-	print("players_sorted: ", players_sorted)
-	
-	#CONSEGUI COLOCAR PLAYERS E SCORE NA ORDEM FALTA AVATARES
-	
-#	while counter <= players.size():
-#		var maxn = scores.max()
-#		scores_sorted.append(maxn)
-#		indexes.append(scores.find(maxn))
-#		counter +=1
-#		scores.remove(maxn)
-		
-	
-	
-#	for j in range(players.size()):
-#		var playerIndex = scores.find(scores[j])
-#		if !players_sorted.has(players[playerIndex]):
-#			players_sorted.append(players[playerIndex])
-#			avatars_sorted.append(avatars[playerIndex])
-	
-#	#NOMES
-#	get_node("/root/MainScene/ResultsScreen/Backg1/PlayerProfile/NameBox/Label").text = players_sorted[0]
-#	get_node("/root/MainScene/ResultsScreen/Backg2/SecondPlaceSlot/NameSlot/Name").text = players_sorted[1]
-#
-#	#IMAGENS DE AVATAR
-#	get_node("/root/MainScene/ResultsScreen/Backg1/PlayerProfile").texture = UiManager.imageIconAvatar(avatars_sorted[0])
-#	get_node("/root/MainScene/ResultsScreen/Backg2/SecondPlaceSlot/PlayerIcon").texture = UiManager.imageIconAvatar(avatars_sorted[1])
-#
-#	#SCORES
-#	get_node("/root/MainScene/ResultsScreen/Backg1/PlayerProfile/ScoreBox/Label").text = str(scores[0])
-#	get_node("/root/MainScene/ResultsScreen/Backg2/SecondPlaceSlot/ScoreBox/Label").text = str(scores[1])
-#
-#	if players.size() > 2:
-#		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot/NameSlot/Name").text = players_sorted[2]
-#		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot/PlayerIcon").texture = UiManager.imageIconAvatar(avatars_sorted[2])
-#		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot/ScoreBox/Label").text = str(scores[2])
-#	else:
-#		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot").visible = false
+	#IMAGENS DE AVATAR
+	get_node("/root/MainScene/ResultsScreen/Backg1/PlayerProfile").texture = UiManager.imageIconAvatar(avatars_sorted[0])
+	get_node("/root/MainScene/ResultsScreen/Backg2/SecondPlaceSlot/PlayerIcon").texture = UiManager.imageIconAvatar(avatars_sorted[1])
+
+	#SCORES
+	get_node("/root/MainScene/ResultsScreen/Backg1/PlayerProfile/ScoreBox/Label").text = str(scores_sorted[0])
+	get_node("/root/MainScene/ResultsScreen/Backg2/SecondPlaceSlot/ScoreBox/Label").text = str(scores_sorted[1])
+
+	if players.size() > 2:
+		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot/NameSlot/Name").text = players_sorted[2]
+		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot/PlayerIcon").texture = UiManager.imageIconAvatar(avatars_sorted[2])
+		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot/ScoreBox/Label").text = str(scores_sorted[2])
+	else:
+		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot").visible = false

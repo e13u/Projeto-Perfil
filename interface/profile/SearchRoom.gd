@@ -48,7 +48,7 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 		var hostButton = hostButtonPrefab.instance()
 		roomsContainer.add_child(hostButton)
 		hostButton.get_child(2).get_child(0).text = hostNames[j]
-		hostButton.get_child(1).texture = UiManager.imageIconAvatar(avatarIconsNames[j])
+		hostButton.get_child(1).texture_normal = UiManager.imageIconAvatar(avatarIconsNames[j])
 		#print(playersInRoomNames[j])
 		#hostButton.get_child(3).text = playersInRoomNames[j].stringValue
 
