@@ -8,7 +8,7 @@ func createRoomData():
 		"state":{"stringValue": "null" },
 		"mediator":{"stringValue": "null" },
 		"activePlayer":{"stringValue": "null" },
-		"score":{"arrayValue":{"values":[{"integerValue":0}]}},
+		"score":{"arrayValue":{"values":[{"integerValue":0}]}},#0
 		"usedTips":{"arrayValue":{"values":[{"integerValue":0}]}},
 	} 
 	return roomData

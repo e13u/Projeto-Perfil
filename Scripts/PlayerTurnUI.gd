@@ -176,12 +176,15 @@ func showResults(data):
 	if players.size() == scores.size():
 		var i = 0
 		for element in players:
-			player_score[element] = scores[i]
+			player_score[element] = int(scores[i])
 			i += 1
+			
+	print("DICTIONARY; ", player_score)
 	
 	for j in range(players.size()):
 		var maxV = player_score.values().max()
 		scores_sorted.append(maxV)
+		print("maxV; ", maxV)
 		for key in player_score:
 			var value = player_score[key]
 			if value == maxV:
@@ -193,6 +196,11 @@ func showResults(data):
 		var player_sorted = players_sorted[j]
 		var index = players.find(player_sorted)
 		avatars_sorted.append(avatars[index])
+	
+
+	print("PLAYERS; ", players_sorted)
+	print("AVATARS; ", avatars_sorted)
+	print("SCORES; ", scores_sorted)
 	
 	#NOMES
 	get_node("/root/MainScene/ResultsScreen/Backg1/PlayerProfile/NameBox/Label").text = players_sorted[0]

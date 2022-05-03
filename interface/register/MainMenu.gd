@@ -5,6 +5,7 @@ onready var http2 : HTTPRequest = $HTTPRequest2
 onready var username : LineEdit = $BG/TextureRect2/LineEditUserName
 #onready var notification : Label = $Container/Notification
 var standardPassword = "123456"
+var placeholderLineEdit = "Digite seu nome ou apelido"
 # 1=CREATE, 0= JOIN
 var create = 0 
 
@@ -51,3 +52,9 @@ func _on_HTTPRequest2_request_completed(result: int, response_code: int, headers
 	else:
 		Firebase.isHost = true
 		get_tree().change_scene("res://interface/profile/UserProfile.tscn")
+
+func _on_LineEditUserName_focus_entered() -> void:
+	get_node("/root/MainMenu/BG/TextureRect2/LineEditUserName").set_placeholder("")
+
+func _on_LineEditUserName_focus_exited() -> void:
+	get_node("/root/MainMenu/BG/TextureRect2/LineEditUserName").set_placeholder(placeholderLineEdit)
