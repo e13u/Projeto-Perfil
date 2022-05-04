@@ -61,4 +61,6 @@ func littleImageIcon(avatar):
 			tex= load("res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/XERETA_litle_icon.png")
 		"Ze Plenarinho": 
 			tex= load("res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Ze_litle_icon.png")
+		"Active_Player":
+			tex = load("res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png")
 	return tex

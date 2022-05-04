@@ -52,7 +52,10 @@ func revealTimer(on):
 	var activePlayer = get_node("/root/MainScene/").roomData.activePlayer.stringValue
 	var index = get_node("/root/MainScene/").playersNames.find(activePlayer)
 	var avatar = get_node("/root/MainScene/").avatarsNames[index]
-	avatarInClock.texture = UiManager.littleImageIcon(avatar)
+	if activePlayer == Firebase.user_email:
+		avatarInClock.texture = UiManager.littleImageIcon("Active_Player")
+	else:
+		avatarInClock.texture = UiManager.littleImageIcon(avatar)
 	#else:
 	#avatarInClock.texture = UiManager.littleImageIcon("Active_Player")
 	
