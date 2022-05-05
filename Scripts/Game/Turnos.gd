@@ -8,7 +8,7 @@ onready var http5 :HTTPRequest = $HTTPRequest5
 onready var http6 :HTTPRequest = $HTTPRequest6
 onready var turnTimer: Timer = $TimerTurn
 onready var playerProfileImage = $Background/PlayerProfile
-onready var scoreText= $Background/PlayerProfile/ScoreBox/Label
+onready var scoreText= $Background/PlayerProfile/ScoreButton/Label
 onready var playerNameText= $Background/PlayerProfile/NameBox/Label
 
 var tabuleiro

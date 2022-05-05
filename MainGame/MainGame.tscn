@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Scripts/Game/Turnos.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Game/Tabuleiro.gd" type="Script" id=5]
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Sprites/BOLO DE CARTAS.png" type="Texture" id=7]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/papel picado.png" type="Texture" id=8]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/DICAS REVELADAS.png" type="Texture" id=10]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_green.png" type="Texture" id=11]
@@ -386,23 +385,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Deck" type="TextureRect" parent="Background"]
-visible = false
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -412.0
-margin_top = -355.0
-margin_right = -23.0
-margin_bottom = 259.0
-texture = ExtResource( 7 )
-expand = true
-stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="PinsPanel" type="Panel" parent="Background"]
 visible = false
 self_modulate = Color( 1, 1, 1, 0 )
@@ -509,6 +491,16 @@ text = "Dicas
 Reveladas"
 align = 1
 valign = 1
+
+[node name="ScoresPanel" type="TextureRect" parent="Background"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 33 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MenuButton" type="TextureButton" parent="Background"]
 anchor_left = 1.0

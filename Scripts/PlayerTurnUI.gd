@@ -14,6 +14,7 @@ var revealedTipsPanel
 var revealedTipsContainer
 var usedTipsNumberText
 var avatarInClock
+var scorePanel
 var timerOn
 var tabuleiro
 var usedTips3: PoolIntArray
@@ -37,7 +38,8 @@ func _ready() -> void:
 	usedTipsNumberText = get_node("/root/MainScene/Background/UsedTipsBox/Label")
 	usedTipsNumberText.text = ''
 	avatarInClock = get_node("/root/MainScene/Background/ClockShadow/TextureRect")
-
+	scorePanel = get_node("/root/MainScene/Background/ScoresPanel")
+	
 func revealTextBoxAnswer(on):
 	answerPanel.visible = on
 	container.visible = !on
@@ -160,6 +162,9 @@ func _process(delta):
 	if Input.is_action_pressed("ui_accept"):
 		_on_SendButton_pressed()
 
+func scoresPanelReveal(on):
+	scorePanel.visible = on
+	
 func showResults(data):
 	get_node("/root/MainScene/ResultsScreen").visible = true
 	var players =[]
