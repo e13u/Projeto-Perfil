@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://interface/rooms/Camada 1109 copiar 10.png" type="Texture" id=2]
+[ext_resource path="res://interface/rooms/Camada 525 copiar 8.png" type="Texture" id=3]
+[ext_resource path="res://interface/rooms/Edu_button.png" type="Texture" id=4]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box pontuacao.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=13]
+size = 70
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 60
+font_data = ExtResource( 1 )
+
+[node name="PlayerScore" type="TextureRect"]
+margin_right = 840.0
+margin_bottom = 1340.0
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AvatarImage" type="TextureRect" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -11.0
+margin_top = -108.0
+margin_right = 205.0
+margin_bottom = 108.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameBox" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -161.0
+margin_top = -49.5
+margin_right = 161.0
+margin_bottom = 49.5
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NameBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 13 )
+text = "Nome"
+align = 1
+valign = 1
+
+[node name="ScoreBox" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -207.0
+margin_top = -40.0
+margin_right = -12.0
+margin_bottom = 41.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScoreBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 14 )
+text = "1000"
+align = 1
+valign = 1
