@@ -1,4 +1,7 @@
 extends Node
+
+signal sliderUpdate(character, score)
+
 var container
 var tipText
 var answerTextBox
@@ -6,6 +9,7 @@ var timerRadial
 var sendButton
 var rightAnswerPanel
 var wrongAnswerPanel
+var timeOverPanel
 var timer = 0
 var totalTimer = 60
 var answerBox
@@ -20,6 +24,10 @@ var tabuleiro
 var usedTips3: PoolIntArray
 var usedTipsNumber = 0
 var feedbackAnswerTime = 4
+var players_sorted = []
+var avatars_sorted = []
+var scores_sorted = []
+var player_score = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +40,7 @@ func _ready() -> void:
 	answerPanel = get_node("/root/MainScene/Background/AnswerTipPanel")
 	rightAnswerPanel = get_node("/root/MainScene/RightAnswerPanel")
 	wrongAnswerPanel = get_node("/root/MainScene/WrongAnswerPanel")
+	timeOverPanel = get_node("/root/MainScene/TimeOverPanel")
 	revealedTipsPanel = get_node("/root/MainScene/Background/RevealedTipsPanel")
 	revealedTipsContainer = get_node("/root/MainScene/Background/RevealedTipsPanel/ScrollContainer/VBoxContainer")
 	tabuleiro = get_node("/root/MainScene/Tabuleiro")
@@ -129,7 +138,7 @@ func timeOver():
 	var answer = answerBox.text
 	answerBox.text = ""
 	print("ACABOU O TEMPO")
-	get_node("/root/MainScene/").wrongAnswer()
+	get_node("/root/MainScene/").timeOver()
 
 func _on_SendButton_pressed() -> void:
 	revealTextBoxAnswer(false)
@@ -151,6 +160,11 @@ func wrongAnswerPanel():
 	yield(get_tree().create_timer(feedbackAnswerTime), "timeout")
 	wrongAnswerPanel.visible = false
 
+func timeOverPanel():
+	timeOverPanel.visible = true
+	yield(get_tree().create_timer(feedbackAnswerTime), "timeout")
+	timeOverPanel.visible = false
+
 func _on_RevealedTipsButton_pressed() -> void:
 	revealedTipsPanel.visible = true
 
@@ -164,6 +178,8 @@ func _process(delta):
 
 func scoresPanelReveal(on):
 	scorePanel.visible = on
+	if on:
+		scorePanelInfo()
 	
 func showResults(data):
 	get_node("/root/MainScene/ResultsScreen").visible = true
@@ -176,10 +192,10 @@ func showResults(data):
 		avatars.append(data.avatars.arrayValue.values[i].stringValue)
 		scores.append(data.score.arrayValue.values[i].integerValue)
 	
-	var players_sorted = []
-	var avatars_sorted = []
-	var scores_sorted = []
-	var player_score = {}
+	players_sorted = []
+	avatars_sorted = []
+	scores_sorted = []
+	player_score = {}
 	
 	if players.size() == scores.size():
 		var i = 0
@@ -228,3 +244,73 @@ func showResults(data):
 		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot/ScoreBox/Label").text = str(scores_sorted[2])
 	else:
 		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot").visible = false
+
+func _on_CloseScoresButton_pressed() -> void:
+	scoresPanelReveal(false)
+
+func getPlayersPositions():
+	var data = get_node("/root/MainScene/").roomData
+	var players =[]
+	var avatars =[]
+	var scores =[]
+	
+	for i in range(data.players.arrayValue.values.size()):
+		players.append(data.players.arrayValue.values[i].stringValue)
+		avatars.append(data.avatars.arrayValue.values[i].stringValue)
+		scores.append(data.score.arrayValue.values[i].integerValue)
+	
+	players_sorted = []
+	avatars_sorted = []
+	scores_sorted = []
+	player_score = {}
+	
+	if players.size() == scores.size():
+		var i = 0
+		for element in players:
+			player_score[element] = int(scores[i])
+			i += 1
+			
+	print("DICTIONARY; ", player_score)
+	
+	for j in range(players.size()):
+		var maxV = player_score.values().max()
+		scores_sorted.append(maxV)
+		print("maxV; ", maxV)
+		for key in player_score:
+			var value = player_score[key]
+			if value == maxV:
+				players_sorted.append(key)
+				player_score.erase(key)
+				pass
+	
+	for j in range(players_sorted.size()):
+		var player_sorted = players_sorted[j]
+		var index = players.find(player_sorted)
+		avatars_sorted.append(avatars[index])
+	
+
+	print("PLAYERS; ", players_sorted)
+	print("AVATARS; ", avatars_sorted)
+	print("SCORES; ", scores_sorted)
+
+func scorePanelInfo():
+	getPlayersPositions()
+	var scorePlayerPrefab = preload("res://Prefabs/PlayerScorePrefab.tscn")
+	var container = get_node('/root/MainScene/Background/ScoresPanel/VBoxContainer')
+	#Limpar container
+	
+	for n in container.get_children():
+		container.remove_child(n)
+		n.queue_free()
+	
+	for i in range(players_sorted.size()):
+		var sc = scorePlayerPrefab.instance()
+		container.add_child(sc)
+		#avatar image
+		sc.get_child(0).texture = UiManager.imageIconAvatar(avatars_sorted[i])
+		#name
+		sc.get_child(1).get_child(0).text = players_sorted[i]
+		#score
+		sc.get_child(2).get_child(0).text = str(scores_sorted[i])
+	
+	emit_signal("sliderUpdate",avatars_sorted,scores_sorted)

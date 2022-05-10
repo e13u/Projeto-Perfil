@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -6,7 +6,9 @@
 [ext_resource path="res://Scripts/Game/Turnos.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Game/Tabuleiro.gd" type="Script" id=5]
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://interface/mainscreen/Agrupar 19.png" type="Texture" id=7]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/papel picado.png" type="Texture" id=8]
+[ext_resource path="res://interface/mainscreen/Tempo esgotado.png" type="Texture" id=9]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/DICAS REVELADAS.png" type="Texture" id=10]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_green.png" type="Texture" id=11]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_fundo.png" type="Texture" id=12]
@@ -509,6 +511,7 @@ __meta__ = {
 }
 
 [node name="ScoresPanel" type="TextureRect" parent="Background"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 30.0
@@ -521,7 +524,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CloseButton" type="TextureButton" parent="Background/ScoresPanel"]
+[node name="CloseScoresButton" type="TextureButton" parent="Background/ScoresPanel"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -91.0
@@ -563,6 +566,10 @@ margin_bottom = 690.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SliderBackg" parent="Background/ScoresPanel" instance=ExtResource( 49 )]
+margin_top = -158.0
+margin_bottom = -128.0
 
 [node name="RevealedTipsPanel" type="TextureRect" parent="Background"]
 visible = false
@@ -619,6 +626,69 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TimeOverPanel" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box" type="TextureRect" parent="TimeOverPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -494.0
+margin_top = -452.0
+margin_right = 494.0
+margin_bottom = 646.0
+texture = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chars" type="TextureRect" parent="TimeOverPanel/Box"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -418.0
+margin_top = -268.0
+margin_right = 372.0
+margin_bottom = 289.0
+texture = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="TimeOverPanel/Box"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -294.5
+margin_top = 70.0
+margin_right = 294.5
+margin_bottom = 175.0
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="TimeOverPanel/Box/TextureRect"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "Tempo Esgotado!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseWindow" type="TextureRect" parent="TimeOverPanel/Box"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_top = 20.0
+margin_bottom = 100.0
+texture = ExtResource( 35 )
 
 [node name="WrongAnswerPanel" type="Panel" parent="."]
 visible = false
@@ -1069,8 +1139,10 @@ wait_time = 3.0
 
 [node name="HTTPRequest6" type="HTTPRequest" parent="."]
 
+[connection signal="sliderUpdate" from="Background" to="Background/ScoresPanel/SliderBackg" method="_on_Background_sliderUpdate"]
 [connection signal="pressed" from="Background/AnswerTipPanel/SendButton" to="Background" method="_on_SendButton_pressed"]
 [connection signal="pressed" from="Background/RevealedTipsButton" to="Background" method="_on_RevealedTipsButton_pressed"]
+[connection signal="pressed" from="Background/ScoresPanel/CloseScoresButton" to="Background" method="_on_CloseScoresButton_pressed"]
 [connection signal="pressed" from="Background/RevealedTipsPanel/CloseButton" to="Background" method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="ResultsScreen/Backg2/FinishButton" to="." method="_on_FinishButton_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

@@ -241,7 +241,14 @@ func wrongAnswer():
 	playerTurnUI.revealTextBoxAnswer(false)
 	playerTurnUI.revealTimer(false)
 	nextPlayerTurn()
-
+	
+func timeOver():
+	playerTurnUI.timeOverPanel()
+	playerTurnUI.turnTipsButtons(false)
+	playerTurnUI.revealTextBoxAnswer(false)
+	playerTurnUI.revealTimer(false)
+	nextPlayerTurn()
+	
 func endGame():
 	gameEnded = true
 	roomData.state = { "stringValue": "ended" }
