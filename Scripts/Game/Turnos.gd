@@ -289,6 +289,5 @@ func stringProcessing(text):
 	
 	return t_final
 
-
 func _on_FinishButton_pressed() -> void:
 	get_tree().change_scene("res://MainGame/MainMenu.tscn")

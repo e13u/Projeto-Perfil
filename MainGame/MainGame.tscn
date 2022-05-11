@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -21,7 +21,7 @@
 [ext_resource path="res://interface/rooms/Edu_button.png" type="Texture" id=19]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha1.png" type="Texture" id=20]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box.png" type="Texture" id=21]
-[ext_resource path="res://Mockups/13.jpeg" type="Texture" id=22]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Camada 1379.png" type="Texture" id=22]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box_Dificuldades.png" type="Texture" id=23]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box_dicas.png" type="Texture" id=24]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/dificuldade_icone1.png" type="Texture" id=25]
@@ -37,6 +37,7 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/X copiar 2.png" type="Texture" id=35]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Agrupar 15.png" type="Texture" id=36]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela8/Agrupar 16.png" type="Texture" id=37]
+[ext_resource path="res://Mockups/mockup_12.jpg" type="Texture" id=38]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/Camada 1482.png" type="Texture" id=39]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2.png" type="Texture" id=40]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1587.png" type="Texture" id=41]
@@ -71,6 +72,10 @@ font_path = "res://Fonts/OpenSans-Regular_0.ttf"
 [sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 50
+font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 100
@@ -132,6 +137,14 @@ stretch_mode = 1
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
+}
+
+[node name="BgPlayerWaiting" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="PlayerProfile" parent="Background" instance=ExtResource( 43 )]
@@ -429,7 +442,89 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TipsForWaitingPlayer" type="TextureRect" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -444.0
+margin_top = 207.0
+margin_right = 450.0
+margin_bottom = 565.0
+texture = ExtResource( 29 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Background/TipsForWaitingPlayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_right = -30.0
+custom_colors/font_color = Color( 0.321569, 0.321569, 0.321569, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "Fui nomeado diretor da Escola Nacional de Belas Artes e lá, minhas ideias de experimentações artísticas entre alunos e professores geraram uma greve de 6 meses de acadêmicos e mestres.
+Acabei me afastando da Escola."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClockPlayerWaiting" type="TextureRect" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -277.5
+margin_top = -394.5
+margin_right = 155.5
+margin_bottom = 38.4999
+rect_scale = Vector2( 1.36, 1.36 )
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="Background/ClockPlayerWaiting"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -184.5
+margin_top = -184.5
+margin_right = 184.5
+margin_bottom = 184.5
+rect_scale = Vector2( 0.979998, 0.979998 )
+max_value = 60.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 11 )
+fill_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActivePlayerWait" type="TextureRect" parent="Background/ClockPlayerWaiting"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -68.8602
+margin_top = -61.5103
+margin_right = 64.1398
+margin_bottom = 56.4897
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ClockShadow" type="TextureRect" parent="Background"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 623.0
@@ -617,11 +712,9 @@ __meta__ = {
 }
 
 [node name="Mockup2" type="TextureRect" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.513726 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 22 )
+texture = ExtResource( 38 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
