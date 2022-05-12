@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -41,6 +41,7 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/Camada 1482.png" type="Texture" id=39]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2.png" type="Texture" id=40]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1587.png" type="Texture" id=41]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_top.png" type="Texture" id=42]
 [ext_resource path="res://Prefabs/PlayerProfile.tscn" type="PackedScene" id=43]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 751.png" type="Texture" id=44]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Retângulo 2087.png" type="Texture" id=45]
@@ -51,6 +52,7 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1590.png" type="Texture" id=50]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha2.png" type="Texture" id=51]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha3.png" type="Texture" id=52]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/VITAL_litle_icon.png" type="Texture" id=53]
 
 [sub_resource type="DynamicFont" id=9]
 size = 62
@@ -75,6 +77,10 @@ font_data = SubResource( 1 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 50
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 56
 font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -140,6 +146,7 @@ __meta__ = {
 }
 
 [node name="BgPlayerWaiting" type="TextureRect" parent="Background"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 22 )
@@ -443,6 +450,7 @@ __meta__ = {
 }
 
 [node name="TipsForWaitingPlayer" type="TextureRect" parent="Background"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -474,6 +482,7 @@ __meta__ = {
 }
 
 [node name="ClockPlayerWaiting" type="TextureRect" parent="Background"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -500,6 +509,7 @@ margin_right = 184.5
 margin_bottom = 184.5
 rect_scale = Vector2( 0.979998, 0.979998 )
 max_value = 60.0
+value = 30.0
 texture_under = ExtResource( 12 )
 texture_progress = ExtResource( 11 )
 fill_mode = 4
@@ -512,16 +522,50 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -68.8602
-margin_top = -61.5103
-margin_right = 64.1398
-margin_bottom = 56.4897
-texture = ExtResource( 2 )
+margin_left = -82.5
+margin_top = -81.4999
+margin_right = 106.5
+margin_bottom = 86.5001
+texture = ExtResource( 53 )
 expand = true
-stretch_mode = 4
+stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Border" type="TextureRect" parent="Background/ClockPlayerWaiting"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.0
+margin_top = -192.0
+margin_right = 192.0
+margin_bottom = 192.0
+texture = ExtResource( 42 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BoxName" type="TextureRect" parent="Background/ClockPlayerWaiting"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -119.5
+margin_top = -90.9999
+margin_right = 122.5
+margin_bottom = -16.9999
+texture = ExtResource( 18 )
+expand = true
+
+[node name="NameLabel" type="Label" parent="Background/ClockPlayerWaiting/BoxName"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 14 )
+text = "Fernando"
+align = 1
+valign = 1
 
 [node name="ClockShadow" type="TextureRect" parent="Background"]
 visible = false
@@ -712,6 +756,7 @@ __meta__ = {
 }
 
 [node name="Mockup2" type="TextureRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 38 )

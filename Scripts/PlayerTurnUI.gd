@@ -6,6 +6,10 @@ var container
 var tipText
 var answerTextBox
 var timerRadial
+var timerRadialWaiting
+var bgWaiting
+var tipsWaiting
+var activePlayerName
 var sendButton
 var rightAnswerPanel
 var wrongAnswerPanel
@@ -35,6 +39,10 @@ func _ready() -> void:
 	tipText = get_node("/root/MainScene/Background/AnswerTipPanel/TipTextBox/Label")
 	answerTextBox = get_node("/root/MainScene/Background/AnswerTipPanel/AnswerPanel/Answer")
 	timerRadial = get_node("/root/MainScene/Background/ClockShadow/TextureProgress")
+	timerRadialWaiting = get_node("/root/MainScene/Background/ClockPlayerWaiting")
+	bgWaiting = get_node("/root/MainScene/Background/BgPlayerWaiting")
+	tipsWaiting = get_node("/root/MainScene/Background/TipsForWaitingPlayer")
+	activePlayerName = get_node("/root/MainScene/Background/ClockPlayerWaiting/BoxName/NameLabel")
 	sendButton= get_node("/root/MainScene/Background/AnswerTipPanel/SendButton")
 	answerBox = get_node("/root/MainScene/Background/AnswerTipPanel/AnswerPanel/Answer")
 	answerPanel = get_node("/root/MainScene/Background/AnswerTipPanel")
@@ -46,7 +54,7 @@ func _ready() -> void:
 	tabuleiro = get_node("/root/MainScene/Tabuleiro")
 	usedTipsNumberText = get_node("/root/MainScene/Background/UsedTipsBox/Label")
 	usedTipsNumberText.text = ''
-	avatarInClock = get_node("/root/MainScene/Background/ClockShadow/TextureRect")
+	avatarInClock = get_node("/root/MainScene/Background/ClockPlayerWaiting/ActivePlayerWait")
 	scorePanel = get_node("/root/MainScene/Background/ScoresPanel")
 	
 func revealTextBoxAnswer(on):
@@ -54,7 +62,22 @@ func revealTextBoxAnswer(on):
 	container.visible = !on
 	#answerTextBox.visible = on
 	#sendButton.visible = on
-
+	
+func revealWaitingUI(on):
+	bgWaiting.visible = on
+	timerRadialWaiting.visible = on
+	tipsWaiting.visible = on
+	
+	var activePlayer = get_node("/root/MainScene/").roomData.activePlayer.stringValue
+	var index = get_node("/root/MainScene/").playersNames.find(activePlayer)
+	var avatar = get_node("/root/MainScene/").avatarsNames[index]
+	var tipNumber= get_node("/root/MainScene/").roomData.activeTip.integerValue
+	var tipText = get_node("/root/MainScene/Tabuleiro").cartaDestaque.dicas[tipNumber]
+	
+	tipsWaiting.get_child(0).text = tipText
+	activePlayerName.text = activePlayer
+	avatarInClock.texture = UiManager.littleImageIcon(avatar)
+		
 func revealTimer(on):
 	timerRadial.visible = on
 	timerRadial.value = 0
