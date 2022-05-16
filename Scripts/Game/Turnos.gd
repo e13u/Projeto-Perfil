@@ -6,6 +6,7 @@ onready var http3 :HTTPRequest = $HTTPRequest3
 onready var http4 :HTTPRequest = $HTTPRequest4
 onready var http5 :HTTPRequest = $HTTPRequest5
 onready var http6 :HTTPRequest = $HTTPRequest6
+onready var http7 :HTTPRequest = $HTTPRequest7
 onready var turnTimer: Timer = $TimerTurn
 onready var playerProfileImage = $Background/PlayerProfile
 onready var scoreText= $Background/PlayerProfile/ScoreButton/Label
@@ -143,6 +144,7 @@ func verifyWhoPlays():
 		_popClientCard(2)
 		playerTurnUI.turnTipsButtons(true)
 		playerTurnUI.revealTimer(true)
+		playerTurnUI.revealWaitingUI(false)
 		turnTimer.stop()
 		playerTurnUI.startClock()
 		get_node("Background/PlayerProfile/ActivePlayer").visible = true
@@ -150,6 +152,7 @@ func verifyWhoPlays():
 	else:
 		playerTurnUI.turnTipsButtons(false)
 		playerTurnUI.revealTimer(false)
+		playerTurnUI.revealWaitingUI(true)
 		get_node("Background/PlayerProfile/ActivePlayer").visible = false
 		_popClientCard(2)
 		turnTimer.start()
@@ -160,12 +163,14 @@ func revealTip(number):
 	#print($Tabuleiro.cartaDestaque.dicas[number-1])
 	print($Tabuleiro.cartaDestaque.nomeCarta)
 	roomData.usedTips.arrayValue.values.append({"integerValue": number})
+	roomData.activeTip.integerValue = int(number-1)
 	#Revela UI do jogador da vez
 	#REVELAR PAINEL DE RESPOSTA
 	playerTurnUI.revealTip(tipText)
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(true)
 	playerTurnUI.revealTimer(true)
+	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http7)
 
 #TRATAMENTO DAS STRINGS
 func verifyAnswer(answer):
@@ -291,3 +296,8 @@ func stringProcessing(text):
 
 func _on_FinishButton_pressed() -> void:
 	get_tree().change_scene("res://MainGame/MainMenu.tscn")
+
+func _on_HTTPRequest7_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
+	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
+	roomData = result_body.fields
+	print(roomData.activeTip.integerValue)

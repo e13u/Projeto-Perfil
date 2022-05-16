@@ -67,29 +67,30 @@ func revealWaitingUI(on):
 	bgWaiting.visible = on
 	timerRadialWaiting.visible = on
 	tipsWaiting.visible = on
-	
-	var activePlayer = get_node("/root/MainScene/").roomData.activePlayer.stringValue
-	var index = get_node("/root/MainScene/").playersNames.find(activePlayer)
-	var avatar = get_node("/root/MainScene/").avatarsNames[index]
-	var tipNumber= get_node("/root/MainScene/").roomData.activeTip.integerValue
-	var tipText = get_node("/root/MainScene/Tabuleiro").cartaDestaque.dicas[tipNumber]
-	
-	tipsWaiting.get_child(0).text = tipText
-	activePlayerName.text = activePlayer
-	avatarInClock.texture = UiManager.littleImageIcon(avatar)
+	if on:
+		var activePlayer = get_node("/root/MainScene/").roomData.activePlayer.stringValue
+		var index = get_node("/root/MainScene/").playersNames.find(activePlayer)
+		var avatar = get_node("/root/MainScene/").avatarsNames[index]
+		var tipNumber= get_node("/root/MainScene/").roomData.activeTip.integerValue
+		var tipText = get_node("/root/MainScene/Tabuleiro").cartaDestaque.dicas[int(tipNumber)]
+		#print(get_node("/root/MainScene/Tabuleiro").cartaDestaque.dicas[0])
+		tipsWaiting.get_child(0).text = tipText
+		activePlayerName.text = activePlayer
+		avatarInClock.texture = UiManager.littleImageIcon(avatar)
 		
 func revealTimer(on):
 	timerRadial.visible = on
 	timerRadial.value = 0
+	timerRadial.get_parent().visible = on
 	timerOn = on
 	#if !on:
-	var activePlayer = get_node("/root/MainScene/").roomData.activePlayer.stringValue
-	var index = get_node("/root/MainScene/").playersNames.find(activePlayer)
-	var avatar = get_node("/root/MainScene/").avatarsNames[index]
-	if activePlayer == Firebase.user_email:
-		avatarInClock.texture = UiManager.littleImageIcon("Active_Player")
-	else:
-		avatarInClock.texture = UiManager.littleImageIcon(avatar)
+	#var activePlayer = get_node("/root/MainScene/").roomData.activePlayer.stringValue
+	#var index = get_node("/root/MainScene/").playersNames.find(activePlayer)
+	#var avatar = get_node("/root/MainScene/").avatarsNames[index]
+	#if activePlayer == Firebase.user_email:
+		#avatarInClock.texture = UiManager.littleImageIcon("Active_Player")
+	#else:
+		#avatarInClock.texture = UiManager.littleImageIcon(avatar)
 	#else:
 	#avatarInClock.texture = UiManager.littleImageIcon("Active_Player")
 	
@@ -121,6 +122,7 @@ func blockTipsUsed():
 func turnTipsButtons(on):
 	for c in container.get_children():
 		c.disabled = !on
+	container.visible = on
 	if on:
 		blockTipsUsed()
 

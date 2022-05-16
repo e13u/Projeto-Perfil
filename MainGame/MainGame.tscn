@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -53,6 +53,7 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha2.png" type="Texture" id=51]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha3.png" type="Texture" id=52]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/VITAL_litle_icon.png" type="Texture" id=53]
+[ext_resource path="res://Fonts/OpenSans-Regular_0.ttf" type="DynamicFontData" id=54]
 
 [sub_resource type="DynamicFont" id=9]
 size = 62
@@ -76,8 +77,8 @@ size = 40
 font_data = SubResource( 1 )
 
 [sub_resource type="DynamicFont" id=13]
-size = 50
-font_data = ExtResource( 16 )
+size = 35
+font_data = ExtResource( 54 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 56
@@ -568,7 +569,6 @@ align = 1
 valign = 1
 
 [node name="ClockShadow" type="TextureRect" parent="Background"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 623.0
@@ -828,6 +828,14 @@ margin_top = 20.0
 margin_bottom = 100.0
 texture = ExtResource( 35 )
 
+[node name="SliderBackg" parent="TimeOverPanel/Box" instance=ExtResource( 49 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -414.0
+margin_top = -130.0
+margin_right = 414.0
+margin_bottom = -100.0
+
 [node name="WrongAnswerPanel" type="Panel" parent="."]
 visible = false
 self_modulate = Color( 1, 1, 1, 0.392157 )
@@ -887,6 +895,14 @@ margin_top = 20.0
 margin_bottom = 100.0
 texture = ExtResource( 35 )
 
+[node name="SliderBackg" parent="WrongAnswerPanel/Box" instance=ExtResource( 49 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -414.0
+margin_top = -130.0
+margin_right = 414.0
+margin_bottom = -100.0
+
 [node name="RightAnswerPanel" type="Panel" parent="."]
 visible = false
 self_modulate = Color( 1, 1, 1, 0.392157 )
@@ -939,9 +955,9 @@ texture = ExtResource( 35 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -414.0
-margin_top = -143.0
+margin_top = -130.0
 margin_right = 414.0
-margin_bottom = -113.0
+margin_bottom = -100.0
 
 [node name="ResultsScreen" type="Panel" parent="."]
 visible = false
@@ -1277,6 +1293,8 @@ wait_time = 3.0
 
 [node name="HTTPRequest6" type="HTTPRequest" parent="."]
 
+[node name="HTTPRequest7" type="HTTPRequest" parent="."]
+
 [connection signal="sliderUpdate" from="Background" to="Background/ScoresPanel/SliderBackg" method="_on_Background_sliderUpdate"]
 [connection signal="pressed" from="Background/AnswerTipPanel/SendButton" to="Background" method="_on_SendButton_pressed"]
 [connection signal="pressed" from="Background/RevealedTipsButton" to="Background" method="_on_RevealedTipsButton_pressed"]
@@ -1291,3 +1309,4 @@ wait_time = 3.0
 [connection signal="request_completed" from="HTTPRequest4" to="." method="_on_HTTPRequest4_request_completed"]
 [connection signal="request_completed" from="HTTPRequest5" to="." method="_on_HTTPRequest5_request_completed"]
 [connection signal="request_completed" from="HTTPRequest6" to="." method="_on_HTTPRequest6_request_completed"]
+[connection signal="request_completed" from="HTTPRequest7" to="." method="_on_HTTPRequest7_request_completed"]
