@@ -32,6 +32,7 @@ var players_sorted = []
 var avatars_sorted = []
 var scores_sorted = []
 var player_score = {}
+var previousPlayer = 'nulo'
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -74,9 +75,17 @@ func revealWaitingUI(on):
 		var tipNumber= get_node("/root/MainScene/").roomData.activeTip.integerValue
 		var tipText = get_node("/root/MainScene/Tabuleiro").cartaDestaque.dicas[int(tipNumber)]
 		#print(get_node("/root/MainScene/Tabuleiro").cartaDestaque.dicas[0])
-		tipsWaiting.get_child(0).text = tipText
+		if int(tipNumber) != -1:
+			tipsWaiting.get_child(0).text = tipText
+			
+		if previousPlayer != activePlayer:
+			previousPlayer = activePlayer
+			timerRadialWaiting.get_child(0).value = 0
+			tipsWaiting.get_child(0).text = ''
+			
 		activePlayerName.text = activePlayer
 		avatarInClock.texture = UiManager.littleImageIcon(avatar)
+		timerRadialWaiting.get_child(0).value += 2
 		
 func revealTimer(on):
 	timerRadial.visible = on
@@ -98,6 +107,8 @@ func revealTimer(on):
 
 func usedTipsNumberText():
 	usedTipsNumberText.text = str(usedTipsNumber)+"/"+str(tabuleiro.cartaDestaque.dicas.size())
+	if usedTipsNumber == 0:
+		tipsWaiting.get_child(0).text = ''
 	
 func blockTipsUsed():
 	#BUSCAR DICAS JÁ UTILIZADAS

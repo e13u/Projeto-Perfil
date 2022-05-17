@@ -10,6 +10,6 @@ func createRoomData():
 		"activePlayer":{"stringValue": "null" },
 		"score":{"arrayValue":{"values":[{"integerValue":0}]}},#0
 		"usedTips":{"arrayValue":{"values":[{"integerValue":0}]}},
-		"activeTip":{"integerValue": 0},
+		"activeTip":{"integerValue": -1},
 	} 
 	return roomData

@@ -134,8 +134,9 @@ func _popClientCard(code):
 	if code == 1:
 		$Tabuleiro._popCCard(card)
 	elif code ==2:
+		roomData.activeTip.integerValue = int(-1)
 		$Tabuleiro._popCCard2(card)
-
+		
 
 func verifyWhoPlays():
 	#print(roomData.activePlayer.stringValue)
@@ -222,7 +223,8 @@ func updateScore():
 	roomData.usedTips.arrayValue.values = [{"integerValue":0}]
 	#print("CARTA ACERTADA: ",roomData.cards.arrayValue.values[0].nomeCarta)
 	scoreText.text = str(scoreInt)
-	$RightAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[index],scoreInt)
+	#$RightAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[index],scoreInt)
+	updareScoreInSlider()
 	if scoreInt >= pointsForWinning:
 		endGame()
 	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http6)
@@ -241,6 +243,7 @@ func rightAnswer():
 	
 func wrongAnswer():
 	print("ERROU")
+	updareScoreInSlider()
 	playerTurnUI.wrongAnswerPanel()
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(false)
@@ -248,6 +251,7 @@ func wrongAnswer():
 	nextPlayerTurn()
 	
 func timeOver():
+	updareScoreInSlider()
 	playerTurnUI.timeOverPanel()
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(false)
@@ -265,6 +269,8 @@ func _getPlayerIndex(name):
 func updareScoreInSlider():
 	for i in avatarsNames.size():
 			$RightAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[i],int(roomData.score.arrayValue.values[i].integerValue))
+			$WrongAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[i],int(roomData.score.arrayValue.values[i].integerValue))
+			$TimeOverPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[i],int(roomData.score.arrayValue.values[i].integerValue))
 			
 func stringProcessing(text):
 	var t_final = text.to_upper()
