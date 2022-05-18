@@ -86,3 +86,6 @@ func _on_HTTPRequest2_request_completed(result: int, response_code: int, headers
 			return
 		200:
 			new_room = false
+
+func _on_CancelButton2_pressed() -> void:
+	get_tree().change_scene("res://MainGame/MainMenu.tscn")

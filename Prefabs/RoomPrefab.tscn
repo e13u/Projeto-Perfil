@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://interface/rooms/Camada 866 copiar 7.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://interface/rooms/Edu_button.png" type="Texture" id=4]
 [ext_resource path="res://interface/rooms/Camada 741.png" type="Texture" id=5]
 [ext_resource path="res://interface/rooms/Camada 740.png" type="Texture" id=6]
+[ext_resource path="res://interface/login/backg.png" type="Texture" id=7]
 [ext_resource path="res://interface/profile/JoinButton.gd" type="Script" id=8]
 
 [node name="RoomPrefab" type="TextureRect"]
@@ -17,11 +18,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureSelecBackg" type="TextureRect" parent="."]
+visible = false
+margin_right = 882.0
+margin_bottom = 245.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureButton" type="TextureButton" parent="."]
 margin_left = 264.0
 margin_top = 44.0
 margin_right = 888.0
 margin_bottom = 230.0
+disabled = true
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 5 )
 texture_focused = ExtResource( 5 )
@@ -36,6 +48,7 @@ margin_left = -1.0
 margin_top = -1.0
 margin_right = -815.0
 margin_bottom = -1.0
+disabled = true
 texture_normal = ExtResource( 4 )
 expand = true
 stretch_mode = 4
@@ -84,5 +97,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureButton2" type="TextureButton" parent="."]
+margin_right = 883.0
+margin_bottom = 248.0
+toggle_mode = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="AvatarButton" to="." method="_on_AvatarButton_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="toggled" from="TextureButton2" to="." method="_on_TextureButton2_toggled"]

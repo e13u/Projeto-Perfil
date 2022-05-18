@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -54,6 +54,7 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha3.png" type="Texture" id=52]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/VITAL_litle_icon.png" type="Texture" id=53]
 [ext_resource path="res://Fonts/OpenSans-Regular_0.ttf" type="DynamicFontData" id=54]
+[ext_resource path="res://Audio/open-button-2.wav" type="AudioStream" id=55]
 
 [sub_resource type="DynamicFont" id=9]
 size = 62
@@ -357,10 +358,17 @@ margin_left = 36.0
 margin_top = 28.0
 margin_right = -41.0
 margin_bottom = -40.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 0.513726 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.392157, 0.439216, 0.458824, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
 custom_styles/normal = SubResource( 8 )
+align = 1
 placeholder_text = " Digite a resposta aqui"
+caret_blink = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1294,7 +1302,12 @@ wait_time = 2.0
 
 [node name="HTTPRequest7" type="HTTPRequest" parent="."]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 55 )
+
 [connection signal="sliderUpdate" from="Background" to="Background/ScoresPanel/SliderBackg" method="_on_Background_sliderUpdate"]
+[connection signal="focus_entered" from="Background/AnswerTipPanel/AnswerPanel/Answer" to="Background" method="_on_Answer_focus_entered"]
+[connection signal="focus_exited" from="Background/AnswerTipPanel/AnswerPanel/Answer" to="Background" method="_on_Answer_focus_exited"]
 [connection signal="pressed" from="Background/AnswerTipPanel/SendButton" to="Background" method="_on_SendButton_pressed"]
 [connection signal="pressed" from="Background/RevealedTipsButton" to="Background" method="_on_RevealedTipsButton_pressed"]
 [connection signal="pressed" from="Background/ScoresPanel/CloseScoresButton" to="Background" method="_on_CloseScoresButton_pressed"]

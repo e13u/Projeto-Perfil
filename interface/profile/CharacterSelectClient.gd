@@ -88,3 +88,7 @@ func _on_ConfirmButton_pressed() -> void:
 	if selectedChar != "null":
 		Firebase.avatar = selectedChar
 		get_tree().change_scene("res://interface/profile/Room.tscn")
+
+
+func _on_CancelButton2_pressed() -> void:
+	get_tree().change_scene("res://MainGame/MainMenu.tscn")

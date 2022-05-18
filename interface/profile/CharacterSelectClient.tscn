@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://interface/profile/CharacterSelectClient.gd" type="Script" id=1]
 [ext_resource path="res://interface/rooms/Camada 158.png" type="Texture" id=2]
+[ext_resource path="res://Prefabs/CancelButton2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/rooms/Cida_button.png" type="Texture" id=4]
 [ext_resource path="res://interface/rooms/Adao_button.png" type="Texture" id=5]
 [ext_resource path="res://interface/rooms/Ze_button.png" type="Texture" id=6]
@@ -37,10 +38,7 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -471.0
-margin_right = 471.0
+margin_right = 942.0
 margin_bottom = 227.0
 texture = ExtResource( 2 )
 __meta__ = {
@@ -150,6 +148,8 @@ texture_focused = ExtResource( 13 )
 expand = true
 stretch_mode = 5
 
+[node name="CancelButton2" parent="." instance=ExtResource( 3 )]
+
 [node name="ConfirmButton" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -191,5 +191,6 @@ __meta__ = {
 [connection signal="pressed" from="GridContainer/XeretaBtn" to="." method="_on_XeretaBtn_pressed"]
 [connection signal="pressed" from="GridContainer/CidaBtn" to="." method="_on_CidaBtn_pressed"]
 [connection signal="pressed" from="GridContainer/AdaoBtn" to="." method="_on_AdaoBtn_pressed"]
+[connection signal="pressed" from="CancelButton2" to="." method="_on_CancelButton2_pressed"]
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

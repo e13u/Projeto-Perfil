@@ -33,6 +33,7 @@ var avatars_sorted = []
 var scores_sorted = []
 var player_score = {}
 var previousPlayer = 'nulo'
+var placeholderLineEdit = "Digite a resposta aqui"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -350,3 +351,10 @@ func scorePanelInfo():
 		sc.get_child(2).get_child(0).text = str(scores_sorted[i])
 	
 	emit_signal("sliderUpdate",avatars_sorted,scores_sorted)
+
+
+func _on_Answer_focus_entered() -> void:
+	get_node("/root/MainScene/Background/AnswerTipPanel/AnswerPanel/Answer").set_placeholder("")
+
+func _on_Answer_focus_exited() -> void:
+	get_node("/root/MainScene/Background/AnswerTipPanel/AnswerPanel/Answer").set_placeholder(placeholderLineEdit)

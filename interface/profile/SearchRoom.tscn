@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Mockups/3.jpeg" type="Texture" id=2]
@@ -6,7 +6,10 @@
 [ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003.png" type="Texture" id=4]
 [ext_resource path="res://interface/profile/SearchRoom.gd" type="Script" id=5]
 [ext_resource path="res://interface/rooms/Camada 146 copiar.png" type="Texture" id=6]
-[ext_resource path="res://interface/rooms/Menu copiar 3.png" type="Texture" id=7]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2.png" type="Texture" id=7]
+[ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_005.png" type="Texture" id=8]
+
+[sub_resource type="Theme" id=1]
 
 [node name="SearchRoom" type="Control"]
 anchor_right = 1.0
@@ -83,7 +86,10 @@ anchor_bottom = 1.0
 margin_left = -295.5
 margin_top = -166.0
 margin_right = 295.5
+theme = SubResource( 1 )
+disabled = true
 texture_normal = ExtResource( 4 )
+texture_disabled = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

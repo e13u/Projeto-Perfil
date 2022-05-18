@@ -134,7 +134,7 @@ func _popClientCard(code):
 	if code == 1:
 		$Tabuleiro._popCCard(card)
 	elif code ==2:
-		roomData.activeTip.integerValue = int(-1)
+		#roomData.activeTip.integerValue = int(-1)
 		$Tabuleiro._popCCard2(card)
 		
 
@@ -150,10 +150,13 @@ func verifyWhoPlays():
 		playerTurnUI.startClock()
 		get_node("Background/PlayerProfile/ActivePlayer").visible = true
 		updareScoreInSlider()
+		$AudioStreamPlayer.play()
 	else:
 		playerTurnUI.turnTipsButtons(false)
 		playerTurnUI.revealTimer(false)
 		playerTurnUI.revealWaitingUI(true)
+		playerTurnUI.blockTipsUsed()
+		playerTurnUI.usedTipsNumberText()
 		get_node("Background/PlayerProfile/ActivePlayer").visible = false
 		_popClientCard(2)
 		turnTimer.start()
@@ -162,7 +165,7 @@ func verifyWhoPlays():
 func revealTip(number):
 	var tipText = $Tabuleiro.cartaDestaque.dicas[number-1] #CORREÇÃO DE INDEX COMEÇANDO COM 0
 	#print($Tabuleiro.cartaDestaque.dicas[number-1])
-	print($Tabuleiro.cartaDestaque.nomeCarta)
+	#print($Tabuleiro.cartaDestaque.nomeCarta)
 	roomData.usedTips.arrayValue.values.append({"integerValue": number})
 	roomData.activeTip.integerValue = int(number-1)
 	#Revela UI do jogador da vez
