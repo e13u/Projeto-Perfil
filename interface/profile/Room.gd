@@ -108,7 +108,11 @@ func refreshPlayerList():
 		iniciarBtn.disabled = false
 	else:
 		iniciarBtn.disabled = true
-
+		
+	if
+	#VERIFICAR AVATARES DUPLICADOS NAS SALAS e MANDAR 
+	#SEGUNDO DUPLICADO DE VOLTA PARA O MENU DE ESCOLHA DO AVATAR
+	
 	if !Firebase.isHost and roomState == "start" and !isUpdating:
 		_startGame()
 	

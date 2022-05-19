@@ -8,6 +8,7 @@ onready var LegisBtn: TextureButton = $GridContainer/LegisBtn
 onready var VitalBtn: TextureButton = $GridContainer/VitalBtn
 onready var XeretaBtn: TextureButton = $GridContainer/XeretaBtn
 onready var confirmBtn: TextureButton = $ConfirmButton
+onready var timer: Timer = $Timer
 
 var roomData
 var usedChars = []
@@ -52,8 +53,11 @@ func blockAvatarOptions():
 		VitalBtn.modulate.a = 0.5
 	if usedChars.has("Xereta"):
 		XeretaBtn.modulate.a = 0.5
-
-
+	if usedChars.has(selectedChar):
+		selectedChar = "null"
+		confirmBtn.disabled = true
+	timer.start()
+	
 func _on_AdaoBtn_pressed() -> void:
 	selectedChar = "Adao"
 	confirmBtn.disabled = false
@@ -92,3 +96,7 @@ func _on_ConfirmButton_pressed() -> void:
 
 func _on_CancelButton2_pressed() -> void:
 	get_tree().change_scene("res://MainGame/MainMenu.tscn")
+
+
+func _on_Timer_timeout() -> void:
+	Firebase.get_document("partidas/%s" % Firebase.hostName, http)

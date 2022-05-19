@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://interface/profile/CharacterSelectClient.gd" type="Script" id=1]
 [ext_resource path="res://interface/rooms/Camada 158.png" type="Texture" id=2]
@@ -18,6 +18,12 @@
 [ext_resource path="res://interface/rooms/Vital_button_selected.png" type="Texture" id=16]
 [ext_resource path="res://interface/rooms/Legis_button_selected.png" type="Texture" id=17]
 [ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003.png" type="Texture" id=18]
+[ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=19]
+[ext_resource path="res://interface/rooms/Camada 754 copiar 3.png" type="Texture" id=20]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 19 )
 
 [node name="CharSeleClient" type="Control"]
 anchor_right = 1.0
@@ -81,6 +87,28 @@ texture_focused = ExtResource( 17 )
 expand = true
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="GridContainer/LegisBtn"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -135.5
+margin_top = -87.0
+margin_right = 135.5
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GridContainer/LegisBtn/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Legis"
+align = 1
+valign = 1
+
 [node name="ZeBtn" type="TextureButton" parent="GridContainer"]
 margin_left = 492.0
 margin_right = 980.0
@@ -94,6 +122,28 @@ texture_focused = ExtResource( 12 )
 expand = true
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="GridContainer/ZeBtn"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -135.5
+margin_top = -87.0
+margin_right = 135.5
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GridContainer/ZeBtn/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Zé Plenarinho"
+align = 1
+valign = 1
+
 [node name="VitalBtn" type="TextureButton" parent="GridContainer"]
 margin_top = 455.0
 margin_right = 488.0
@@ -106,6 +156,28 @@ texture_normal = ExtResource( 8 )
 texture_focused = ExtResource( 16 )
 expand = true
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VitalBtn"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -135.5
+margin_top = -87.0
+margin_right = 135.5
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GridContainer/VitalBtn/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Vital"
+align = 1
+valign = 1
 
 [node name="XeretaBtn" type="TextureButton" parent="GridContainer"]
 margin_left = 492.0
@@ -121,6 +193,28 @@ texture_focused = ExtResource( 15 )
 expand = true
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="GridContainer/XeretaBtn"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -135.5
+margin_top = -87.0
+margin_right = 135.5
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GridContainer/XeretaBtn/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Xereta"
+align = 1
+valign = 1
+
 [node name="CidaBtn" type="TextureButton" parent="GridContainer"]
 margin_top = 910.0
 margin_right = 488.0
@@ -133,6 +227,28 @@ texture_normal = ExtResource( 4 )
 texture_focused = ExtResource( 14 )
 expand = true
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/CidaBtn"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -135.5
+margin_top = -87.0
+margin_right = 135.5
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GridContainer/CidaBtn/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Cida"
+align = 1
+valign = 1
 
 [node name="AdaoBtn" type="TextureButton" parent="GridContainer"]
 margin_left = 492.0
@@ -147,6 +263,28 @@ texture_normal = ExtResource( 5 )
 texture_focused = ExtResource( 13 )
 expand = true
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/AdaoBtn"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -135.5
+margin_top = -87.0
+margin_right = 135.5
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GridContainer/AdaoBtn/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Adão"
+align = 1
+valign = 1
 
 [node name="CancelButton2" parent="." instance=ExtResource( 3 )]
 
@@ -185,6 +323,8 @@ __meta__ = {
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="pressed" from="GridContainer/LegisBtn" to="." method="_on_LegisBtn_pressed"]
 [connection signal="pressed" from="GridContainer/ZeBtn" to="." method="_on_ZeBtn_pressed"]
 [connection signal="pressed" from="GridContainer/VitalBtn" to="." method="_on_VitalBtn_pressed"]
@@ -194,3 +334,4 @@ __meta__ = {
 [connection signal="pressed" from="CancelButton2" to="." method="_on_CancelButton2_pressed"]
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
