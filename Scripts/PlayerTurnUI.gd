@@ -110,6 +110,10 @@ func usedTipsNumberText():
 	usedTipsNumberText.text = str(usedTipsNumber)+"/"+str(tabuleiro.cartaDestaque.dicas.size())
 	if usedTipsNumber == 0:
 		tipsWaiting.get_child(0).text = ''
+	#elif usedTipsNumber > tabuleiro.cartaDestaque.dicas.size():
+		#NÂO MOSTRAR MAIS BOTOES DE DICAS E APENAS ESPERAR A RESPOSTA+
+		#print("Acabaram as dicas!")
+		#get_node("/root/MainScene/").revealAnswerPanelWithNoTips()
 	
 func blockTipsUsed():
 	#BUSCAR DICAS JÁ UTILIZADAS
@@ -129,6 +133,12 @@ func blockTipsUsed():
 			c.disabled = true
 			usedTipsNumber +=1
 			addTipInContainer(tabuleiro.cartaDestaque.dicas[number-1])
+	
+	if usedTipsNumber >= tabuleiro.cartaDestaque.dicas.size():
+		#NÂO MOSTRAR MAIS BOTOES DE DICAS E APENAS ESPERAR A RESPOSTA+
+		print("Acabaram as dicas!")
+		get_node("/root/MainScene/").revealAnswerPanelWithNoTips()
+		
 	usedTipsNumberText()
 	
 func turnTipsButtons(on):

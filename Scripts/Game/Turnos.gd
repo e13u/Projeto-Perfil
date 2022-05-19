@@ -176,6 +176,13 @@ func revealTip(number):
 	playerTurnUI.revealTimer(true)
 	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http7)
 
+func revealAnswerPanelWithNoTips():
+	playerTurnUI.revealTip('')
+	playerTurnUI.turnTipsButtons(false)
+	playerTurnUI.revealTextBoxAnswer(true)
+	playerTurnUI.revealTimer(true)
+	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http7)
+	
 #TRATAMENTO DAS STRINGS
 func verifyAnswer(answer):
 	var answer1 = stringProcessing(answer)
