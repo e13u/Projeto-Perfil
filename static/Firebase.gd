@@ -17,6 +17,9 @@ var isHost
 var hostName
 var playerId
 
+func _ready() -> void:
+	get_tree().set_auto_accept_quit(false)
+	
 func _get_user_info(result: Array) -> Dictionary:
 	var result_body := JSON.parse(result[3].get_string_from_ascii()).result as Dictionary
 	return {
@@ -82,6 +85,13 @@ func delete_document(path: String, http: HTTPRequest) -> void:
 	var url := FIRESTORE_URL + path
 	http.request(url, _get_request_headers(), false, HTTPClient.METHOD_DELETE)
 
+func _notification(what: int) -> void:
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		print("FECHOU!!!!")
+		yield(get_tree().create_timer(2), "timeout")
+		print("FECHOU____2!!!!")
+		get_tree().quit() 
+		
 """"
 func _receive_message(tag,from,key,data):
 	if tag == "Firebase":

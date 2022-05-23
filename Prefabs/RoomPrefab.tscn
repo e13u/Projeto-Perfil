@@ -6,7 +6,7 @@
 [ext_resource path="res://interface/rooms/Edu_button.png" type="Texture" id=4]
 [ext_resource path="res://interface/rooms/Camada 741.png" type="Texture" id=5]
 [ext_resource path="res://interface/rooms/Camada 740.png" type="Texture" id=6]
-[ext_resource path="res://interface/login/backg.png" type="Texture" id=7]
+[ext_resource path="res://interface/rooms/SelectRoom.png" type="Texture" id=7]
 [ext_resource path="res://interface/profile/JoinButton.gd" type="Script" id=8]
 
 [node name="RoomPrefab" type="TextureRect"]
@@ -20,8 +20,10 @@ __meta__ = {
 
 [node name="TextureSelecBackg" type="TextureRect" parent="."]
 visible = false
-margin_right = 882.0
-margin_bottom = 245.0
+margin_left = -17.0
+margin_top = -15.0
+margin_right = 899.0
+margin_bottom = 272.0
 texture = ExtResource( 7 )
 expand = true
 __meta__ = {

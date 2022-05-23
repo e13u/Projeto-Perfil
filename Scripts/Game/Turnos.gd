@@ -7,6 +7,7 @@ onready var http4 :HTTPRequest = $HTTPRequest4
 onready var http5 :HTTPRequest = $HTTPRequest5
 onready var http6 :HTTPRequest = $HTTPRequest6
 onready var http7 :HTTPRequest = $HTTPRequest7
+onready var http8 :HTTPRequest = $HTTPRequest8
 onready var turnTimer: Timer = $TimerTurn
 onready var playerProfileImage = $Background/PlayerProfile
 onready var scoreText= $Background/PlayerProfile/ScoreButton/Label
@@ -215,6 +216,8 @@ func _on_HTTPRequest5_request_completed(result: int, response_code: int, headers
 	roomData = result_body.fields
 	if roomData.state.stringValue == "ended":
 		endGame()
+	elif roomData.state.stringValue == "answered":
+		playerTurnUI.waitingFeedback(roomData)
 	else:
 		verifyWhoPlays()
 	
@@ -249,7 +252,9 @@ func rightAnswer():
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(false)
 	playerTurnUI.revealTimer(false)
-	updateScore()
+	roomData.answerState = {"stringValue": "right"}
+	sendAnswerResult()
+	#updateScore()
 	
 func wrongAnswer():
 	print("ERROU")
@@ -258,7 +263,9 @@ func wrongAnswer():
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(false)
 	playerTurnUI.revealTimer(false)
-	nextPlayerTurn()
+	roomData.answerState = {"stringValue": "wrong"}
+	sendAnswerResult()
+	#nextPlayerTurn()
 	
 func timeOver():
 	updareScoreInSlider()
@@ -266,7 +273,13 @@ func timeOver():
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(false)
 	playerTurnUI.revealTimer(false)
-	nextPlayerTurn()
+	roomData.answerState = {"stringValue": "timeover"}
+	sendAnswerResult()
+	#nextPlayerTurn()
+
+func sendAnswerResult():
+	roomData.state = {"stringValue": "answered"}
+	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http8)
 	
 func endGame():
 	gameEnded = true
@@ -317,3 +330,6 @@ func _on_HTTPRequest7_request_completed(result: int, response_code: int, headers
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	roomData = result_body.fields
 	print(roomData.activeTip.integerValue)
+
+func _on_HTTPRequest8_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
+	pass # Replace with function body.

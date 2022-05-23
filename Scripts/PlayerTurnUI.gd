@@ -354,7 +354,8 @@ func scorePanelInfo():
 		var sc = scorePlayerPrefab.instance()
 		container.add_child(sc)
 		#avatar image
-		sc.get_child(0).texture = UiManager.imageIconAvatar(avatars_sorted[i])
+		#sc.get_child(0).texture = UiManager.imageIconAvatar(avatars_sorted[i])
+		sc.get_child(0).texture = UiManager.littleImageIcon(avatars_sorted[i])
 		#name
 		sc.get_child(1).get_child(0).text = players_sorted[i]
 		#score
@@ -368,3 +369,14 @@ func _on_Answer_focus_entered() -> void:
 
 func _on_Answer_focus_exited() -> void:
 	get_node("/root/MainScene/Background/AnswerTipPanel/AnswerPanel/Answer").set_placeholder(placeholderLineEdit)
+
+func waitingFeedback(data):
+	if data.answerState.stringValue == "right":
+		get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackCorrect").visible = true
+		tipsWaiting.get_child(0).text = get_node("/root/MainScene/Tabuleiro").cartaDestaque.nomeCarta
+	elif data.answerState.stringValue == "wrong":
+		get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackIncorrect").visible = true
+	elif data.answerState.stringValue == "timeover":
+		get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackTimeOver").visible = true
+	yield(get_tree().create_timer(2), "timeout")
+	print("VOLTAR AO NORMAL!")

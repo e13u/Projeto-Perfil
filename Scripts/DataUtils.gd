@@ -11,5 +11,6 @@ func createRoomData():
 		"score":{"arrayValue":{"values":[{"integerValue":0}]}},#0
 		"usedTips":{"arrayValue":{"values":[{"integerValue":0}]}},
 		"activeTip":{"integerValue": -1},
+		"answerState":{"stringValue": "null" },
 	} 
 	return roomData

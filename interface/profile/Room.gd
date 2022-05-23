@@ -13,6 +13,8 @@ var playersInRoom :int = 0
 var id 
 var roomData
 var isUpdating
+var player_list =[]
+var avatar_list=[]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -108,8 +110,29 @@ func refreshPlayerList():
 		iniciarBtn.disabled = false
 	else:
 		iniciarBtn.disabled = true
-		
-	if
+	
+	var duplicated = false
+	var dupList = []
+	avatar_list = []
+	
+	for i in avatars.size():
+			avatar_list.append(avatars[i].stringValue)
+			player_list.append(players[i].stringValue)
+			
+	print('avatars: ',avatar_list)
+	
+	for i in range(avatar_list.size()):
+		if duplicated:
+			break
+		for j in range(avatar_list.size()):
+			if (avatar_list[j] == avatar_list[i]) and i != j:
+				duplicated = true
+				print('DUPLICATED!!!!')
+				dupList.append(avatar_list[j])
+	
+	if dupList.size() >0:
+		kickDuplicatedPlayer(dupList)
+	
 	#VERIFICAR AVATARES DUPLICADOS NAS SALAS e MANDAR 
 	#SEGUNDO DUPLICADO DE VOLTA PARA O MENU DE ESCOLHA DO AVATAR
 	
@@ -139,3 +162,17 @@ func _on_HTTPRequest5_request_completed(result: int, response_code: int, headers
 
 func _startGame():
 	get_tree().change_scene("res://MainGame/MainGame.tscn")
+
+func kickDuplicatedPlayer(duplicatedList):
+	print('duplicatedList: ',duplicatedList)
+	
+	var index = avatar_list.find(duplicatedList[0])
+	
+	print('index: ',index)
+	#TEMP
+	var duplPlayer = player_list[index+1]
+	print('duplPlayer: ',duplPlayer)
+	print('Firebase.user_email: ',Firebase.user_email)
+	
+	if duplPlayer == Firebase.user_email:
+		_on_CancelButton_pressed()

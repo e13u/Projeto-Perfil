@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -80,6 +80,10 @@ font_data = SubResource( 1 )
 [sub_resource type="DynamicFont" id=13]
 size = 35
 font_data = ExtResource( 54 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 50
+font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 56
@@ -486,6 +490,51 @@ custom_fonts/font = SubResource( 13 )
 align = 1
 valign = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultFeedbackCorrect" type="Label" parent="Background/TipsForWaitingPlayer"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.0
+margin_top = 9.0
+margin_right = 151.0
+margin_bottom = 73.0
+custom_colors/font_color = Color( 0.129412, 1, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "Resposta Correta!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultFeedbackIncorrect" type="Label" parent="Background/TipsForWaitingPlayer"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.0
+margin_top = 9.0
+margin_right = 151.0
+margin_bottom = 77.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "Resposta Errada!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultFeedbackTimeOver" type="Label" parent="Background/TipsForWaitingPlayer"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.0
+margin_top = 9.0
+margin_right = 151.0
+margin_bottom = 77.0
+custom_colors/font_color = Color( 1, 0.631373, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "O Tempo Acabou!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1302,6 +1351,8 @@ wait_time = 2.0
 
 [node name="HTTPRequest7" type="HTTPRequest" parent="."]
 
+[node name="HTTPRequest8" type="HTTPRequest" parent="."]
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 55 )
 
@@ -1322,3 +1373,4 @@ stream = ExtResource( 55 )
 [connection signal="request_completed" from="HTTPRequest5" to="." method="_on_HTTPRequest5_request_completed"]
 [connection signal="request_completed" from="HTTPRequest6" to="." method="_on_HTTPRequest6_request_completed"]
 [connection signal="request_completed" from="HTTPRequest7" to="." method="_on_HTTPRequest7_request_completed"]
+[connection signal="request_completed" from="HTTPRequest8" to="." method="_on_HTTPRequest8_request_completed"]
