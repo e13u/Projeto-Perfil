@@ -12,11 +12,6 @@ func _on_AvatarButton_pressed() -> void:
 	#var name = $NameRect/RoomName.text
 	#get_parent().get_parent().toggleConfirmButton(false, name)
 
-#func _on_TextureButton2_pressed() -> void:
-	#var name = $NameRect/RoomName.text
-	#get_child(0).visible = true
-	#get_parent().get_parent().toggleConfirmButton(false, name)
-
 func _on_TextureButton2_toggled(button_pressed: bool) -> void:
 	var name = $NameRect/RoomName.text
 	get_parent().get_parent().toggleConfirmButton(false, name)

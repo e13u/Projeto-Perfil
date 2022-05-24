@@ -34,6 +34,8 @@ var scores_sorted = []
 var player_score = {}
 var previousPlayer = 'nulo'
 var placeholderLineEdit = "Digite a resposta aqui"
+var activePlayer
+var reset = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -58,7 +60,7 @@ func _ready() -> void:
 	usedTipsNumberText.text = ''
 	avatarInClock = get_node("/root/MainScene/Background/ClockPlayerWaiting/ActivePlayerWait")
 	scorePanel = get_node("/root/MainScene/Background/ScoresPanel")
-	
+
 func revealTextBoxAnswer(on):
 	answerPanel.visible = on
 	container.visible = !on
@@ -70,24 +72,31 @@ func revealWaitingUI(on):
 	timerRadialWaiting.visible = on
 	tipsWaiting.visible = on
 	if on:
-		var activePlayer = get_node("/root/MainScene/").roomData.activePlayer.stringValue
+		activePlayer = get_node("/root/MainScene/").roomData.activePlayer.stringValue
 		var index = get_node("/root/MainScene/").playersNames.find(activePlayer)
 		var avatar = get_node("/root/MainScene/").avatarsNames[index]
 		var tipNumber= get_node("/root/MainScene/").roomData.activeTip.integerValue
 		var tipText = get_node("/root/MainScene/Tabuleiro").cartaDestaque.dicas[int(tipNumber)]
 		#print(get_node("/root/MainScene/Tabuleiro").cartaDestaque.dicas[0])
+		
 		if int(tipNumber) != -1:
 			tipsWaiting.get_child(0).text = tipText
 			
 		if previousPlayer != activePlayer:
+			reset = true #VERIFICAR DE OUTRA FORMA PARA 2 PLAYERS
+			
+		if reset:
 			previousPlayer = activePlayer
 			timerRadialWaiting.get_child(0).value = 0
 			tipsWaiting.get_child(0).text = ''
+			reset = false
 			
 		activePlayerName.text = activePlayer
 		avatarInClock.texture = UiManager.littleImageIcon(avatar)
 		timerRadialWaiting.get_child(0).value += 2
-		
+	else:
+		reset = true
+	
 func revealTimer(on):
 	timerRadial.visible = on
 	timerRadial.value = 0
@@ -135,9 +144,10 @@ func blockTipsUsed():
 			addTipInContainer(tabuleiro.cartaDestaque.dicas[number-1])
 	
 	if usedTipsNumber >= tabuleiro.cartaDestaque.dicas.size():
-		#NÂO MOSTRAR MAIS BOTOES DE DICAS E APENAS ESPERAR A RESPOSTA+
-		print("Acabaram as dicas!")
-		get_node("/root/MainScene/").revealAnswerPanelWithNoTips()
+		if Firebase.user_email != activePlayer:
+			#NÂO MOSTRAR MAIS BOTOES DE DICAS E APENAS ESPERAR A RESPOSTA+
+			print("Acabaram as dicas!")
+			get_node("/root/MainScene/").revealAnswerPanelWithNoTips()
 		
 	usedTipsNumberText()
 	
@@ -155,10 +165,11 @@ func revealTip(tip):
 	usedTipsNumberText()
 
 func addTipInContainer(tiptext):
-	var prefab = preload("res://Prefabs/RevealedTipPrefab.tscn")
-	var tip = prefab.instance()
-	revealedTipsContainer.add_child(tip)
-	tip.get_child(0).text = tiptext
+	if tiptext != '':
+		var prefab = preload("res://Prefabs/RevealedTipPrefab.tscn")
+		var tip = prefab.instance()
+		revealedTipsContainer.add_child(tip)
+		tip.get_child(0).text = tiptext
 	
 func clearContainer():
 	for n in revealedTipsContainer.get_children():
@@ -197,7 +208,9 @@ func _on_SendButton_pressed() -> void:
 	answerBox.text = ""
 	get_node("/root/MainScene/").verifyAnswer(answer)
 
-func rightAnswerPanel():
+func rightAnswerPanel(avatar, score):
+	get_node("/root/MainScene/RightAnswerPanel/Box/AvatarImage").texture = UiManager.imageIconAvatar(avatar)
+	get_node("/root/MainScene/RightAnswerPanel/Box/ScoreBox/Label").text = str(score)
 	rightAnswerPanel.visible = true
 	yield(get_tree().create_timer(feedbackAnswerTime), "timeout")
 	rightAnswerPanel.visible = false

@@ -24,6 +24,7 @@ var canStart = false
 var playerTurnUI
 var gameEnded = false
 var pointsForWinning = 100
+var righQ = false
 
 func _initGame() -> void:
 	turnState = 0
@@ -236,6 +237,7 @@ func updateScore():
 	roomData.usedTips.arrayValue.values = [{"integerValue":0}]
 	#print("CARTA ACERTADA: ",roomData.cards.arrayValue.values[0].nomeCarta)
 	scoreText.text = str(scoreInt)
+	playerTurnUI.rightAnswerPanel(avatarsNames[_getPlayerIndex(Firebase.user_email)], scoreInt)
 	#$RightAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[index],scoreInt)
 	updareScoreInSlider()
 	if scoreInt >= pointsForWinning:
@@ -248,7 +250,7 @@ func _on_HTTPRequest6_request_completed(result: int, response_code: int, headers
 	
 func rightAnswer():
 	print("ACERTOU")
-	playerTurnUI.rightAnswerPanel()
+	righQ = true
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(false)
 	playerTurnUI.revealTimer(false)
@@ -258,6 +260,7 @@ func rightAnswer():
 	
 func wrongAnswer():
 	print("ERROU")
+	righQ = false
 	updareScoreInSlider()
 	playerTurnUI.wrongAnswerPanel()
 	playerTurnUI.turnTipsButtons(false)
@@ -269,6 +272,7 @@ func wrongAnswer():
 	
 func timeOver():
 	updareScoreInSlider()
+	righQ = false
 	playerTurnUI.timeOverPanel()
 	playerTurnUI.turnTipsButtons(false)
 	playerTurnUI.revealTextBoxAnswer(false)
@@ -338,4 +342,7 @@ func _on_HTTPRequest7_request_completed(result: int, response_code: int, headers
 func _on_HTTPRequest8_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	roomData.state = {"stringValue": "null"}
 	yield(get_tree().create_timer(2), "timeout")
-	nextPlayerTurn()
+	if !righQ:
+		nextPlayerTurn()
+	else:
+		updateScore()
