@@ -277,6 +277,10 @@ func timeOver():
 	sendAnswerResult()
 	#nextPlayerTurn()
 
+#unc endWaitingFeedback():
+	#roomData.state = {"stringValue": "null"}
+	#nextPlayerTurn()
+	
 func sendAnswerResult():
 	roomData.state = {"stringValue": "answered"}
 	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http8)
@@ -332,4 +336,6 @@ func _on_HTTPRequest7_request_completed(result: int, response_code: int, headers
 	print(roomData.activeTip.integerValue)
 
 func _on_HTTPRequest8_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
-	pass # Replace with function body.
+	roomData.state = {"stringValue": "null"}
+	yield(get_tree().create_timer(2), "timeout")
+	nextPlayerTurn()

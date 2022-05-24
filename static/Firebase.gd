@@ -87,7 +87,17 @@ func delete_document(path: String, http: HTTPRequest) -> void:
 
 func _notification(what: int) -> void:
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		print("FECHOU!!!!")
+		if isHost:
+			var data = DataUtils.createRoomData()
+			print("Apagando partida de: "+user_email)
+			data.state = { "stringValue": "canceled" }
+			Firebase.update_document("partidas/%s" % user_email, data, http)
+		else:
+			#roomData.player_1 = { "stringValue": "null"}
+			roomData.players.arrayValue.values.remove(id)
+			roomData.avatars.arrayValue.values.remove(id)
+		
+		Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http)
 		yield(get_tree().create_timer(2), "timeout")
 		print("FECHOU____2!!!!")
 		get_tree().quit() 

@@ -379,4 +379,8 @@ func waitingFeedback(data):
 	elif data.answerState.stringValue == "timeover":
 		get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackTimeOver").visible = true
 	yield(get_tree().create_timer(2), "timeout")
-	print("VOLTAR AO NORMAL!")
+	get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackCorrect").visible = false
+	get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackIncorrect").visible = false
+	get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackTimeOver").visible = false
+	tipsWaiting.get_child(0).text = ''
+	#get_node("/root/MainScene/").endWaitingFeedback()
