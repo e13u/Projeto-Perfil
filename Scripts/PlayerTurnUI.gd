@@ -143,7 +143,7 @@ func blockTipsUsed():
 			usedTipsNumber +=1
 			addTipInContainer(tabuleiro.cartaDestaque.dicas[number-1])
 	
-	if usedTipsNumber >= tabuleiro.cartaDestaque.dicas.size():
+	if usedTipsNumber >= tabuleiro.cartaDestaque.dicas.size(): #BUG DE DICAS 
 		if Firebase.user_email != activePlayer:
 			#NÂO MOSTRAR MAIS BOTOES DE DICAS E APENAS ESPERAR A RESPOSTA+
 			print("Acabaram as dicas!")

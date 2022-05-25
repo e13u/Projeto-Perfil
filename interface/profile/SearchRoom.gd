@@ -16,8 +16,14 @@ func _ready() -> void:
 func toggleConfirmButton(disabled, name):
 	iniciarBtn.disabled = disabled
 	hostName = name
+	deactivateAnotherSelection()
 	#_on_ConfirmButton_pressed()
 	
+func deactivateAnotherSelection():
+	for btn in roomsContainer.get_children():
+		if hostName != btn.get_child(3).get_child(0).text:
+			btn.get_child(0).visible = false
+		
 func _getActiveRooms():
 	print("Verificando Salas")
 	Firebase.get_document("partidas", http)
@@ -42,20 +48,26 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 			hostNames.append(result_body.values()[0][i].fields.players.arrayValue.values[0].stringValue)
 			avatarIconsNames.append(result_body.values()[0][i].fields.avatars.arrayValue.values[0].stringValue)
 			playersInRoomNames.append(result_body.values()[0][i].fields.players.arrayValue.values)
-
+			
+	print("LISTA: _____",playersInRoomNames)
+	
 	for j in (hostNames.size()):
-		var hostButtonPrefab = preload("res://Prefabs/RoomPrefab.tscn")
+		var hostButtonPrefab = preload("res://Prefabs/RoomPrefab2.tscn")
 		var hostButton = hostButtonPrefab.instance()
 		roomsContainer.add_child(hostButton)
 		hostButton.get_child(3).get_child(0).text = hostNames[j]
 		hostButton.get_child(2).texture_normal = UiManager.imageIconAvatar(avatarIconsNames[j])
-		if hostName != "":
+		if hostName == hostNames[j]:
 			hostButton.get_child(0).visible = true
 		else:
 			hostButton.get_child(0).visible = false	
-		#print(playersInRoomNames[j])
-		#hostButton.get_child(3).text = playersInRoomNames[j].stringValue
-
+		#print(playersInRoomNames)
+		var textPlayers = ''
+		for k in range(playersInRoomNames[j].size()):
+			textPlayers += ', '+playersInRoomNames[j][k].stringValue
+		textPlayers.erase(0,1)
+		hostButton.get_child(4).text = textPlayers
+		
 func _on_Timer_timeout() -> void:
 	_getActiveRooms()
 

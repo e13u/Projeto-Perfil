@@ -74,7 +74,7 @@ func showTipsLater():
 		n.queue_free()
 		
 	_cardData()
-	var size = cartaDestaque.dicas.size()
+	var size = cartaDestaque.dicas.size() #BUG DE DICAS 
 	#print("SIZE: ",size)
 	#print("CARTA DESTAQUE: ",cartaDestaque.nomeCarta)
 	
@@ -87,7 +87,7 @@ func showTipsLater():
 	
 func _cardData():
 	var allTheEnumKeys = Categoria.Categori.keys()
-	var key_value = allTheEnumKeys[cartaDestaque.categoriaCarta]
+	var key_value = allTheEnumKeys[cartaDestaque.categoriaCarta] #BUG DE DICAS 
 	#print("CAT: ", key_value )
 	var catString
 	

@@ -119,7 +119,7 @@ func refreshPlayerList():
 			avatar_list.append(avatars[i].stringValue)
 			player_list.append(players[i].stringValue)
 			
-	print('avatars: ',avatar_list)
+	#print('avatars: ',avatar_list)
 	
 	for i in range(avatar_list.size()):
 		if duplicated:
