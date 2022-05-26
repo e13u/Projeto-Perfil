@@ -34,10 +34,12 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 	#get_tree().change_scene("res://interface/login/Login.tscn")
 
 func _on_JoinButton_pressed() -> void:
+	$AudioStreamPlayer.play()
 	create = 0 
 	Firebase.register(username.text, standardPassword, http)
 
 func _on_CreateButton_pressed() -> void:
+	$AudioStreamPlayer.play()
 	create = 1 
 	Firebase.register(username.text, standardPassword, http)
 	

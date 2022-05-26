@@ -36,7 +36,7 @@ var previousPlayer = 'nulo'
 var placeholderLineEdit = "Digite a resposta aqui"
 var activePlayer
 var reset = true
-
+var audioStream
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	container = get_node("/root/MainScene/Background/HintsPanel/GridContainer")
@@ -60,7 +60,8 @@ func _ready() -> void:
 	usedTipsNumberText.text = ''
 	avatarInClock = get_node("/root/MainScene/Background/ClockPlayerWaiting/ActivePlayerWait")
 	scorePanel = get_node("/root/MainScene/Background/ScoresPanel")
-
+	audioStream = get_node('/root/MainScene/AudioStreamPlayer2')
+	
 func revealTextBoxAnswer(on):
 	answerPanel.visible = on
 	container.visible = !on
@@ -199,6 +200,7 @@ func timeOver():
 	get_node("/root/MainScene/").timeOver()
 
 func _on_SendButton_pressed() -> void:
+	buttonClick()
 	revealTextBoxAnswer(false)
 	revealTimer(false)
 	turnTipsButtons(false)
@@ -227,9 +229,11 @@ func timeOverPanel():
 
 func _on_RevealedTipsButton_pressed() -> void:
 	revealedTipsPanel.visible = true
+	buttonClick()
 
 func _on_CloseButton_pressed() -> void:
 	revealedTipsPanel.visible = false
+	buttonClick()
 	
 #Revificar se Enter foi pressionado
 func _process(delta):
@@ -304,9 +308,15 @@ func showResults(data):
 		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot/ScoreBox/Label").text = str(scores_sorted[2])
 	else:
 		get_node("/root/MainScene/ResultsScreen/Backg2/ThirddPlaceSlot").visible = false
-
+	
+	var slider_final = get_node("/root/MainScene/ResultsScreen/Backg2/SliderBackg")
+	
+	for i in avatars_sorted.size():
+		slider_final.updatePlayerScore(avatars_sorted[i],int(scores_sorted[i]))
+	
 func _on_CloseScoresButton_pressed() -> void:
 	scoresPanelReveal(false)
+	buttonClick()
 
 func getPlayersPositions():
 	var data = get_node("/root/MainScene/").roomData
@@ -397,3 +407,6 @@ func waitingFeedback(data):
 	get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackTimeOver").visible = false
 	tipsWaiting.get_child(0).text = ''
 	#get_node("/root/MainScene/").endWaitingFeedback()
+
+func buttonClick():
+	audioStream.play()

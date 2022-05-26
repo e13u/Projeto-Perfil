@@ -61,40 +61,42 @@ func blockAvatarOptions():
 func _on_AdaoBtn_pressed() -> void:
 	selectedChar = "Adao"
 	confirmBtn.disabled = false
-
+	$AudioStreamPlayer.play()
 
 func _on_CidaBtn_pressed() -> void:
 	selectedChar = "Cida"
 	confirmBtn.disabled = false
-
+	$AudioStreamPlayer.play()
 
 func _on_ZeBtn_pressed() -> void:
 	selectedChar = "Ze Plenarinho"
 	confirmBtn.disabled = false
-
+	$AudioStreamPlayer.play()
 
 func _on_LegisBtn_pressed() -> void:
 	selectedChar = "Legis"
 	confirmBtn.disabled = false
-
+	$AudioStreamPlayer.play()
 
 func _on_VitalBtn_pressed() -> void:
 	selectedChar = "Vital"
 	confirmBtn.disabled = false
-
+	$AudioStreamPlayer.play()
 
 func _on_XeretaBtn_pressed() -> void:
 	selectedChar = "Xereta"
 	confirmBtn.disabled = false
-
+	$AudioStreamPlayer.play()
 
 func _on_ConfirmButton_pressed() -> void:
+	$AudioStreamPlayer.play()
 	if selectedChar != "null":
 		Firebase.avatar = selectedChar
 		get_tree().change_scene("res://interface/profile/Room.tscn")
 
 
 func _on_CancelButton2_pressed() -> void:
+	$AudioStreamPlayer.play()
 	get_tree().change_scene("res://MainGame/MainMenu.tscn")
 
 

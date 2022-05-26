@@ -34,6 +34,7 @@ func enterInRoom():
 	isUpdating = true
 	
 func _on_CancelButton_pressed() -> void:
+	$AudioStreamPlayer.play()
 	var user_email = Firebase.user_email
 	if Firebase.isHost:
 		var data = DataUtils.createRoomData()
@@ -152,6 +153,7 @@ func verifyNumberOfPlayersInRoom():
 		return roomData.players.arrayValue.values.size()
 
 func _on_ConfirmButton_pressed() -> void:
+	$AudioStreamPlayer.play()
 	var data = roomData
 	if verifyNumberOfPlayersInRoom() > 1: 
 		data.state = { "stringValue": "start" }

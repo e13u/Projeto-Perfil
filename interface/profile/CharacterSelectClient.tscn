@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://interface/profile/CharacterSelectClient.gd" type="Script" id=1]
 [ext_resource path="res://interface/rooms/Camada 158.png" type="Texture" id=2]
@@ -20,6 +20,9 @@
 [ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003.png" type="Texture" id=18]
 [ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=19]
 [ext_resource path="res://interface/rooms/Camada 754 copiar 3.png" type="Texture" id=20]
+[ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003b.png" type="Texture" id=21]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2b.png" type="Texture" id=22]
+[ext_resource path="res://Audio/button.mp3" type="AudioStream" id=23]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -287,6 +290,7 @@ align = 1
 valign = 1
 
 [node name="CancelButton2" parent="." instance=ExtResource( 3 )]
+texture_pressed = ExtResource( 22 )
 
 [node name="ConfirmButton" type="TextureButton" parent="."]
 anchor_left = 0.5
@@ -294,9 +298,11 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -216.0
-margin_top = -214.08
+margin_top = -199.0
 margin_right = 216.0
+margin_bottom = 25.0
 texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 21 )
 expand = true
 stretch_mode = 3
 __meta__ = {
@@ -324,6 +330,9 @@ __meta__ = {
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
 
 [connection signal="pressed" from="GridContainer/LegisBtn" to="." method="_on_LegisBtn_pressed"]
 [connection signal="pressed" from="GridContainer/ZeBtn" to="." method="_on_ZeBtn_pressed"]

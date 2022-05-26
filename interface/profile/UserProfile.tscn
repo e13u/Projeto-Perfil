@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://interface/profile/UserProfile.gd" type="Script" id=1]
 [ext_resource path="res://Mockups/4.jpeg" type="Texture" id=2]
@@ -21,6 +21,9 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2.png" type="Texture" id=19]
 [ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=20]
 [ext_resource path="res://interface/rooms/Camada 754 copiar 3.png" type="Texture" id=21]
+[ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003b.png" type="Texture" id=22]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2b.png" type="Texture" id=23]
+[ext_resource path="res://Audio/button.mp3" type="AudioStream" id=24]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -290,7 +293,9 @@ anchor_top = 0.9
 anchor_right = 0.7
 anchor_bottom = 1.0
 margin_top = -22.0802
+margin_bottom = 20.0
 texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 22 )
 expand = true
 stretch_mode = 3
 __meta__ = {
@@ -324,6 +329,7 @@ margin_left = -150.0
 margin_top = 30.0
 margin_bottom = 100.0
 texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -338,6 +344,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
 
 [connection signal="pressed" from="GridContainer/legisBtn" to="." method="_on_legisBtn_pressed"]
 [connection signal="pressed" from="GridContainer/ZeBtn" to="." method="_on_ZeBtn_pressed"]

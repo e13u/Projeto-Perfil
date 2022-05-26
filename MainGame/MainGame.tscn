@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -14,7 +14,7 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_fundo.png" type="Texture" id=12]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/fundo.png" type="Texture" id=13]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_sombra.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/LINHA VITORIA.png" type="Texture" id=15]
+[ext_resource path="res://interface/rooms/Menu copiar 3b.png" type="Texture" id=15]
 [ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=16]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box pontuacao.png" type="Texture" id=17]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box nome.png" type="Texture" id=18]
@@ -57,6 +57,10 @@
 [ext_resource path="res://Audio/open-button-2.wav" type="AudioStream" id=55]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Camada 1705.png" type="Texture" id=56]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Ze_icon.png" type="Texture" id=57]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/DICAS REVELADASb.png" type="Texture" id=58]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2b.png" type="Texture" id=59]
+[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1590b.png" type="Texture" id=60]
+[ext_resource path="res://Audio/button.mp3" type="AudioStream" id=61]
 
 [sub_resource type="DynamicFont" id=9]
 size = 62
@@ -309,6 +313,9 @@ margin_top = 133.0
 margin_right = 5.0
 margin_bottom = 564.0
 texture = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Background/AnswerTipPanel/TipTextBox"]
 anchor_right = 1.0
@@ -321,6 +328,7 @@ custom_colors/font_color = Color( 0.321569, 0.321569, 0.321569, 1 )
 custom_fonts/font = SubResource( 6 )
 text = "Fui nomeado diretor da Escola Nacional de Belas Artes e lá, minhas ideias de experimentações artísticas entre alunos e professores geraram uma greve de 6 meses de acadêmicos e mestres.
 Acabei me afastando da Escola."
+align = 1
 valign = 1
 autowrap = true
 
@@ -424,27 +432,6 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = 20.0
 margin_bottom = -20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PinsPanel" type="Panel" parent="Background"]
-visible = false
-self_modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.173
-anchor_top = 0.761
-anchor_right = 0.925
-anchor_bottom = 1.0
-margin_left = -0.160004
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Pins" type="TextureRect" parent="Background/PinsPanel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 15 )
-expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -679,6 +666,7 @@ margin_top = -341.0
 margin_right = 566.0
 margin_bottom = -51.0
 texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 58 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -694,6 +682,9 @@ text = "Dicas
 Reveladas"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MenuButton" type="TextureButton" parent="Background"]
 anchor_left = 1.0
@@ -703,6 +694,7 @@ margin_top = 31.0
 margin_right = -18.0
 margin_bottom = 131.0
 texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -729,6 +721,7 @@ margin_top = -30.0
 margin_right = 10.0
 margin_bottom = 70.0
 texture_normal = ExtResource( 40 )
+texture_pressed = ExtResource( 59 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -810,6 +803,7 @@ margin_top = -116.0
 margin_right = 5.0
 margin_bottom = -16.0
 texture_normal = ExtResource( 40 )
+texture_pressed = ExtResource( 59 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -880,6 +874,7 @@ __meta__ = {
 }
 
 [node name="CloseWindow" type="TextureRect" parent="TimeOverPanel/Box"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -150.0
@@ -947,6 +942,7 @@ align = 1
 valign = 1
 
 [node name="CloseWindow" type="TextureRect" parent="WrongAnswerPanel/Box"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -150.0
@@ -1003,6 +999,7 @@ align = 1
 valign = 1
 
 [node name="CloseWindow" type="TextureRect" parent="RightAnswerPanel/Box"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -150.0
@@ -1227,6 +1224,7 @@ margin_top = -215.0
 margin_right = 371.0
 margin_bottom = -76.0
 texture_normal = ExtResource( 50 )
+texture_pressed = ExtResource( 60 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1251,20 +1249,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 8 )
 stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="ResultsScreen/Backg1"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -540.0
-margin_top = -487.0
-margin_right = 540.0
-margin_bottom = 2.0
-texture = ExtResource( 31 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1363,6 +1347,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="TextureRect" parent="ResultsScreen/Backg1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -540.0
+margin_top = -487.0
+margin_right = 540.0
+margin_bottom = 2.0
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="HTTPRequest2" type="HTTPRequest" parent="."]
@@ -1389,6 +1387,9 @@ wait_time = 2.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 55 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 61 )
 
 [connection signal="sliderUpdate" from="Background" to="Background/ScoresPanel/SliderBackg" method="_on_Background_sliderUpdate"]
 [connection signal="focus_entered" from="Background/AnswerTipPanel/AnswerPanel/Answer" to="Background" method="_on_Answer_focus_entered"]

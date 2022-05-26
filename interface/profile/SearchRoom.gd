@@ -14,6 +14,7 @@ func _ready() -> void:
 	_getActiveRooms()
 	
 func toggleConfirmButton(disabled, name):
+	$AudioStreamPlayer.play()
 	iniciarBtn.disabled = disabled
 	hostName = name
 	deactivateAnotherSelection()
@@ -72,6 +73,7 @@ func _on_Timer_timeout() -> void:
 	_getActiveRooms()
 
 func _on_ConfirmButton_pressed() -> void:
+	$AudioStreamPlayer.play()
 	Firebase.hostName = hostName
 	Firebase.isHost = false
 	#get_tree().change_scene("res://interface/profile/Room.tscn")

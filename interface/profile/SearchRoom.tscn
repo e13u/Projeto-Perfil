@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Mockups/3.jpeg" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://interface/rooms/Camada 146 copiar.png" type="Texture" id=6]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2.png" type="Texture" id=7]
 [ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_005.png" type="Texture" id=8]
+[ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003b.png" type="Texture" id=9]
+[ext_resource path="res://Audio/button.mp3" type="AudioStream" id=10]
 
 [sub_resource type="Theme" id=1]
 
@@ -92,6 +94,7 @@ margin_right = 295.5
 theme = SubResource( 1 )
 disabled = true
 texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 9 )
 texture_disabled = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -120,6 +123,9 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
 
 [connection signal="pressed" from="CancelButton" to="." method="_on_CancelButton_pressed"]
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_ConfirmButton_pressed"]

@@ -29,6 +29,7 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 			get_tree().change_scene("res://interface/profile/Room.tscn")
 
 func _on_ConfirmButton_pressed() -> void:
+	$AudioStreamPlayer.play()
 	if player_Avatar == "null":
 		return
 	
@@ -88,4 +89,5 @@ func _on_HTTPRequest2_request_completed(result: int, response_code: int, headers
 			new_room = false
 
 func _on_CancelButton2_pressed() -> void:
+	$AudioStreamPlayer.play()
 	get_tree().change_scene("res://MainGame/MainMenu.tscn")

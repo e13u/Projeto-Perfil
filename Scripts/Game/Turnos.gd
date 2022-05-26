@@ -12,6 +12,7 @@ onready var turnTimer: Timer = $TimerTurn
 onready var playerProfileImage = $Background/PlayerProfile
 onready var scoreText= $Background/PlayerProfile/ScoreButton/Label
 onready var playerNameText= $Background/PlayerProfile/NameBox/Label
+onready var audioStream2 = $AudioStreamPlayer2
 
 var tabuleiro
 var playersNames =[]
@@ -126,13 +127,22 @@ func _on_HTTPRequest3_request_completed(result: int, response_code: int, headers
 		print("RECEBI OS DADOS!")
 		canStart = true
 
+#FUNÇÂO COM PROBLEMA
 func _popClientCard(code):
 	var card : Carta
 	var ran = $Tabuleiro.baralho.pilhaCartas.size()
 	
 	for i in range(ran):
 		if $Tabuleiro.baralho.pilhaCartas[i].idCarta == int(roomData.cards.arrayValue.values[0].integerValue):
+			print("ACHEI A CARTA")
 			card = $Tabuleiro.baralho.pilhaCartas[i]
+			break
+			
+	if card == null:
+		print("NÃO ACHEI A CARTA")
+		_popClientCard(code)
+		return
+		
 	if code == 1:
 		$Tabuleiro._popCCard(card)
 	elif code ==2:
@@ -333,6 +343,7 @@ func stringProcessing(text):
 
 func _on_FinishButton_pressed() -> void:
 	get_tree().change_scene("res://MainGame/MainMenu.tscn")
+	audioStream2.play()
 
 func _on_HTTPRequest7_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
