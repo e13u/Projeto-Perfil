@@ -529,7 +529,6 @@ __meta__ = {
 }
 
 [node name="ClockPlayerWaiting" type="TextureRect" parent="Background"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -604,6 +603,9 @@ margin_right = 122.5
 margin_bottom = -16.9999
 texture = ExtResource( 18 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NameLabel" type="Label" parent="Background/ClockPlayerWaiting/BoxName"]
 anchor_right = 1.0

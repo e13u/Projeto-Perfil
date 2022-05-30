@@ -200,15 +200,7 @@ func timeOver():
 	get_node("/root/MainScene/").timeOver()
 
 func _on_SendButton_pressed() -> void:
-	buttonClick()
-	revealTextBoxAnswer(false)
-	revealTimer(false)
-	turnTipsButtons(false)
-	timerOn = false
-	timer = 0
-	var answer = answerBox.text
-	answerBox.text = ""
-	get_node("/root/MainScene/").verifyAnswer(answer)
+	sendAnswer()
 
 func rightAnswerPanel(avatar, score):
 	get_node("/root/MainScene/RightAnswerPanel/Box/AvatarImage").texture = UiManager.imageIconAvatar(avatar)
@@ -237,9 +229,22 @@ func _on_CloseButton_pressed() -> void:
 	
 #Revificar se Enter foi pressionado
 func _process(delta):
-	if Input.is_action_pressed("ui_accept"):
-		_on_SendButton_pressed()
+	if Input.is_action_just_pressed("ui_accept"):
+		sendAnswer()
 
+func sendAnswer():
+	buttonClick()
+	revealTextBoxAnswer(false)
+	revealTimer(false)
+	turnTipsButtons(false)
+	timerOn = false
+	timer = 0
+	var answer = answerBox.text
+	answerBox.text = ""
+	print("answer: ",answer)
+	print("size: ",answer.length())
+	get_node("/root/MainScene/").verifyAnswer(answer)
+	
 func scoresPanelReveal(on):
 	scorePanel.visible = on
 	if on:

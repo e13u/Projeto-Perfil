@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 12
 qtPontosTotais = 18.0
 pontosDica = 1.5
-possiveisRespostas = PoolStringArray( "Voto Feminino", "Voto das Mulheres", "Voto Feminino Brasil" )
+possiveisRespostas = PoolStringArray( "Voto Feminino", "Voto das Mulheres", "Voto Feminino Brasil", "Voto Feminino no Brasil" )
 cartaBonus = false

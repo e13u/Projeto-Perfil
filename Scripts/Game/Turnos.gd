@@ -352,7 +352,7 @@ func _on_HTTPRequest7_request_completed(result: int, response_code: int, headers
 
 func _on_HTTPRequest8_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	roomData.state = {"stringValue": "null"}
-	yield(get_tree().create_timer(2), "timeout")
+	yield(get_tree().create_timer(1), "timeout")
 	if !righQ:
 		nextPlayerTurn()
 	else:
