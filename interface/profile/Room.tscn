@@ -168,6 +168,8 @@ __meta__ = {
 
 [node name="HTTPRequest3" type="HTTPRequest" parent="."]
 
+[node name="HTTPRequest10" type="HTTPRequest" parent="."]
+
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
@@ -207,6 +209,7 @@ stream = ExtResource( 14 )
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="request_completed" from="HTTPRequest2" to="." method="_on_HTTPRequest2_request_completed"]
 [connection signal="request_completed" from="HTTPRequest3" to="." method="_on_HTTPRequest3_request_completed"]
+[connection signal="request_completed" from="HTTPRequest10" to="." method="_on_HTTPRequest10_request_completed"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="request_completed" from="HTTPRequest4" to="." method="_on_HTTPRequest4_request_completed"]
 [connection signal="request_completed" from="HTTPRequest5" to="." method="_on_HTTPRequest5_request_completed"]

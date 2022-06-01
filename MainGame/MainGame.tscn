@@ -1388,6 +1388,8 @@ wait_time = 2.0
 
 [node name="HTTPRequest8" type="HTTPRequest" parent="."]
 
+[node name="HTTPRequest10" type="HTTPRequest" parent="."]
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 55 )
 
@@ -1412,3 +1414,4 @@ stream = ExtResource( 61 )
 [connection signal="request_completed" from="HTTPRequest6" to="." method="_on_HTTPRequest6_request_completed"]
 [connection signal="request_completed" from="HTTPRequest7" to="." method="_on_HTTPRequest7_request_completed"]
 [connection signal="request_completed" from="HTTPRequest8" to="." method="_on_HTTPRequest8_request_completed"]
+[connection signal="request_completed" from="HTTPRequest10" to="." method="_on_HTTPRequest10_request_completed"]

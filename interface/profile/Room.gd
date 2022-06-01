@@ -5,6 +5,7 @@ onready var http2 : HTTPRequest = $HTTPRequest2
 onready var http3 : HTTPRequest = $HTTPRequest3
 onready var http4 : HTTPRequest = $HTTPRequest4
 onready var http5 : HTTPRequest = $HTTPRequest5
+onready var http10 : HTTPRequest = $HTTPRequest10
 
 onready var numberPlayersLabel : Label = $TextureRect3/numberPlayersLabel
 onready var iniciarBtn : TextureButton = $ConfirmButton
@@ -178,3 +179,24 @@ func kickDuplicatedPlayer(duplicatedList):
 	
 	if duplPlayer == Firebase.user_email:
 		_on_CancelButton_pressed()
+
+func _notification(what: int) -> void:
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		if Firebase.isHost:
+			print('HOST SAIU')
+			var data = DataUtils.createRoomData()
+			print("Apagando partida de: "+Firebase.user_email)
+			data.state = { "stringValue": "canceled" }
+			Firebase.update_document("partidas/%s" % Firebase.user_email, data, http10)
+		else:
+			print('CLIENT SAIU')
+			roomData.players.arrayValue.values.remove(id)
+			roomData.avatars.arrayValue.values.remove(id)
+			Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http10)
+			
+func _on_HTTPRequest10_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
+	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
+	print(response_code)
+	match response_code:
+		200:
+			get_tree().quit() 

@@ -85,25 +85,6 @@ func delete_document(path: String, http: HTTPRequest) -> void:
 	var url := FIRESTORE_URL + path
 	http.request(url, _get_request_headers(), false, HTTPClient.METHOD_DELETE)
 
-func _notification(what: int) -> void:
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		if isHost:
-			print('HOST SAIU')
-#			var data = DataUtils.createRoomData()
-#			print("Apagando partida de: "+user_email)
-#			data.state = { "stringValue": "canceled" }
-#			Firebase.update_document("partidas/%s" % user_email, data, http)
-		else:
-			print('CLIENT SAIU')
-#			#roomData.player_1 = { "stringValue": "null"}
-#			roomData.players.arrayValue.values.remove(id)
-#			roomData.avatars.arrayValue.values.remove(id)
-#
-#		Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http)
-#		yield(get_tree().create_timer(2), "timeout")
-#		print("FECHOU____2!!!!")
-#		get_tree().quit() 
-		
 """"
 func _receive_message(tag,from,key,data):
 	if tag == "Firebase":

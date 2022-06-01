@@ -60,3 +60,7 @@ func _on_LineEditUserName_focus_entered() -> void:
 
 func _on_LineEditUserName_focus_exited() -> void:
 	get_node("/root/MainMenu/BG/TextureRect2/LineEditUserName").set_placeholder(placeholderLineEdit)
+
+func _notification(what: int) -> void:
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		get_tree().quit()

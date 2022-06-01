@@ -8,6 +8,7 @@ onready var http5 :HTTPRequest = $HTTPRequest5
 onready var http6 :HTTPRequest = $HTTPRequest6
 onready var http7 :HTTPRequest = $HTTPRequest7
 onready var http8 :HTTPRequest = $HTTPRequest8
+onready var http10 :HTTPRequest = $HTTPRequest10
 onready var turnTimer: Timer = $TimerTurn
 onready var playerProfileImage = $Background/PlayerProfile
 onready var scoreText= $Background/PlayerProfile/ScoreButton/Label
@@ -57,6 +58,12 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 		activePlayer = roomData.activePlayer.stringValue
 		roomData.usedTips.arrayValue.values.remove(0)
 	if turnState == 2:
+		playersNames = []
+		avatarsNames = []
+		for i in roomData.players.arrayValue.values.size():
+			playersNames.append(roomData.players.arrayValue.values[i].stringValue)
+			avatarsNames.append(roomData.avatars.arrayValue.values[i].stringValue)
+			
 		print("Active Player: ",activePlayer)
 		var index = playersNames.find(activePlayer)+1 #3 ->4
 		#print("INDEX: ",index)
@@ -82,9 +89,9 @@ func playersIcon():
 #		#get_node("Background/PlayerContainer/player_image_"+str(i)).texture = UiManager.imageIconAvatar(avatarsNames[i])
 #		get_node("/root/MainScene/Background/PlayerContainer/").add_child(icon)
 #		icon.texture = UiManager.imageIconAvatar(avatarsNames[i])
-	playersPins()	
+	playersPins()
 		
-func playersPins():	
+func playersPins():
 #	var pinPrefab = preload("res://Prefabs/player_pin_.tscn")
 #	for i in avatarsNames.size(): 
 #		var pin = pinPrefab.instance()
@@ -121,7 +128,7 @@ func waitGameInfo():
 
 func _on_HTTPRequest3_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
-	roomData = result_body.fields 
+	roomData = result_body.fields
 	#print(roomData.cards.arrayValue.values)
 	if roomData.cards.arrayValue.values.size() >1:
 		print("RECEBI OS DADOS!")
@@ -154,6 +161,7 @@ func verifyWhoPlays():
 	#print(roomData.activePlayer.stringValue)
 	if roomData.activePlayer.stringValue == Firebase.user_email:
 		print("MINHA VEZ")
+		verifyRoomState()
 		_popClientCard(2)
 		playerTurnUI.turnTipsButtons(true)
 		playerTurnUI.revealTimer(true)
@@ -225,7 +233,9 @@ func _on_HTTPRequest4_request_completed(result: int, response_code: int, headers
 func _on_HTTPRequest5_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	roomData = result_body.fields
-	if roomData.state.stringValue == "ended":
+	if roomData.state.stringValue == "canceled":
+		get_tree().change_scene("res://MainGame/MainMenu.tscn")
+	elif roomData.state.stringValue == "ended":
 		endGame()
 	elif roomData.state.stringValue == "answered":
 		playerTurnUI.waitingFeedback(roomData)
@@ -309,9 +319,9 @@ func _getPlayerIndex(name):
 
 func updareScoreInSlider():
 	for i in avatarsNames.size():
-			$RightAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[i],int(roomData.score.arrayValue.values[i].integerValue))
-			$WrongAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[i],int(roomData.score.arrayValue.values[i].integerValue))
-			$TimeOverPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[i],int(roomData.score.arrayValue.values[i].integerValue))
+		$RightAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[i],int(roomData.score.arrayValue.values[i].integerValue))
+		$WrongAnswerPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[i],int(roomData.score.arrayValue.values[i].integerValue))
+		$TimeOverPanel/Box/SliderBackg.updatePlayerScore(avatarsNames[i],int(roomData.score.arrayValue.values[i].integerValue))
 			
 func stringProcessing(text):
 	var t_final = text.to_upper()
@@ -349,6 +359,8 @@ func _on_HTTPRequest7_request_completed(result: int, response_code: int, headers
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	roomData = result_body.fields
 	print(roomData.activeTip.integerValue)
+	if roomData.state.stringValue == "canceled":
+		get_tree().change_scene("res://MainGame/MainMenu.tscn")
 
 func _on_HTTPRequest8_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	roomData.state = {"stringValue": "null"}
@@ -357,3 +369,28 @@ func _on_HTTPRequest8_request_completed(result: int, response_code: int, headers
 		nextPlayerTurn()
 	else:
 		updateScore()
+
+func _notification(what: int) -> void:
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		if Firebase.isHost:
+			print('HOST SAIU')
+			var data = DataUtils.createRoomData()
+			print("Apagando partida de: "+Firebase.user_email)
+			data.state = { "stringValue": "canceled" }
+			Firebase.update_document("partidas/%s" % Firebase.user_email, data, http10)
+		else:
+			print('CLIENT SAIU')
+			var index = _getPlayerIndex(Firebase.user_email)
+			roomData.players.arrayValue.values.remove(index)
+			roomData.avatars.arrayValue.values.remove(index)
+			Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http10)
+			
+func _on_HTTPRequest10_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
+	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
+	print(response_code)
+	match response_code:
+		200:
+			get_tree().quit()
+
+func verifyRoomState():
+	Firebase.get_document("partidas/%s" % Firebase.hostName, http7)

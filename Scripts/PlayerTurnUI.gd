@@ -183,6 +183,7 @@ func startClock():
 		timer = timer+1
 		#print("TIMER: ",timer)
 		timerRadial.value = timer
+		get_node("/root/MainScene/").verifyRoomState()
 		if timer <= totalTimer:
 			startClock()
 		else:
