@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 15
 qtPontosTotais = 27.0
 pontosDica = 1.8
-possiveisRespostas = PoolStringArray( "Joaquim Nabuco", "Joaquim Nambuco" )
+possiveisRespostas = PoolStringArray( "Joaquim Nabuco", "Joaquim Nambuco", "Joaquim Nabucco", "Joaquim Nambucco" )
 cartaBonus = false

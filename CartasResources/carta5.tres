@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 12
 qtPontosTotais = 18.0
 pontosDica = 1.5
-possiveisRespostas = PoolStringArray( "Proclamação da República", "15 de Novembro", "15 Novembro", "15 de Novembro de 1889", "Proclamação República" )
+possiveisRespostas = PoolStringArray( "Proclamação da República", "15 de Novembro", "15 Novembro", "15 de Novembro de 1889", "Proclamação República", "Dia da Proclamação da República", "Proclamação da República do Brasil" )
 cartaBonus = false

@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 15
 qtPontosTotais = 27.0
 pontosDica = 1.8
-possiveisRespostas = PoolStringArray( "Primeira Constituição da República", "Primeira Constituição", "Constituição de 1891", "Constituição República", "Constituição 1891" )
+possiveisRespostas = PoolStringArray( "Primeira Constituição da República", "Primeira Constituição", "Constituição de 1891", "Constituição República", "Constituição 1891", "Constituição da República", "Primeira Constituição Brasileira", "Primeira Constituição do Brasil", "Constituição" )
 cartaBonus = false

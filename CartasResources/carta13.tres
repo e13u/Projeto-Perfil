@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 15
 qtPontosTotais = 27.0
 pontosDica = 1.8
-possiveisRespostas = PoolStringArray( "Consolidação Leis Trabalho", "CLT", "C.L.T." )
+possiveisRespostas = PoolStringArray( "Consolidação Leis Trabalho", "CLT", "C.L.T.", "Leis do Trabalho", "Consolidação das Leis do Trabalho", "Leis Trabalhistas", "Legislação Trabalhista", "Lei dos Trabalhadores", "Lei Trabalhista", "Lei do Trabalhador", "Lei do Trabalho", "Consolidação da Lei do Trabalho", "Consolidação das Leis Trabalhistas", "Conjunto de Leis Trabalhistas" )
 cartaBonus = false

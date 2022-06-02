@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 12
 qtPontosTotais = 18.0
 pontosDica = 1.5
-possiveisRespostas = PoolStringArray( "Dia da Bandeira", "Dia Bandeira" )
+possiveisRespostas = PoolStringArray( "Dia da Bandeira", "Dia Bandeira", "Dia da Bandeira Brasileira", "Dia da Bandeira Nacional", "Dia da Bandeira do Brasil", "Bandeira do Brasil", "Bandeira Nacional", "Bandeira" )
 cartaBonus = false

@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 10
 qtPontosTotais = 10.0
 pontosDica = 1.0
-possiveisRespostas = PoolStringArray( "Lei Áurea" )
+possiveisRespostas = PoolStringArray( "Lei Áurea", "Abolição da escravidão", "Lei de abolição da escravidão", "Abolição da escravatura", "Lei de abolição da escravatura" )
 cartaBonus = false

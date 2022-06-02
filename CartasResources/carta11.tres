@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 12
 qtPontosTotais = 18.0
 pontosDica = 1.5
-possiveisRespostas = PoolStringArray( "Lei da Ficha Limpa", "Lei Ficha Limpa", "Ficha Limpa" )
+possiveisRespostas = PoolStringArray( "Lei da Ficha Limpa", "Lei Ficha Limpa", "Ficha Limpa", "Fixa Limpa", "Lei da Fixa Limpa", "Lei Fixa Limpa" )
 cartaBonus = false

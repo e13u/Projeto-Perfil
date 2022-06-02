@@ -66,11 +66,11 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 			
 		print("Active Player: ",activePlayer)
 		var index = playersNames.find(activePlayer)+1 #3 ->4
-		#print("INDEX: ",index)
+		print("INDEX: ",index)
 		if index == playersNames.size():
 			index = 0
 		activePlayer = playersNames[index]
-		#print("ACTIVE PLAYER: ",activePlayer, " INDEX: ",index)
+		print("ACTIVE PLAYER: ",activePlayer, " INDEX: ",index)
 		roomData.activePlayer.stringValue = activePlayer
 		Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http4)
 
@@ -141,12 +141,12 @@ func _popClientCard(code):
 	
 	for i in range(ran):
 		if $Tabuleiro.baralho.pilhaCartas[i].idCarta == int(roomData.cards.arrayValue.values[0].integerValue):
-			print("ACHEI A CARTA")
+			#print("ACHEI A CARTA")
 			card = $Tabuleiro.baralho.pilhaCartas[i]
 			break
 			
 	if card == null:
-		print("NÃO ACHEI A CARTA")
+		#print("NÃO ACHEI A CARTA")
 		_popClientCard(code)
 		return
 		
@@ -161,6 +161,7 @@ func verifyWhoPlays():
 	#print(roomData.activePlayer.stringValue)
 	if roomData.activePlayer.stringValue == Firebase.user_email:
 		print("MINHA VEZ")
+		print("playersNames: ",playersNames)
 		verifyRoomState()
 		_popClientCard(2)
 		playerTurnUI.turnTipsButtons(true)
@@ -172,6 +173,7 @@ func verifyWhoPlays():
 		updareScoreInSlider()
 		$AudioStreamPlayer.play()
 	else:
+		print("playersNames: ",playersNames)
 		playerTurnUI.turnTipsButtons(false)
 		playerTurnUI.revealTimer(false)
 		playerTurnUI.revealWaitingUI(true)
@@ -179,6 +181,12 @@ func verifyWhoPlays():
 		playerTurnUI.usedTipsNumberText()
 		get_node("Background/PlayerProfile/ActivePlayer").visible = false
 		_popClientCard(2)
+		playersNames = []
+		avatarsNames = []
+		for i in roomData.players.arrayValue.values.size():
+			playersNames.append(roomData.players.arrayValue.values[i].stringValue)
+			avatarsNames.append(roomData.avatars.arrayValue.values[i].stringValue)
+			
 		turnTimer.start()
 	
 #AS VEZES DANDO ERRO QUANDO SELECIONA DICA NUMERO 15
@@ -233,6 +241,9 @@ func _on_HTTPRequest4_request_completed(result: int, response_code: int, headers
 func _on_HTTPRequest5_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	roomData = result_body.fields
+	if roomData.players.arrayValue.values.size() <= 1:
+		roomData.state.stringValue = "canceled"
+		
 	if roomData.state.stringValue == "canceled":
 		get_tree().change_scene("res://MainGame/MainMenu.tscn")
 	elif roomData.state.stringValue == "ended":
@@ -358,7 +369,7 @@ func _on_FinishButton_pressed() -> void:
 func _on_HTTPRequest7_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	roomData = result_body.fields
-	print(roomData.activeTip.integerValue)
+	#print(roomData.activeTip.integerValue)
 	if roomData.state.stringValue == "canceled":
 		get_tree().change_scene("res://MainGame/MainMenu.tscn")
 

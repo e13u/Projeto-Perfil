@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 12
 qtPontosTotais = 18.0
 pontosDica = 1.5
-possiveisRespostas = PoolStringArray( "Estatuto da Criança e do Adolescente", "Estatuto Criança Adolescente", "ECA", "E.C.A." )
+possiveisRespostas = PoolStringArray( "Estatuto da Criança e do Adolescente", "Estatuto Criança Adolescente", "ECA", "E.C.A.", "Estatuto da Criança e Adolescente", "Estatuto das Crianças e dos Adolescentes", "Estatuto das Crianças e Adolescentes" )
 cartaBonus = false

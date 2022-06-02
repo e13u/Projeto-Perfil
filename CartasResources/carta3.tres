@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 12
 qtPontosTotais = 18.0
 pontosDica = 1.5
-possiveisRespostas = PoolStringArray( "Constituição Federal de 1988", "Constituição de 1988", "Constituição 1988" )
+possiveisRespostas = PoolStringArray( "Constituição Federal de 1988", "Constituição de 1988", "Constituição 1988", "Constituição de 88", "CF", "Constituição Federal", "Constituição" )
 cartaBonus = false

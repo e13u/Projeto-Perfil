@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 15
 qtPontosTotais = 27.0
 pontosDica = 1.8
-possiveisRespostas = PoolStringArray( "Comissão Nacional da Verdade", "Comissão da Verdade", "Comissão Verdade" )
+possiveisRespostas = PoolStringArray( "Comissão Nacional da Verdade", "Comissão da Verdade", "Comissão Verdade", "CNV", "C.N.V.", "Comisão Nacional da Verdade", "Comição da Verdade", "Comição Nacional da Verdade" )
 cartaBonus = false
