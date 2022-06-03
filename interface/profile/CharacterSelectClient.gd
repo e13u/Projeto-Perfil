@@ -90,6 +90,7 @@ func _on_XeretaBtn_pressed() -> void:
 
 func _on_ConfirmButton_pressed() -> void:
 	$AudioStreamPlayer.play()
+	yield(get_tree().create_timer(0.5), "timeout")
 	if selectedChar != "null":
 		Firebase.avatar = selectedChar
 		get_tree().change_scene("res://interface/profile/Room.tscn")

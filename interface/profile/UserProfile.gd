@@ -30,6 +30,7 @@ func _on_HTTPRequest_request_completed(result: int, response_code: int, headers:
 
 func _on_ConfirmButton_pressed() -> void:
 	$AudioStreamPlayer.play()
+	yield(get_tree().create_timer(0.5), "timeout")
 	if player_Avatar == "null":
 		return
 	
@@ -55,27 +56,27 @@ func _on_ConfirmButton_pressed() -> void:
 
 func _on_AdaoBtn_pressed() -> void:
 	player_Avatar = "Adao"
-
+	$AudioStreamPlayer.play()
 
 func _on_CidaBtn_pressed() -> void:
 	player_Avatar = "Cida"
-
+	$AudioStreamPlayer.play()
 
 func _on_ZeBtn_pressed() -> void:
 	player_Avatar = "Ze Plenarinho"
-
+	$AudioStreamPlayer.play()
 
 func _on_legisBtn_pressed() -> void:
 	player_Avatar = "Legis"
-
+	$AudioStreamPlayer.play()
 
 func _on_VitalBtn_pressed() -> void:
 	player_Avatar = "Vital"
-
+	$AudioStreamPlayer.play()
 
 func _on_XeretaBtn_pressed() -> void:
 	player_Avatar = "Xereta"
-
+	$AudioStreamPlayer.play()
 
 func _on_HTTPRequest2_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary

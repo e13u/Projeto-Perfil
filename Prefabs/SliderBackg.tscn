@@ -27,6 +27,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SliderAdao" type="HSlider" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -78.0
+margin_bottom = 51.0
+mouse_filter = 2
+custom_icons/grabber = ExtResource( 7 )
+custom_styles/slider = SubResource( 8 )
+scrollable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SliderCida" type="HSlider" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -78.0
+margin_bottom = 51.0
+mouse_filter = 2
+custom_icons/grabber = ExtResource( 5 )
+custom_styles/slider = SubResource( 8 )
+scrollable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="SliderZe" type="HSlider" parent="."]
 visible = false
 anchor_top = 1.0
@@ -34,8 +66,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
 margin_top = -78.0
-margin_right = -171.0
 margin_bottom = 51.0
+mouse_filter = 2
 custom_icons/grabber = ExtResource( 4 )
 custom_styles/slider = SubResource( 8 )
 scrollable = false
@@ -50,41 +82,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
 margin_top = -78.0
-margin_right = -171.0
 margin_bottom = 51.0
+mouse_filter = 2
 custom_icons/grabber = ExtResource( 6 )
-custom_styles/slider = SubResource( 8 )
-scrollable = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SliderVital" type="HSlider" parent="."]
-visible = false
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = -78.0
-margin_right = -171.0
-margin_bottom = 51.0
-custom_icons/grabber = ExtResource( 3 )
-custom_styles/slider = SubResource( 8 )
-scrollable = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SliderCida" type="HSlider" parent="."]
-visible = false
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = -78.0
-margin_right = -171.0
-margin_bottom = 51.0
-custom_icons/grabber = ExtResource( 5 )
 custom_styles/slider = SubResource( 8 )
 scrollable = false
 __meta__ = {
@@ -98,8 +98,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
 margin_top = -78.0
-margin_right = -171.0
 margin_bottom = 51.0
+mouse_filter = 2
 custom_icons/grabber = ExtResource( 1 )
 custom_styles/slider = SubResource( 8 )
 scrollable = false
@@ -107,16 +107,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SliderAdao" type="HSlider" parent="."]
+[node name="SliderVital" type="HSlider" parent="."]
 visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
 margin_top = -78.0
-margin_right = -171.0
 margin_bottom = 51.0
-custom_icons/grabber = ExtResource( 7 )
+mouse_filter = 2
+custom_icons/grabber = ExtResource( 3 )
 custom_styles/slider = SubResource( 8 )
 scrollable = false
 __meta__ = {

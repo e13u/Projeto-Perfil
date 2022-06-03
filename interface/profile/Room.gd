@@ -135,9 +135,6 @@ func refreshPlayerList():
 	if dupList.size() >0:
 		kickDuplicatedPlayer(dupList)
 	
-	#VERIFICAR AVATARES DUPLICADOS NAS SALAS e MANDAR 
-	#SEGUNDO DUPLICADO DE VOLTA PARA O MENU DE ESCOLHA DO AVATAR
-	
 	if !Firebase.isHost and roomState == "start" and !isUpdating:
 		_startGame()
 	
@@ -156,10 +153,16 @@ func verifyNumberOfPlayersInRoom():
 func _on_ConfirmButton_pressed() -> void:
 	$AudioStreamPlayer.play()
 	var data = roomData
-	if verifyNumberOfPlayersInRoom() > 1: 
-		data.state = { "stringValue": "start" }
-		Firebase.update_document("partidas/%s" % Firebase.hostName, data, http5)
-
+	yield(get_tree().create_timer(0.5), "timeout")
+	get_node("ConfirmButton").disabled = true
+	if !isUpdating:
+		if verifyNumberOfPlayersInRoom() > 1: 
+			#DATA NULL
+			data.state = { "stringValue": "start" }
+			Firebase.update_document("partidas/%s" % Firebase.hostName, data, http5)
+	else:
+		_on_ConfirmButton_pressed()
+		
 func _on_HTTPRequest5_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	_startGame()
 

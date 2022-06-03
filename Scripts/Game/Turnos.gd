@@ -390,6 +390,13 @@ func _notification(what: int) -> void:
 			data.state = { "stringValue": "canceled" }
 			Firebase.update_document("partidas/%s" % Firebase.user_email, data, http10)
 		else:
+			if activePlayer == Firebase.user_email:
+				print("ACTIVE VOU SAIR")
+				var index = playersNames.find(activePlayer)+1 #3 ->4
+				if index == playersNames.size():
+					index = 0
+				activePlayer = playersNames[index]
+				roomData.activePlayer.stringValue = activePlayer
 			print('CLIENT SAIU')
 			var index = _getPlayerIndex(Firebase.user_email)
 			roomData.players.arrayValue.values.remove(index)
