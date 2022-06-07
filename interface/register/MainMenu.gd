@@ -64,3 +64,5 @@ func _on_LineEditUserName_focus_exited() -> void:
 func _notification(what: int) -> void:
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		get_tree().quit()
+	elif what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
+		get_tree().quit()

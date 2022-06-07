@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 15
 qtPontosTotais = 27.0
 pontosDica = 1.8
-possiveisRespostas = PoolStringArray( "Proposta de Emenda Constitucional", "Proposta Emenda Constitucional", "PEC", "P.E.C." )
+possiveisRespostas = PoolStringArray( "Proposta de Emenda Constitucional", "Proposta Emenda Constitucional", "PEC", "P.E.C.", "Proposta de Emenda à Constituição" )
 cartaBonus = false

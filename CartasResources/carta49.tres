@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 12
 qtPontosTotais = 18.0
 pontosDica = 1.5
-possiveisRespostas = PoolStringArray( "Presidente do Senado Federal", "Presidente do Senado", "Presidente Senado" )
+possiveisRespostas = PoolStringArray( "Presidente do Senado Federal", "Presidente do Senado", "Presidente Senado", "Presidenta do Senado Federal", "Presidenta do Senado", "Presidenta Senado" )
 cartaBonus = false

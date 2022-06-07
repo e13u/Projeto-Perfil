@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 12
 qtPontosTotais = 18.0
 pontosDica = 1.5
-possiveisRespostas = PoolStringArray( "Assembleia Nacional Constituinte", "Assembleia Constituinte", "Assembleia Nacional Contituinte", "Assembleia Contituinte" )
+possiveisRespostas = PoolStringArray( "Assembleia Nacional Constituinte", "Assembleia Constituinte", "Assembleia Nacional Contituinte", "Assembleia Contituinte", "Constituinte", "Contituinte" )
 cartaBonus = false

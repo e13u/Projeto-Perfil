@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 10
 qtPontosTotais = 10.0
 pontosDica = 1.0
-possiveisRespostas = PoolStringArray( "Governador", "Governadora", "Governador de Estado", "Governadora de Estado", "Governadores" )
+possiveisRespostas = PoolStringArray( "Governador ou Governadora", "Governador", "Governadora", "Governadores", "Governador de Estado", "Governadora de Estado", "Governadores de Estado" )
 cartaBonus = false

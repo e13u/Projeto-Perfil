@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 15
 qtPontosTotais = 27.0
 pontosDica = 1.8
-possiveisRespostas = PoolStringArray( "Carlota Pereira de Queiroz", "Carlota Pereira de Queiros", "Carlota de Queiroz", "Carlota de Queiros", "Carlota Pereira Queiroz", "Carlota Pereira Queiros" )
+possiveisRespostas = PoolStringArray( "Carlota Pereira de Queiroz", "Carlota Pereira", "Carlota Pereira de Queiros", "Carlotta Pereira de Queiroz", "Carlotta Pereira", "Carlotta Pereira de Queiros", "Carlota de Queiroz", "Carlota de Queiros", "Carlotta de Queiroz", "Carlotta de Queiros" )
 cartaBonus = false

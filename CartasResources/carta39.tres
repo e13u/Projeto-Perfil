@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 15
 qtPontosTotais = 27.0
 pontosDica = 1.8
-possiveisRespostas = PoolStringArray( "Princesa Leopoldina", "Leopoldina", "Maria Leopoldina" )
+possiveisRespostas = PoolStringArray( "Maria Leopoldina", "Princesa Leopoldina", "Princesa Maria Leopoldina", "Maria Leopoldina da Áustria", "Maria Leopodina", "Princesa Leopodina", "Maria Leopoudina", "Princesa Leopoudina", "Princesa Maria Leopoudina" )
 cartaBonus = false

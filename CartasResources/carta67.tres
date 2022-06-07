@@ -13,5 +13,5 @@ instrucoes = PoolStringArray(  )
 qtDicas = 15
 qtPontosTotais = 27.0
 pontosDica = 1.8
-possiveisRespostas = PoolStringArray( "Praça da República", "Praça República", "Praça da Aclamação", "Praça Aclamação" )
+possiveisRespostas = PoolStringArray( "Praça da República", "Praça da Aclamação", "Praça República", "Praça Aclamação" )
 cartaBonus = false
