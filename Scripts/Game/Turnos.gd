@@ -402,7 +402,8 @@ func _notification(what: int) -> void:
 			roomData.players.arrayValue.values.remove(index)
 			roomData.avatars.arrayValue.values.remove(index)
 			Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http10)
-			
+	elif what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
+		pass
 func _on_HTTPRequest10_request_completed(result: int, response_code: int, headers: PoolStringArray, body: PoolByteArray) -> void:
 	var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 	print(response_code)

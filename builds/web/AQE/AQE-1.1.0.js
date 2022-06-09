@@ -308,9 +308,7 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 		 * @ignore
 		 * @type {?function(number)}
 		 */
-		onExit:function () {
-			console.log.apply(console, Array.from(arguments)); // eslint-disable-line no-console
-		},
+		onExit: null,
 		/**
 		 * A callback function for displaying download progress.
 		 *
