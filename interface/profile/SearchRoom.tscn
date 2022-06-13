@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Mockups/3.jpeg" type="Texture" id=2]
+[ext_resource path="res://NOVOS ASSETS/TELA_02/Escolha sala.png" type="Texture" id=2]
 [ext_resource path="res://interface/rooms/Camada 136 copiar 2.jpg" type="Texture" id=3]
 [ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003.png" type="Texture" id=4]
 [ext_resource path="res://interface/profile/SearchRoom.gd" type="Script" id=5]
-[ext_resource path="res://interface/rooms/Camada 146 copiar.png" type="Texture" id=6]
+[ext_resource path="res://NOVOS ASSETS/TELA_02/tela_02 copiar.png" type="Texture" id=6]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2.png" type="Texture" id=7]
 [ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_005.png" type="Texture" id=8]
 [ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003b.png" type="Texture" id=9]
@@ -39,7 +39,7 @@ margin_left = -434.0
 margin_top = 65.0
 margin_right = 434.0
 margin_bottom = 286.0
-texture = ExtResource( 6 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -59,9 +59,10 @@ valign = 1
 [node name="CancelButton" type="Button" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -120.0
-margin_top = 10.0
-margin_bottom = 106.0
+margin_left = -126.0
+margin_top = 27.0
+margin_right = -6.0
+margin_bottom = 133.0
 size_flags_horizontal = 4
 icon = ExtResource( 7 )
 flat = true
@@ -112,7 +113,7 @@ valign = 1
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false

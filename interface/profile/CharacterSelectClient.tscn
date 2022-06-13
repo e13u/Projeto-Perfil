@@ -1,7 +1,7 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://interface/profile/CharacterSelectClient.gd" type="Script" id=1]
-[ext_resource path="res://interface/rooms/Camada 158.png" type="Texture" id=2]
+[ext_resource path="res://NOVOS ASSETS/TELA_03/EscolhaPersonagem.png" type="Texture" id=2]
 [ext_resource path="res://Prefabs/CancelButton2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interface/rooms/Cida_button.png" type="Texture" id=4]
 [ext_resource path="res://interface/rooms/Adao_button.png" type="Texture" id=5]
@@ -23,6 +23,7 @@
 [ext_resource path="res://interface/login/Jogo_AdivinhaQuemE_box_003b.png" type="Texture" id=21]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2b.png" type="Texture" id=22]
 [ext_resource path="res://Audio/button.mp3" type="AudioStream" id=23]
+[ext_resource path="res://NOVOS ASSETS/TELA_03/tela_03 copiar.png" type="Texture" id=24]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -47,8 +48,10 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-margin_right = 942.0
-margin_bottom = 227.0
+margin_left = 38.0
+margin_top = 60.0
+margin_right = 980.0
+margin_bottom = 287.0
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -57,12 +60,12 @@ __meta__ = {
 [node name="Label" type="Label" parent="TextureRect2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 267.0
-margin_top = 59.0
-margin_right = -9.0
+margin_left = 238.0
+margin_top = 46.0
+margin_right = -22.0
 margin_bottom = -7.0
 custom_fonts/font = ExtResource( 10 )
-text = "Escolha seu Personagem"
+text = "Escolha seu personagem"
 align = 1
 valign = 1
 
@@ -290,6 +293,9 @@ align = 1
 valign = 1
 
 [node name="CancelButton2" parent="." instance=ExtResource( 3 )]
+margin_left = -120.0
+margin_right = -5.0
+margin_bottom = 130.0
 texture_pressed = ExtResource( 22 )
 
 [node name="ConfirmButton" type="TextureButton" parent="."]
@@ -333,6 +339,15 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )
+
+[node name="mockup" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="GridContainer/LegisBtn" to="." method="_on_LegisBtn_pressed"]
 [connection signal="pressed" from="GridContainer/ZeBtn" to="." method="_on_ZeBtn_pressed"]

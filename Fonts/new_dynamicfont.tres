@@ -3,5 +3,5 @@
 [ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=1]
 
 [resource]
-size = 73
+size = 75
 font_data = ExtResource( 1 )
