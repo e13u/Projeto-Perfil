@@ -413,3 +413,28 @@ func _on_HTTPRequest10_request_completed(result: int, response_code: int, header
 
 func verifyRoomState():
 	Firebase.get_document("partidas/%s" % Firebase.hostName, http7)
+
+func leaveMatch():
+	if Firebase.isHost:
+		print('HOST SAIU')
+		var data = DataUtils.createRoomData()
+		print("Apagando partida de: "+Firebase.user_email)
+		data.state = { "stringValue": "canceled" }
+		Firebase.update_document("partidas/%s" % Firebase.user_email, data, http10)
+	else:
+		if activePlayer == Firebase.user_email:
+			print("ACTIVE VOU SAIR")
+			var index = playersNames.find(activePlayer)+1 #3 ->4
+			if index == playersNames.size():
+				index = 0
+			activePlayer = playersNames[index]
+			roomData.activePlayer.stringValue = activePlayer
+		print('CLIENT SAIU')
+		var index = _getPlayerIndex(Firebase.user_email)
+		roomData.players.arrayValue.values.remove(index)
+		roomData.avatars.arrayValue.values.remove(index)
+		Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http10)
+
+
+func _on_MenuButton_pressed() -> void:
+	leaveMatch()

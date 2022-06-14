@@ -14,8 +14,8 @@ var hintsContainer
 
 func inicializarBaralho():
 	baralho = load("res://Prefabs/Baralho.tres")
-	cardTypeBox = get_node("/root/MainScene/Background/CardTypeBox/Label")
-	cardDificultyImage = get_node("/root/MainScene/Background/CardTypeBox/TextureRect")
+	cardTypeBox = get_node("/root/MainScene/Background/AnswerTipPanel/CardTypeBox/Label")
+	cardDificultyImage = get_node("/root/MainScene/Background/AnswerTipPanel/CardTypeBox/TextureRect")
 	#cardDificultyText = get_node("/root/MainScene/Background/DificultyBox/DifiText")
 	baralho.criarBaralho()
 	baralho._embaralhar()

@@ -402,16 +402,16 @@ func _on_Answer_focus_exited() -> void:
 
 func waitingFeedback(data):
 	if data.answerState.stringValue == "right":
-		get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackCorrect").visible = true
+		get_node("/root/MainScene/Background/TipsForWaitingPlayer/TextureRect/ResultFeedbackCorrect").visible = true
 		tipsWaiting.get_child(0).text = get_node("/root/MainScene/Tabuleiro").cartaDestaque.nomeCarta
 	elif data.answerState.stringValue == "wrong":
-		get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackIncorrect").visible = true
+		get_node("/root/MainScene/Background/TipsForWaitingPlayer/TextureRect/ResultFeedbackIncorrect").visible = true
 	elif data.answerState.stringValue == "timeover":
-		get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackTimeOver").visible = true
+		get_node("/root/MainScene/Background/TipsForWaitingPlayer/TextureRect/ResultFeedbackTimeOver").visible = true
 	yield(get_tree().create_timer(2), "timeout")
-	get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackCorrect").visible = false
-	get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackIncorrect").visible = false
-	get_node("/root/MainScene/Background/TipsForWaitingPlayer/ResultFeedbackTimeOver").visible = false
+	get_node("/root/MainScene/Background/TipsForWaitingPlayer/TextureRect/ResultFeedbackCorrect").visible = false
+	get_node("/root/MainScene/Background/TipsForWaitingPlayer/TextureRect/ResultFeedbackIncorrect").visible = false
+	get_node("/root/MainScene/Background/TipsForWaitingPlayer/TextureRect/ResultFeedbackTimeOver").visible = false
 	tipsWaiting.get_child(0).text = ''
 	#get_node("/root/MainScene/").endWaitingFeedback()
 
