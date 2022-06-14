@@ -2,7 +2,7 @@ extends Node
 
 var cardTypeBox
 var cardDificultyImage 
-var cardDificultyText
+#var cardDificultyText
 var casasTotais = 100
 var baralho = null
 var cartaDestaque = null
@@ -15,8 +15,8 @@ var hintsContainer
 func inicializarBaralho():
 	baralho = load("res://Prefabs/Baralho.tres")
 	cardTypeBox = get_node("/root/MainScene/Background/CardTypeBox/Label")
-	cardDificultyImage = get_node("/root/MainScene/Background/DificultyBox/DificultyBox2/TextureRect")
-	cardDificultyText = get_node("/root/MainScene/Background/DificultyBox/DifiText")
+	cardDificultyImage = get_node("/root/MainScene/Background/CardTypeBox/TextureRect")
+	#cardDificultyText = get_node("/root/MainScene/Background/DificultyBox/DifiText")
 	baralho.criarBaralho()
 	baralho._embaralhar()
 	if Firebase.isHost:
@@ -104,4 +104,4 @@ func _cardData():
 	cardTypeBox.text = catString
 	#print("DIFI: ",cartaDestaque.pontosDica)
 	cardDificultyImage.texture = UiManager.dificultyImage(cartaDestaque.pontosDica)
-	cardDificultyText.text = UiManager.dificultyText(cartaDestaque.pontosDica)
+	#cardDificultyText.text = UiManager.dificultyText(cartaDestaque.pontosDica)

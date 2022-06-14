@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Scripts/PlayerTurnUI.gd" type="Script" id=1]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_relogio.png" type="Texture" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://interface/mainscreen/Agrupar 19.png" type="Texture" id=7]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/papel picado.png" type="Texture" id=8]
 [ext_resource path="res://interface/mainscreen/Tempo esgotado.png" type="Texture" id=9]
-[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/DICAS REVELADAS.png" type="Texture" id=10]
+[ext_resource path="res://NOVOS ASSETS/TELA_05/Tema e dificuldade.png" type="Texture" id=10]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_green.png" type="Texture" id=11]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Timer_fundo.png" type="Texture" id=12]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/fundo.png" type="Texture" id=13]
@@ -20,10 +20,10 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box nome.png" type="Texture" id=18]
 [ext_resource path="res://interface/rooms/Edu_button.png" type="Texture" id=19]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/Medalha1.png" type="Texture" id=20]
-[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box.png" type="Texture" id=21]
+[ext_resource path="res://NOVOS ASSETS/TELA_05/DicasReveladas.png" type="Texture" id=21]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Camada 1379.png" type="Texture" id=22]
-[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box_Dificuldades.png" type="Texture" id=23]
-[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/box_dicas.png" type="Texture" id=24]
+[ext_resource path="res://NOVOS ASSETS/TELA_05/DicasNumeros.png" type="Texture" id=23]
+[ext_resource path="res://NOVOS ASSETS/TELA_05/Tela_06 copiar 7.png" type="Texture" id=24]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/dificuldade_icone1.png" type="Texture" id=25]
 [ext_resource path="res://interface/rooms/Menu copiar 3.png" type="Texture" id=26]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela6/botaoEnviar_press.png" type="Texture" id=27]
@@ -37,7 +37,6 @@
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/X copiar 2.png" type="Texture" id=35]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Agrupar 15.png" type="Texture" id=36]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela8/Agrupar 16.png" type="Texture" id=37]
-[ext_resource path="res://Mockups/8.jpeg" type="Texture" id=38]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/Camada 1482.png" type="Texture" id=39]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2.png" type="Texture" id=40]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1587.png" type="Texture" id=41]
@@ -57,17 +56,13 @@
 [ext_resource path="res://Audio/open-button-2.wav" type="AudioStream" id=55]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Camada 1705.png" type="Texture" id=56]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela7/Ze_icon.png" type="Texture" id=57]
-[ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela5/DICAS REVELADASb.png" type="Texture" id=58]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela10/X copiar 2b.png" type="Texture" id=59]
 [ext_resource path="res://interface/mainscreen/Jogo_AdivinhaQuemE_Tela9/Camada 1590b.png" type="Texture" id=60]
 [ext_resource path="res://Audio/button.mp3" type="AudioStream" id=61]
 
-[sub_resource type="DynamicFont" id=9]
-size = 62
-font_data = ExtResource( 16 )
-
 [sub_resource type="DynamicFont" id=6]
 size = 39
+extra_spacing_top = -9
 font_data = ExtResource( 54 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -75,6 +70,10 @@ size = 90
 font_data = ExtResource( 16 )
 
 [sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="DynamicFont" id=18]
+size = 80
+font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonts/OpenSans-Regular_0.ttf"
@@ -95,8 +94,8 @@ font_data = ExtResource( 16 )
 size = 50
 font_data = ExtResource( 16 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 100
+[sub_resource type="DynamicFont" id=17]
+size = 75
 font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=12]
@@ -168,107 +167,6 @@ __meta__ = {
 
 [node name="PlayerProfile" parent="Background" instance=ExtResource( 43 )]
 
-[node name="CardTypeBox" type="TextureRect" parent="Background"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -547.0
-margin_top = 155.0
-margin_right = -39.0
-margin_bottom = 303.0
-texture = ExtResource( 21 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Background/CardTypeBox"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_colors/font_color = Color( 0.513726, 0.603922, 0.643137, 1 )
-custom_fonts/font = ExtResource( 6 )
-text = "?"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DificultyBox" type="TextureRect" parent="Background"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -552.0
-margin_top = 343.0
-margin_right = -74.0
-margin_bottom = 438.0
-texture = ExtResource( 18 )
-expand = true
-stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DificultyBox2" type="TextureRect" parent="Background/DificultyBox"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -190.0
-margin_top = -74.0
-margin_right = 26.0
-margin_bottom = 74.0
-texture = ExtResource( 23 )
-
-[node name="TextureRect" type="TextureRect" parent="Background/DificultyBox/DificultyBox2"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -71.0
-margin_top = -49.0
-margin_right = 71.0
-margin_bottom = 49.0
-texture = ExtResource( 25 )
-stretch_mode = 6
-
-[node name="DifiText" type="Label" parent="Background/DificultyBox"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -195.0
-margin_bottom = -11.0
-custom_fonts/font = SubResource( 9 )
-text = "Dificuldade"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="UsedTipsBox" type="TextureRect" parent="Background"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -315.0
-margin_top = 476.0
-margin_right = -53.0
-margin_bottom = 573.0
-texture = ExtResource( 24 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Background/UsedTipsBox"]
-anchor_left = 0.263
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 0.0939941
-custom_fonts/font = ExtResource( 6 )
-text = "6/15"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="HintsPanel" type="TextureRect" parent="Background"]
 anchor_top = 0.5
 anchor_right = 1.0
@@ -292,7 +190,6 @@ __meta__ = {
 }
 
 [node name="AnswerTipPanel" type="TextureRect" parent="Background"]
-visible = false
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -320,15 +217,14 @@ __meta__ = {
 [node name="Label" type="Label" parent="Background/AnswerTipPanel/TipTextBox"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 27.0
-margin_top = 22.0
-margin_right = -28.0
-margin_bottom = -32.0
+margin_left = 53.0
+margin_top = 56.0
+margin_right = -18.0
+margin_bottom = -36.0
 custom_colors/font_color = Color( 0.321569, 0.321569, 0.321569, 1 )
 custom_fonts/font = SubResource( 6 )
 text = "Fui nomeado diretor da Escola Nacional de Belas Artes e lá, minhas ideias de experimentações artísticas entre alunos e professores geraram uma greve de 6 meses de acadêmicos e mestres.
 Acabei me afastando da Escola."
-align = 1
 valign = 1
 autowrap = true
 
@@ -396,18 +292,25 @@ margin_bottom = 84.0
 texture = ExtResource( 28 )
 expand = true
 stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Background/AnswerTipPanel/AnswerPanel/TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 144.0
-margin_top = 28.0
-margin_right = -207.0
-margin_bottom = -20.0
-custom_fonts/font = ExtResource( 6 )
-text = "RESPOSTA"
+margin_left = 120.0
+margin_top = 17.0
+margin_right = -218.0
+margin_bottom = -23.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 18 )
+text = "Resposta"
 align = 1
-valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SendButton" type="TextureButton" parent="Background/AnswerTipPanel"]
 anchor_left = 1.0
@@ -421,6 +324,51 @@ margin_bottom = 16.0
 texture_normal = ExtResource( 30 )
 texture_pressed = ExtResource( 27 )
 texture_focused = ExtResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardTypeBox" type="TextureRect" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -267.0
+margin_top = -323.0
+margin_right = 387.0
+margin_bottom = -175.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Background/CardTypeBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 14.0
+margin_top = 14.0
+margin_right = -160.0
+margin_bottom = -19.0
+custom_colors/font_color = Color( 0.513726, 0.603922, 0.643137, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Background/CardTypeBox"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 185.0
+margin_top = -42.0
+margin_right = 310.0
+margin_bottom = 62.0
+texture = ExtResource( 25 )
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -662,15 +610,14 @@ __meta__ = {
 }
 
 [node name="RevealedTipsButton" type="TextureButton" parent="Background"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 51.0
-margin_top = -341.0
-margin_right = 566.0
-margin_bottom = -51.0
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 58 )
-expand = true
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -530.0
+margin_top = 298.0
+margin_right = -15.0
+margin_bottom = 487.0
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -678,11 +625,37 @@ __meta__ = {
 [node name="Label" type="Label" parent="Background/RevealedTipsButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 50.0
-margin_bottom = -29.0
-custom_fonts/font = SubResource( 4 )
-text = "Dicas 
-Reveladas"
+margin_left = 18.0
+margin_top = 11.0
+margin_right = -42.0
+margin_bottom = -25.0
+custom_fonts/font = SubResource( 17 )
+text = "Dicas reveladas"
+align = 1
+valign = 1
+
+[node name="UsedTipsBox" type="TextureRect" parent="Background"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -356.0
+margin_top = 200.0
+margin_right = -57.0
+margin_bottom = 351.0
+texture = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Background/UsedTipsBox"]
+anchor_left = 0.263
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -22.637
+margin_right = -34.0
+margin_bottom = -11.0
+custom_colors/font_color = Color( 0.513726, 0.603922, 0.643137, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "00/00"
 align = 1
 valign = 1
 __meta__ = {
@@ -692,10 +665,10 @@ __meta__ = {
 [node name="MenuButton" type="TextureButton" parent="Background"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -119.0
-margin_top = 31.0
-margin_right = -18.0
-margin_bottom = 131.0
+margin_left = -175.0
+margin_top = 50.0
+margin_right = -74.0
+margin_bottom = 150.0
 texture_normal = ExtResource( 26 )
 texture_pressed = ExtResource( 15 )
 __meta__ = {
@@ -815,7 +788,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 38 )
+texture = ExtResource( 24 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
