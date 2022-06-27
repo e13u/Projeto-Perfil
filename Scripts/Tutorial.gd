@@ -6,16 +6,38 @@ func _ready() -> void:
 	$"1".visible = true
 	$"2".visible = false
 	$"3".visible = false
+	$"4".visible = false
+	$"5".visible = false
+	$"6".visible = false
+	$"7".visible = false
+	$"8".visible = false
 
 func _on_ScreenButton_pressed() -> void:
 	count = count+1
-	$"1".visible = false
+	$"1".visible = true
 	$"2".visible = false
 	$"3".visible = false
+	$"4".visible = false
+	$"5".visible = false
+	$"6".visible = false
+	$"7".visible = false
+	$"8".visible = false
 	if count == 1:
 		$"2".visible = true
 	elif count == 2:
 		$"3".visible = true
+	elif count == 3:
+		$"4".visible = true
+	elif count == 4:
+		$"5".visible = true
+	elif count == 5:
+		$"6".visible = true
+	elif count == 6:
+		$"7".visible = true
+	elif count == 7:
+		$"8".visible = true
+	elif count == 8:
+		$"9".visible = true
 	else:
 		LoadMainScreen()
 

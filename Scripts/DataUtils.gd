@@ -2,6 +2,7 @@ extends Node
 
 func createRoomData():
 	var roomData := {
+		"playersPing":{"arrayValue":{"values":[{"stringValue":"null"}]}},
 		"players":{"arrayValue":{"values":[{"stringValue":"null"}]}},
 		"avatars":{"arrayValue":{"values":[{"stringValue":"null"}]}},
 		"cards":{"arrayValue":{"values":[{"integerValue":1000}]}},
