@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Perfil Plenarinho"
-run/main_scene="res://MainGame/MainMenu.tscn"
+run/main_scene="res://MainGame/Tutorial.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -48,6 +48,7 @@ Firebase="*res://static/Firebase.gd"
 UiManager="*res://Scripts/UIManager.gd"
 DataUtils="*res://Scripts/DataUtils.gd"
 GameState="*res://Scripts/GameState.gd"
+PlayersVerification="*res://Scripts/PlayersVerification.gd"
 
 [display]
 

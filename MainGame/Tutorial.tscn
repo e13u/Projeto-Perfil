@@ -1,16 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://NOVOS ASSETS/TELA_01/botao azul_press.png" type="Texture" id=1]
-[ext_resource path="res://Fonts/Boogaloo-Regular.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://NOVOS ASSETS/TELA_01/botao azul.png" type="Texture" id=3]
-[ext_resource path="res://NOVOS ASSETS/TELA_01/tela_01 copiar.png" type="Texture" id=4]
-[ext_resource path="res://NOVOS ASSETS/TELA_03/tela_03 copiar.png" type="Texture" id=5]
-[ext_resource path="res://NOVOS ASSETS/TELA_02/tela_02 copiar.png" type="Texture" id=6]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/TutorialMockups08.jpg" type="Texture" id=1]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/Pular.png" type="Texture" id=2]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/Pular_Press.png" type="Texture" id=3]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/TutorialTelas05.jpg" type="Texture" id=4]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/TutorialTelas04.jpg" type="Texture" id=5]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/TutorialTelas07.jpg" type="Texture" id=6]
 [ext_resource path="res://Scripts/Tutorial.gd" type="Script" id=7]
-
-[sub_resource type="DynamicFont" id=1]
-size = 60
-font_data = ExtResource( 2 )
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/TutorialTelas01.jpg" type="Texture" id=8]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/TutorialTelas08.jpg" type="Texture" id=9]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/TutorialTelas06.jpg" type="Texture" id=10]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/TutorialTelas02.jpg" type="Texture" id=11]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/TutorialTelas03.jpg" type="Texture" id=12]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/VJogar_Press.png" type="Texture" id=13]
+[ext_resource path="res://NOVOS ASSETS/TUTORIAIS/Vjogar.png" type="Texture" id=14]
 
 [node name="TutorialScene" type="Control"]
 anchor_right = 1.0
@@ -24,7 +27,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -33,7 +36,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 6 )
+texture = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -42,7 +45,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -60,7 +63,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -69,7 +72,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -78,7 +81,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -87,7 +90,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -99,27 +102,63 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="JumpToGameButton" type="TextureButton" parent="."]
-anchor_left = 1.0
+[node name="MOCKUP" type="TextureRect" parent="."]
+visible = false
 anchor_right = 1.0
-margin_left = -374.0
-margin_top = 27.0
-margin_right = -29.0
-margin_bottom = 114.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 1 )
-expand = true
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="JumpToGameButton"]
-anchor_right = 1.0
+[node name="JumpToGameButton1" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 1 )
-text = "Pular"
-align = 1
-valign = 1
+margin_left = 166.5
+margin_top = -378.0
+margin_right = 511.5
+margin_bottom = -224.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JumpToGameButton2" type="TextureButton" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -448.5
+margin_top = -378.0
+margin_right = -103.5
+margin_bottom = -224.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JumpToGameButton3" type="TextureButton" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -396.5
+margin_top = -199.0
+margin_right = -10.5
+margin_bottom = -45.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="ScreenButton" to="." method="_on_ScreenButton_pressed"]
-[connection signal="pressed" from="JumpToGameButton" to="." method="_on_JumpToGameButton_pressed"]
+[connection signal="pressed" from="JumpToGameButton1" to="." method="_on_JumpToGameButton_pressed"]
+[connection signal="pressed" from="JumpToGameButton2" to="." method="_on_JumpToGameButton_pressed"]
+[connection signal="pressed" from="JumpToGameButton3" to="." method="_on_JumpToGameButton_pressed"]
