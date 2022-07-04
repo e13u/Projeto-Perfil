@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/SplashMenu.gd" type="Script" id=1]
+[ext_resource path="res://NOVOS ASSETS/INICIAL/TELA_INICIAL2.jpg" type="Texture" id=2]
+[ext_resource path="res://interface/rooms/Play.png" type="Texture" id=3]
+[ext_resource path="res://interface/rooms/PlayPress.png" type="Texture" id=4]
+[ext_resource path="res://NOVOS ASSETS/INICIAL/MOCKUP_INITIAL.jpeg" type="Texture" id=5]
+[ext_resource path="res://NOVOS ASSETS/INICIAL/tutorialButton_01.png" type="Texture" id=6]
+[ext_resource path="res://NOVOS ASSETS/INICIAL/tutorialButton_01_press.png" type="Texture" id=7]
+
+[node name="Splash" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MOCKUP" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="MainMenuButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -156.0
+margin_top = 153.0
+margin_right = 156.0
+margin_bottom = 465.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -223.0
+margin_top = -451.0
+margin_right = 223.0
+margin_bottom = -261.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+
+[connection signal="pressed" from="MainMenuButton" to="BG" method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="TutorialButton" to="BG" method="_on_TutorialButton_pressed"]

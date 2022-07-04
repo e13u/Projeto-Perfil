@@ -5,6 +5,7 @@ var roomData
 var playersPing
 var stateRequest = 0
 var timer = 3
+var activePlayers = []
 
 func _ready():
 	yield(get_tree().create_timer(timer), "timeout")
@@ -12,8 +13,11 @@ func _ready():
 	add_child(http_request_ping)  
 	print("Starting")  
 	http_request_ping.connect("request_completed", self, "_http_request_completed")
-	getInfo()
-	
+	if Firebase.isHost:
+		verifyPlayers()
+	else:
+		getInfo()
+		
 func getInfo():
 	if Firebase.user_email != null and Firebase.hostName != null:
 		stateRequest = 0
@@ -36,7 +40,15 @@ func _http_request_completed(result, response_code, headers, body):
 		print("Sending info")
 		yield(get_tree().create_timer(timer), "timeout")
 		getInfo()
-	
+	elif stateRequest == 2:
+		for i in roomData.playersPing.arrayValue.values.size():
+			activePlayers.append(roomData.playersPing.arrayValue.values[i].stringValue)
+
 func sendPing():
 	stateRequest = 1
 	Firebase.update_document("partidas/%s" % Firebase.hostName, roomData, http_request_ping)
+
+func verifyPlayers():
+	if Firebase.user_email != null and Firebase.hostName != null:
+		stateRequest = 2
+		Firebase.get_document("partidas/%s" % Firebase.hostName, http_request_ping)

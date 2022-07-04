@@ -9,6 +9,7 @@ onready var http10 : HTTPRequest = $HTTPRequest10
 
 onready var numberPlayersLabel : Label = $TextureRect3/numberPlayersLabel
 onready var iniciarBtn : TextureButton = $ConfirmButton
+onready var waitingLabel : Label = $ClientWaitingLabel
 
 var playersInRoom :int = 0
 var id 
@@ -20,7 +21,9 @@ var avatar_list=[]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	iniciarBtn.disabled = true
+	iniciarBtn.visible = false
 	if Firebase.isHost:
+		waitingLabel.visible = false
 		Firebase.hostName = Firebase.user_email
 		startRoom()
 	else:
@@ -110,8 +113,10 @@ func refreshPlayerList():
 	
 	if players.size() > 1 and Firebase.isHost:
 		iniciarBtn.disabled = false
+		iniciarBtn.visible = true
 	else:
 		iniciarBtn.disabled = true
+		iniciarBtn.visible = false
 	
 	var duplicated = false
 	var dupList = []

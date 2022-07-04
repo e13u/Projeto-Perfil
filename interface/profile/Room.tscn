@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://interface/profile/Room.gd" type="Script" id=1]
 [ext_resource path="res://NOVOS ASSETS/TELA_04/Jogadores.png" type="Texture" id=2]
@@ -21,6 +21,10 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 74
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
 font_data = ExtResource( 5 )
 
 [node name="Room" type="Control"]
@@ -208,6 +212,17 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
+
+[node name="ClientWaitingLabel" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -150.0
+custom_colors/font_color = Color( 0.537255, 0.596078, 0.623529, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Aguarde o criador da sala iniciar a partida"
+align = 1
+valign = 1
 
 [connection signal="pressed" from="CancelButton" to="." method="_on_CancelButton_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
